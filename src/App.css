@@ -405,62 +405,34 @@ body {
   animation-delay: 0s;
 }
 
-@keyframes floatingJelly {
-  0% {
-    border-radius: 65% 35% 70% 30%;
-    transform: translateX(-50%) translateY(-50%) scale(1) rotateX(0deg) rotateY(0deg);
-  }
-  16.66% {
-    border-radius: 30% 70% 40% 60%;
-    transform: translateX(-50%) translateY(-45%) scale(1.08) rotateX(5deg) rotateY(15deg);
-  }
-  33.33% {
-    border-radius: 75% 25% 55% 45%;
-    transform: translateX(-50%) translateY(-55%) scale(0.92) rotateX(-3deg) rotateY(30deg);
+@keyframes arcGlow {
+  0%, 100% {
+    filter: blur(2px);
+    opacity: 0.8;
   }
   50% {
-    border-radius: 45% 55% 35% 65%;
-    transform: translateX(-50%) translateY(-50%) scale(1.05) rotateX(8deg) rotateY(45deg);
-  }
-  66.66% {
-    border-radius: 60% 40% 80% 20%;
-    transform: translateX(-50%) translateY(-48%) scale(0.95) rotateX(-2deg) rotateY(60deg);
-  }
-  83.33% {
-    border-radius: 35% 65% 50% 50%;
-    transform: translateX(-50%) translateY(-52%) scale(1.03) rotateX(4deg) rotateY(75deg);
-  }
-  100% {
-    border-radius: 65% 35% 70% 30%;
-    transform: translateX(-50%) translateY(-50%) scale(1) rotateX(0deg) rotateY(90deg);
+    filter: blur(3px);
+    opacity: 1;
   }
 }
 
-@keyframes jellyHighlight {
+@keyframes arcRotate {
   0% {
-    opacity: 0.7;
-    transform: scale(1);
-    border-radius: 60% 40% 70% 30%;
-  }
-  25% {
-    opacity: 0.9;
-    transform: scale(1.15);
-    border-radius: 40% 60% 30% 70%;
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(0.95);
-    border-radius: 70% 30% 60% 40%;
-  }
-  75% {
-    opacity: 1;
-    transform: scale(1.08);
-    border-radius: 35% 65% 45% 55%;
+    transform: translateX(-50%) rotate(0deg);
   }
   100% {
-    opacity: 0.7;
-    transform: scale(1);
-    border-radius: 60% 40% 70% 30%;
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes innerGlow {
+  0% {
+    opacity: 0.6;
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 0.9;
+    filter: blur(8px);
   }
 }
 
