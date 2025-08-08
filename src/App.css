@@ -611,6 +611,23 @@ body {
     0 0 60px rgba(0, 212, 255, 0.2);
 }
 
+/* Hero section specific title */
+.hero-section .brand-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+.hero-section .jarvis-text {
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  text-shadow: none;
+  font-weight: 800;
+}
+
 .title-underline {
   width: 100px;
   height: 4px;
