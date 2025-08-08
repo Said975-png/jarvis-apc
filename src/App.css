@@ -132,7 +132,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 50%, #000000 100%);
+  background: #000000;
   overflow: hidden;
   padding-top: 70px;
 }
