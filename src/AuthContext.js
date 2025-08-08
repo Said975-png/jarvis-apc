@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
+import { createFallbackAuth } from './AuthFallback';
 
 const AuthContext = createContext();
 
@@ -15,7 +16,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Проверяем автори��ацию при загрузке
+  // Проверяем авторизацию при загрузке
   useEffect(() => {
     // Получаем текущую сессию
     supabase.auth.getSession().then(({ data: { session } }) => {
