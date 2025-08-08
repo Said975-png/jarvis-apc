@@ -2885,7 +2885,74 @@ body {
 }
 
 /* Responsive для How It Works */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .steps-grid::before,
+  .steps-grid::after {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
+  .how-it-works-section {
+    padding: 5rem 0;
+  }
+
+  .how-it-works-content {
+    gap: 4rem;
+  }
+
+  .main-description h3 {
+    font-size: 2rem;
+  }
+
+  .main-description p {
+    font-size: 1.2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .feature-card {
+    min-height: 250px;
+    padding: 2rem 1.5rem;
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .step-item {
+    flex-direction: row;
+    text-align: left;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .step-item:nth-child(odd) {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
   .how-it-works-section {
     padding: 4rem 0;
   }
@@ -2902,65 +2969,48 @@ body {
     font-size: 1.1rem;
   }
 
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
   .feature-card {
-    padding: 1.5rem;
-  }
-
-  .steps-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .step-item {
-    padding: 1.2rem;
-    gap: 1rem;
-  }
-
-  .step-number {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .how-it-works-section {
-    padding: 3rem 0;
-  }
-
-  .main-description h3 {
-    font-size: 1.6rem;
-  }
-
-  .main-description p {
-    font-size: 1rem;
-  }
-
-  .feature-card {
-    padding: 1.2rem;
+    min-height: 220px;
+    padding: 1.5rem 1rem;
   }
 
   .feature-icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .feature-card h4 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .feature-card p {
+    font-size: 0.95rem;
+  }
+
+  .how-it-works-steps h3 {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
   }
 
   .step-item {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
 
   .step-number {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
     align-self: center;
+  }
+
+  .step-content h4 {
+    font-size: 1.4rem;
+  }
+
+  .step-content p {
+    font-size: 1rem;
   }
 }
 
