@@ -285,8 +285,8 @@ body {
 .brand-badge {
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 212, 255, 0.05));
-  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: linear-gradient(135deg, #ffffff10, #ffffff05);
+  border: 1px solid #ffffff20;
   border-radius: 2rem;
   font-family: 'Orbitron', monospace;
   font-size: 0.8rem;
@@ -296,8 +296,6 @@ body {
   color: #ffffff;
   margin-bottom: 2rem;
   backdrop-filter: blur(10px);
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
 }
 
 .brand-title {
@@ -311,19 +309,9 @@ body {
 }
 
 .jarvis-text {
-  background: linear-gradient(135deg, #00d4ff 0%, #ffffff 25%, #00d4ff 50%, #ffffff 75%, #00d4ff 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 100%;
-  animation: jarvisGlow 3s ease-in-out infinite alternate;
-  text-shadow:
-    0 0 20px rgba(0, 212, 255, 0.8),
-    0 0 40px rgba(0, 212, 255, 0.6),
-    0 0 60px rgba(0, 212, 255, 0.4);
+  color: #ffffff;
   letter-spacing: 0.15em;
   position: relative;
-  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.7));
 }
 
 .title-underline {
@@ -342,7 +330,6 @@ body {
   margin-bottom: 0.5rem;
   line-height: 1.6;
   letter-spacing: 0.03em;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .brand-subtitle {
@@ -352,7 +339,6 @@ body {
   margin-bottom: 3rem;
   font-weight: 400;
   letter-spacing: 0.05em;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
   opacity: 0.9;
 }
 
