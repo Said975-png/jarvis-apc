@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
         const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
         if (!supabaseUrl || supabaseUrl.includes('demo-project') || !supabaseKey || supabaseKey.includes('demo-anon-key')) {
-          console.log('Supabase не настроен, используем localStorage');
+          console.log('Supabase не настрое��, используем localStorage');
           setUseSupabase(false);
 
           // Загружаем пользователя из localStorage
@@ -410,7 +410,9 @@ export const AuthProvider = ({ children }) => {
     loadUserChats,
     createChat,
     saveChatMessage,
-    isAuthenticated: !!user
+    isAuthenticated: !!user,
+    useSupabase,
+    databaseStatus: useSupabase ? 'Supabase подключен' : 'Локальное хранилище'
   };
 
   return (
