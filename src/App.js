@@ -429,16 +429,6 @@ function App() {
         {isChatOpen && (
           <div className="chat-window">
             <div className="chat-header">
-              <div className="chat-header-center">
-                <div className="jarvis-avatar">
-                  <div className="avatar-glow"></div>
-                  <span className="avatar-text">J</span>
-                </div>
-                <div className="chat-info">
-                  <h3>Джарвис</h3>
-                  <span className="status">В сети</span>
-                </div>
-              </div>
               <button
                 className="close-chat"
                 onClick={() => setIsChatOpen(false)}
