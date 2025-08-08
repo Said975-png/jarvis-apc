@@ -2948,6 +2948,9 @@ body {
 @media (max-width: 768px) {
   .chat-header {
     padding: 20px;
+  }
+
+  .chat-header-center {
     gap: 15px;
   }
 
