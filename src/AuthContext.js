@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
               const parsedUser = JSON.parse(savedUser);
               setUser(parsedUser);
             } catch (error) {
-              console.error('О��ибка при загрузке пользователя из localStorage:', error);
+              console.error('Ошибка при загрузке пользователя из localStorage:', error);
               localStorage.removeItem('jarvis_current_user');
             }
           }
@@ -100,6 +100,22 @@ export const AuthProvider = ({ children }) => {
 
   // Функция регистрации
   const register = async (userData) => {
+    if (!useSupabase) {
+      try {
+        setLoading(true);
+        const result = await fallbackAuth.register(userData);
+        if (result.success) {
+          setUser(result.user);
+          localStorage.setItem('jarvis_current_user', JSON.stringify(result.user));
+        }
+        setLoading(false);
+        return result;
+      } catch (error) {
+        setLoading(false);
+        return { success: false, error: error.message };
+      }
+    }
+
     try {
       setLoading(true);
 
@@ -150,6 +166,22 @@ export const AuthProvider = ({ children }) => {
 
   // Функция входа
   const login = async (credentials) => {
+    if (!useSupabase) {
+      try {
+        setLoading(true);
+        const result = await fallbackAuth.login(credentials);
+        if (result.success) {
+          setUser(result.user);
+          localStorage.setItem('jarvis_current_user', JSON.stringify(result.user));
+        }
+        setLoading(false);
+        return result;
+      } catch (error) {
+        setLoading(false);
+        return { success: false, error: error.message };
+      }
+    }
+
     try {
       setLoading(true);
 
