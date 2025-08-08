@@ -36,10 +36,10 @@ function App() {
               </h1>
               <div className="title-underline"></div>
               <p className="brand-description">
-                Создаем крутые дизайны сайтов с искусственным интеллектом
+                Создаем крутые диз��йны сайтов с искусственным интеллектом
               </p>
               <p className="brand-subtitle">
-                Современные ре��ения для цифрового мира
+                Современные решения для цифрового мира
               </p>
               <div className="cta-section">
                 <button className="primary-button">Начать проект</button>
