@@ -5266,7 +5266,7 @@ body {
 }
 
 .orders-section {
-  background: rgba(255, 255, 255, 0.03);
+  animation: fadeInUp 0.5s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 25px;
