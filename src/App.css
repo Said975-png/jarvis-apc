@@ -4248,7 +4248,8 @@ body {
 }
 
 .user-plan {
-  background: linear-gradient(135deg, #00d4ff, #8a2be2);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
   padding: 4px 12px;
   border-radius: 12px;
