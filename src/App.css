@@ -31,7 +31,7 @@ body {
   border-radius: 50px;
   transition: all 0.3s ease;
   width: auto;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .navbar-container {
@@ -107,12 +107,79 @@ body {
   gap: 1rem;
 }
 
+.navbar-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 400;
+  width: 200px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-input:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.search-button {
+  position: absolute;
+  right: 0.3rem;
+  padding: 0.3rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.auth-buttons-wrapper {
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  padding: 2px;
+  transition: all 0.3s ease;
+}
+
+.auth-buttons-wrapper:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
 .navbar-button {
   padding: 0.5rem 1.2rem;
-  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
-  color: #000;
+  background: transparent;
+  color: #ffffff;
   border: none;
-  border-radius: 25px;
+  border-radius: 23px;
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
@@ -121,10 +188,8 @@ body {
 }
 
 .navbar-button:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
 .navbar-icon-button {
@@ -156,10 +221,10 @@ body {
 
 .navbar-button-primary {
   padding: 0.5rem 1.2rem;
-  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
-  color: #000;
+  background: transparent;
+  color: #ffffff;
   border: none;
-  border-radius: 25px;
+  border-radius: 23px;
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
@@ -168,9 +233,8 @@ body {
 }
 
 .navbar-button-primary:hover {
-  background: linear-gradient(135deg, #f0f0f0 0%, #d0d0d0 100%);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
 .hero-section {
@@ -324,7 +388,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Side positions - только два текста */
+/* Side positions - толь��о два текста */
 .left-center {
   top: 50%;
   left: 1rem;
@@ -1647,6 +1711,9 @@ body {
   padding: 2.5rem;
   transition: all 0.3s ease;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .pricing-card::before {
@@ -1754,6 +1821,7 @@ body {
 
 .plan-features {
   margin-bottom: 2.5rem;
+  flex-grow: 1;
 }
 
 .feature-item {
@@ -1788,9 +1856,9 @@ body {
 .plan-button {
   width: 100%;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
-  color: #000;
-  border: none;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 2rem;
   font-size: 1rem;
   font-weight: 600;
@@ -1809,7 +1877,7 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s ease;
 }
 
@@ -1818,26 +1886,10 @@ body {
 }
 
 .plan-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-}
-
-.pro-plan .plan-button {
-  background: linear-gradient(135deg, #8a2be2 0%, #9333ea 100%);
-  color: #ffffff;
-}
-
-.pro-plan .plan-button:hover {
-  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
-}
-
-.max-plan .plan-button {
-  background: linear-gradient(135deg, #00d4ff 0%, #0ea5e9 100%);
-  color: #ffffff;
-}
-
-.max-plan .plan-button:hover {
-  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
 }
 
 /* AI Showcase Section - NEW COOL DESIGN */
@@ -2471,20 +2523,41 @@ body {
   z-index: 10000;
 }
 
+.chat-button-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-direction: column;
+}
+
+.chat-label {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
 .chat-button {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #06b6d4 100%);
-  border: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .chat-button::before {
@@ -2494,37 +2567,32 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    rgba(255, 255, 255, 0.3) 90deg,
-    transparent 180deg,
-    rgba(255, 255, 255, 0.3) 270deg,
-    transparent 360deg
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   border-radius: 50%;
-  animation: spin 3s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
 }
 
 .chat-button:hover::before {
-  opacity: 1;
+  transform: translateX(100%);
 }
 
 .chat-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
 .chat-button.open {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .chat-icon {
   width: 24px;
   height: 24px;
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   z-index: 2;
   position: relative;
 }

@@ -24,7 +24,7 @@ function App() {
   }, [messages]);
 
   const jarvisResponses = [
-    "Отличный вопрос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
+    "Отличный во��рос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обесп��чить максимальное качество продукта.",
@@ -75,9 +75,6 @@ function App() {
             <span className="brand-tagline">AI Design</span>
           </div>
 
-          <div className="navbar-menu">
-            <a href="#contact" className="navbar-link">Контакты</a>
-          </div>
 
           <div className="navbar-actions">
             <button className="navbar-icon-button" title="Корзина">
@@ -85,8 +82,23 @@ function App() {
                 <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 002 2h6a2 2 0 002-2v-6m-9 0h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <button className="navbar-button">Регистрация</button>
-            <button className="navbar-button-primary">Вход</button>
+            <div className="auth-buttons-wrapper">
+              <button className="navbar-button">Регистрация</button>
+              <button className="navbar-button-primary">Вход</button>
+            </div>
+            <div className="navbar-search">
+              <input
+                type="text"
+                placeholder="Поиск..."
+                className="search-input"
+              />
+              <button className="search-button">
+                <svg viewBox="0 0 24 24" fill="none" className="search-icon">
+                  <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
+                  <path d="m21 21-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -386,20 +398,23 @@ function App() {
       {/* Chat Widget */}
       <div className="chat-widget">
         {/* Chat Button */}
-        <button
-          className={`chat-button ${isChatOpen ? 'open' : ''}`}
-          onClick={() => setIsChatOpen(!isChatOpen)}
-        >
-          {isChatOpen ? (
-            <svg viewBox="0 0 24 24" fill="none" className="chat-icon">
-              <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-          ) : (
-            <svg viewBox="0 0 24 24" fill="none" className="chat-icon">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" strokeWidth="2"/>
-            </svg>
-          )}
-        </button>
+        <div className="chat-button-container">
+          <span className="chat-label">👋 Джарвис - ИИ помощник</span>
+          <button
+            className={`chat-button ${isChatOpen ? 'open' : ''}`}
+            onClick={() => setIsChatOpen(!isChatOpen)}
+          >
+            {isChatOpen ? (
+              <svg viewBox="0 0 24 24" fill="none" className="chat-icon">
+                <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" className="chat-icon">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" strokeWidth="2"/>
+              </svg>
+            )}
+          </button>
+        </div>
 
         {/* Chat Window */}
         {isChatOpen && (
