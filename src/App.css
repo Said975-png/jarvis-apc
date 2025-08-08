@@ -1215,6 +1215,22 @@ body {
   overflow: hidden;
 }
 
+/* AI Slider Container */
+.ai-slider-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  z-index: 3;
+}
+
+.ai-cards-slider {
+  display: flex;
+  transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 400%; /* 4 карточки * 100% */
+}
+
 .ai-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
