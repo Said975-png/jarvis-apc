@@ -148,6 +148,82 @@ body {
   display: none;
 }
 
+/* Side Texts */
+.side-texts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.side-text {
+  position: absolute;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  writing-mode: horizontal-tb;
+  transition: all 0.3s ease;
+}
+
+.side-text:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Top positions */
+.top-left {
+  top: 2rem;
+  left: 2rem;
+}
+
+.top-center {
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-right {
+  top: 2rem;
+  right: 2rem;
+}
+
+/* Bottom positions */
+.bottom-left {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.bottom-center {
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom-right {
+  bottom: 2rem;
+  right: 2rem;
+}
+
+/* Side positions */
+.left-center {
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+}
+
+.right-center {
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+}
+
 /* Grid Overlay */
 .grid-overlay {
   position: absolute;
