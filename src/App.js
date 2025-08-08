@@ -163,7 +163,7 @@ function App() {
               <div className="title-underline"></div>
               <div className="brand-description-wrapper">
                 <h2 className="brand-description">
-                  Создаем <span className="highlight-text">крутые дизайны</span> сайтов<br />
+                  Создаем <span className="highlight-text">крутые дизайн��</span> сайтов<br />
                   с искусственным интеллектом
                 </h2>
                 <div className="brand-features">
@@ -314,7 +314,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Базовый функци��нал</span>
+                  <span>Базовый функционал</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -395,7 +395,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Техподдерж��а 12 месяцев</span>
+                  <span>Техподдержка 12 месяцев</span>
                 </div>
               </div>
               <button className="plan-button">Выбрать план</button>
@@ -502,38 +502,42 @@ function App() {
               </div>
             </div>
 
-            <div className="how-it-works-steps">
-              <h3>Как это работает:</h3>
-              <div className="steps-grid">
-                <div className="step-item">
-                  <div className="step-number">1</div>
-                  <div className="step-content">
-                    <h4>Изучает потребности</h4>
-                    <p>Джарвис задает уточняющие вопросы, чтобы понять, что именно нужно клиенту</p>
+            <div className="process-section">
+              <div className="process-header">
+                <h3>Простая интеграция</h3>
+                <p>Запуск за 24 часа без изменения существующего сайта</p>
+              </div>
+
+              <div className="process-timeline">
+                <div className="timeline-item">
+                  <div className="timeline-content">
+                    <div className="timeline-step">01</div>
+                    <h4>Анализ сайта</h4>
+                    <p>Изучаем структуру каталога и особенности бизнеса</p>
                   </div>
                 </div>
 
-                <div className="step-item">
-                  <div className="step-number">2</div>
-                  <div className="step-content">
-                    <h4>Анализирует каталог</h4>
-                    <p>Система мгновенно обрабатывает весь ассортимент и находит подходящие варианты</p>
+                <div className="timeline-item">
+                  <div className="timeline-content">
+                    <div className="timeline-step">02</div>
+                    <h4>Настройка ИИ</h4>
+                    <p>Обучаем систему на ваших данных и товарах</p>
                   </div>
                 </div>
 
-                <div className="step-item">
-                  <div className="step-number">3</div>
-                  <div className="step-content">
-                    <h4>Предлагает решения</h4>
-                    <p>Представляет лучшие варианты с объяснением, почему именно они подходят</p>
+                <div className="timeline-item">
+                  <div className="timeline-content">
+                    <div className="timeline-step">03</div>
+                    <h4>Интеграция</h4>
+                    <p>Встраиваем Джарвис в ваш сайт одной строкой кода</p>
                   </div>
                 </div>
 
-                <div className="step-item">
-                  <div className="step-number">4</div>
-                  <div className="step-content">
-                    <h4>Сопровождает покупку</h4>
-                    <p>Помогает оформить заказ, отвечает на вопросы о доставке и гарантии</p>
+                <div className="timeline-item">
+                  <div className="timeline-content">
+                    <div className="timeline-step">04</div>
+                    <h4>Запуск</h4>
+                    <p>Система готова к работе и начинает помогать клиентам</p>
                   </div>
                 </div>
               </div>
