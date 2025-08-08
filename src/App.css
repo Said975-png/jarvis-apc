@@ -2967,6 +2967,9 @@ body {
 @media (max-width: 480px) {
   .chat-header {
     padding: 15px;
+  }
+
+  .chat-header-center {
     gap: 10px;
   }
 
