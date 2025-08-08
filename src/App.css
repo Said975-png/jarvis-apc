@@ -892,12 +892,12 @@ body {
 }
 
 .hero-section .scroll-text {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Exo 2', sans-serif;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.5);
-  text-transform: none;
-  letter-spacing: 0;
-  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 
 @keyframes scrollBounce {
