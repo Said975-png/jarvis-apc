@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useCart } from './CartContext';
 
 const AdminPanel = () => {
-  const { getAllOrders, updateOrderStatus, deleteOrder } = useCart();
+  // Работаем напрямую с localStorage вместо useCart для лучшей надежности
   const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [filterStatus, setFilterStatus] = useState('all');
@@ -316,8 +316,8 @@ const AdminPanel = () => {
           {filteredOrders.length === 0 ? (
             <div className="empty-orders">
               <div className="empty-icon">📋</div>
-              <h3>Заказы не найдены</h3>
-              <p>Пока нет зак��зов{filterStatus !== 'all' ? ` со статусом "${filterStatus}"` : ''}</p>
+              <h3>Заказ�� не найдены</h3>
+              <p>Пока нет заказов{filterStatus !== 'all' ? ` со статусом "${filterStatus}"` : ''}</p>
             </div>
           ) : (
             <div className="orders-grid">
