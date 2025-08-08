@@ -665,6 +665,30 @@ body {
   opacity: 0.9;
 }
 
+/* Hero section specific description */
+.hero-section .brand-description {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-section .brand-subtitle {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  opacity: 1;
+}
+
 .cta-section {
   display: flex;
   flex-direction: column;
