@@ -1,19 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
+import { AuthProvider } from './AuthContext';
+import { CartProvider } from './CartContext';
+import Navbar from './Navbar';
+import PricingSection from './PricingSection';
+import AdminPanel from './AdminPanel';
 
-function App() {
+function AppContent() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Привет! Я Джарвис, ваш ИИ помощник. Как дела? Чем могу по��очь?",
+      text: "Привет! Я Джарвис, ваш ИИ помощник. Как дела? Чем могу помочь?",
       sender: "jarvis",
       timestamp: new Date()
     }
   ]);
   const [inputMessage, setInputMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [chatHistory, setChatHistory] = useState([]);
   const messagesEndRef = useRef(null);
+
+  // Проверяем, находимся ли мы на странице админ панели
+  const isAdminPage = window.location.pathname === '/admin';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -35,12 +44,12 @@ function App() {
   }, [isChatOpen]);
 
   const jarvisResponses = [
-    "Отличный во��рос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
+    "Отличный вопрос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
-    "Наши разработчики работают 24/7, чтобы обесп��чить максимальное качество продукта.",
-    "Хотите узнать больше о наших тарифных ��ланах? Я могу помочь выбрать подходящий вариант.",
-    "Наша к��манда имеет более 15 лет оп����та в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
+    "Наши разработчики работают 24/7, чтобы обеспечить максимальное к��чество продукта.",
+    "Хотите узнать больше о наших тарифных планах? Я могу помочь выбрать подходящий вариант.",
+    "Наша команда имеет более 15 лет опыта в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
     "Безопасность данных - наш приоритет. Мы используем шифрование и соблюдаем все международные стандарты."
   ];
 
@@ -77,43 +86,55 @@ function App() {
     }
   };
 
+  const handleNewChat = () => {
+    // Сохранить текущий чат в историю, если есть сообщения
+    if (messages.length > 1) {
+      const currentChat = {
+        id: Date.now(),
+        messages: [...messages],
+        timestamp: new Date(),
+        title: `Чат ${new Date().toLocaleDateString('ru-RU')}`
+      };
+      setChatHistory(prev => [currentChat, ...prev]);
+    }
+
+    // Очистить текущий чат
+    setMessages([
+      {
+        id: 1,
+        text: "Привет! Я Джарвис, ваш ИИ помощник. Как дела? Чем могу помочь?",
+        sender: "jarvis",
+        timestamp: new Date()
+      }
+    ]);
+    setInputMessage("");
+  };
+
+  const handleChatHistory = () => {
+    // Показать историю чатов (пока простой alert, можно расширить)
+    if (chatHistory.length === 0) {
+      alert('История чатов пуста');
+    } else {
+      const historyText = chatHistory.map(chat =>
+        `${chat.title} - ${chat.timestamp.toLocaleString('ru-RU')}`
+      ).join('\n');
+      alert('История чатов:\n' + historyText);
+    }
+  };
+
+
+  // Если это страница админ панели, показываем только админ панель
+  if (isAdminPage) {
+    return (
+      <div className="jarvis-app">
+        <AdminPanel />
+      </div>
+    );
+  }
 
   return (
     <div className="jarvis-app">
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="navbar-brand">
-            <span className="brand-logo">JARVIS</span>
-            <span className="brand-tagline">AI Design</span>
-          </div>
-
-
-          <div className="navbar-actions">
-            <button className="navbar-icon-button" title="Корзина">
-              <svg viewBox="0 0 24 24" fill="none" className="navbar-icon">
-                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 002 2h6a2 2 0 002-2v-6m-9 0h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <div className="auth-buttons-wrapper">
-              <button className="navbar-button">Регистрация</button>
-              <button className="navbar-button-primary">Вход</button>
-            </div>
-            <div className="navbar-search">
-              <input
-                type="text"
-                placeholder="Поиск..."
-                className="search-input"
-              />
-              <button className="search-button">
-                <svg viewBox="0 0 24 24" fill="none" className="search-icon">
-                  <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
-                  <path d="m21 21-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       <section className="hero-section">
         <div className="background-overlay"></div>
@@ -163,7 +184,7 @@ function App() {
               <div className="title-underline"></div>
               <div className="brand-description-wrapper">
                 <h2 className="brand-description">
-                  Создаем <span className="highlight-text">крутые дизайн��</span> сайтов<br />
+                  Создае�� <span className="highlight-text">крутые дизайны</span> сайтов<br />
                   с искусственным интеллектом
                 </h2>
                 <div className="brand-features">
@@ -206,7 +227,7 @@ function App() {
             <span className="section-number">01</span>
             <div className="section-info">
               <div className="section-badge">НАШИ ПРЕИМУЩЕСТВА</div>
-              <h2 className="section-title">Почему мы лу��шие?</h2>
+              <h2 className="section-title">Почему мы лучшие?</h2>
             </div>
           </div>
 
@@ -235,7 +256,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Инновационные технологии</h4>
                 </div>
-                <p>Используем самые современные AI-реш��ния и передовые технологии разработки</p>
+                <p>Используем самые современные AI-решения и передовые технологии разработки</p>
               </div>
 
               <div className="advantage-item">
@@ -306,7 +327,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Адап��ивная верстка</span>
+                  <span>Адаптивная верстка</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -337,11 +358,11 @@ function App() {
               <div className="plan-features">
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Все функции Basic</span>
+                  <span>Вс�� функции Basic</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>ИИ помощник для клиентов</span>
+                  <span>ИИ помощник для ��лиентов</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -357,7 +378,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Техподдержка 6 месяц��в</span>
+                  <span>Техподдержка 6 месяцев</span>
                 </div>
               </div>
               <button className="plan-button">Выбрать план</button>
@@ -379,11 +400,11 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Огро��ный функционал</span>
+                  <span>Огромный функционал</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Улучшенн��й И�� помощник</span>
+                  <span>Улучшенный ИИ помощник</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -391,7 +412,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Индивидуальные решения</span>
+                  <span>Инди��идуальные решения</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -403,6 +424,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <PricingSection />
 
       <section className="how-it-works-section">
         <div className="geometric-bg">
@@ -431,7 +454,7 @@ function App() {
             <div className="intro-section">
               <div className="intro-text">
                 <h3>Превратите каждого посетителя в клиента</h3>
-                <p>Джарвис анализирует поведение пользователей и предлагает персонализированные решения в режиме реального времени</p>
+                <p>Джарвис анализирует поведение пользователей и предлагает персонализиров��нные решения в режиме реального времени</p>
               </div>
               <div className="stats-bar">
                 <div className="stat">
@@ -461,7 +484,7 @@ function App() {
                     </div>
                     <h4>Умная рекомендация</h4>
                   </div>
-                  <p>Анализирует историю покупок, поведение на сайте и предпочтения для точных рекомендаций товаров</p>
+                  <p>Анализирует исто��ию покупок, поведение на сайте и предпочтения для точных рекомендаций товаров</p>
                 </div>
 
                 <div className="capability-item">
@@ -485,7 +508,7 @@ function App() {
                     </div>
                     <h4>Поддержка 24/7</h4>
                   </div>
-                  <p>Мгновенные ответы на вопросы клиентов в любое время, без выходных и праздников</p>
+                  <p>Мгновенные ответы на вопро��ы клиентов в любое время, без выходных и праздников</p>
                 </div>
 
                 <div className="capability-item">
@@ -521,7 +544,7 @@ function App() {
                   <div className="timeline-content">
                     <div className="timeline-step">02</div>
                     <h4>Настройка ИИ</h4>
-                    <p>Обучаем систему на ваших данных и товарах</p>
+                    <p>О��учаем систему на ваших данных и товарах</p>
                   </div>
                 </div>
 
@@ -570,64 +593,130 @@ function App() {
         {/* Chat Window */}
         {isChatOpen && (
           <div className="chat-window">
-            <div className="chat-header">
-              <button
-                className="close-chat"
-                onClick={() => setIsChatOpen(false)}
-                title="Закрыть чат"
-              >
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </button>
+            {/* Left Sidebar */}
+            <div className="chat-sidebar">
+              <div className="sidebar-header">
+                <div className="jarvis-logo">
+                  <span className="logo-text">JARVIS</span>
+                  <span className="logo-subtitle">AI Assistant</span>
+                </div>
+              </div>
+
+              <div className="sidebar-actions">
+                <button
+                  className="sidebar-button new-chat-button"
+                  onClick={handleNewChat}
+                  title="Новый чат"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" className="sidebar-icon">
+                    <path d="M12 5v14m-7-7h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Новый чат
+                </button>
+              </div>
+
+              <div className="sidebar-history">
+                <div className="history-header">
+                  <h4>История чатов</h4>
+                </div>
+                <div className="history-list">
+                  {chatHistory.length === 0 ? (
+                    <div className="no-history">Пока нет истории чатов</div>
+                  ) : (
+                    chatHistory.map(chat => (
+                      <div key={chat.id} className="history-item">
+                        <svg viewBox="0 0 24 24" fill="none" className="history-icon">
+                          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" strokeWidth="2"/>
+                        </svg>
+                        <div className="history-content">
+                          <div className="history-title">{chat.title}</div>
+                          <div className="history-time">{chat.timestamp.toLocaleString('ru-RU', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                          })}</div>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
             </div>
 
-            <div className="chat-messages">
-              {messages.map(message => (
-                <div key={message.id} className={`message ${message.sender}`}>
-                  <div className="message-content">
-                    {message.text}
+            {/* Chat Content */}
+            <div className="chat-content">
+              <div className="chat-header">
+                <div className="chat-info">
+                  <div className="jarvis-avatar">
+                    <div className="avatar-glow"></div>
+                    <span className="avatar-text">J</span>
                   </div>
-                  <div className="message-time">
-                    {message.timestamp.toLocaleTimeString('ru-RU', {
-                      hour: '2-digit',
-                      minute: '2-digit'
-                    })}
-                  </div>
-                </div>
-              ))}
-
-              {isTyping && (
-                <div className="message jarvis">
-                  <div className="message-content typing">
-                    <div className="typing-indicator">
-                      <span></span>
-                      <span></span>
-                      <span></span>
+                  <div className="chat-title">
+                    <h3>Джарвис</h3>
+                    <div className="status">
+                      <span>Онлайн</span>
                     </div>
                   </div>
                 </div>
-              )}
-              <div ref={messagesEndRef} />
-            </div>
+                <button
+                  className="close-chat"
+                  onClick={() => setIsChatOpen(false)}
+                  title="Закрыть чат"
+                >
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </button>
+              </div>
 
-            <div className="chat-input">
-              <input
-                type="text"
-                placeholder="Напишите сообщение..."
-                value={inputMessage}
-                onChange={(e) => setInputMessage(e.target.value)}
-                onKeyPress={handleKeyPress}
-              />
-              <button
-                className="send-button"
-                onClick={handleSendMessage}
-                disabled={inputMessage.trim() === ""}
-              >
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
+              <div className="chat-messages">
+                {messages.map(message => (
+                  <div key={message.id} className={`message ${message.sender}`}>
+                    <div className="message-content">
+                      {message.text}
+                    </div>
+                    <div className="message-time">
+                      {message.timestamp.toLocaleTimeString('ru-RU', {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                      })}
+                    </div>
+                  </div>
+                ))}
+
+                {isTyping && (
+                  <div className="message jarvis">
+                    <div className="message-content typing">
+                      <div className="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+
+              <div className="chat-input">
+                <input
+                  type="text"
+                  placeholder="Напишите сообщение..."
+                  value={inputMessage}
+                  onChange={(e) => setInputMessage(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                />
+                <button
+                  className="send-button"
+                  onClick={handleSendMessage}
+                  disabled={inputMessage.trim() === ""}
+                >
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -637,4 +726,12 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <AuthProvider>
+      <CartProvider>
+        <AppContent />
+      </CartProvider>
+    </AuthProvider>
+  );
+}
