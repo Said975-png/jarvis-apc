@@ -3800,36 +3800,43 @@ body {
 }
 
 @media (max-width: 480px) {
-  .chat-header {
-    padding: 15px;
+  .chat-window {
     flex-direction: column;
-    align-items: stretch;
-    gap: 15px;
   }
 
-  .chat-header-center {
-    gap: 10px;
+  .chat-sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    max-height: 200px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .chat-header-buttons {
-    gap: 6px;
-    justify-content: center;
+  .sidebar-header {
+    padding: 10px 15px;
   }
 
-  .chat-action-button {
-    padding: 6px 12px;
-    font-size: 0.75rem;
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  .sidebar-actions {
+    padding: 10px 15px;
+  }
+
+  .sidebar-history {
+    padding: 10px 15px;
+    max-height: 100px;
+  }
+
+  .chat-content {
     flex: 1;
-    justify-content: center;
   }
 
-  .button-icon {
-    width: 12px;
-    height: 12px;
-  }
-
-  .close-chat {
-    align-self: flex-end;
+  .chat-header {
+    padding: 10px 15px;
+    min-height: 60px;
   }
 
   .chat-messages {
