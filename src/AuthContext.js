@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { supabase } from './supabaseClient';
 
 const AuthContext = createContext();
 
@@ -14,56 +15,99 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Проверяем авторизацию при загрузке
+  // Проверяем автори��ацию при загрузке
   useEffect(() => {
-    const savedUser = localStorage.getItem('jarvis_user');
-    if (savedUser) {
-      try {
-        const parsedUser = JSON.parse(savedUser);
-        setUser(parsedUser);
-      } catch (error) {
-        console.error('Ошибка при загру��ке пользователя:', error);
-        localStorage.removeItem('jarvis_user');
+    // Получаем текущую сессию
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        loadUserProfile(session.user.id);
+      } else {
+        setLoading(false);
       }
-    }
-    setLoading(false);
+    });
+
+    // Слушаем изменения аутентификации
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      if (event === 'SIGNED_IN' && session?.user) {
+        await loadUserProfile(session.user.id);
+      } else if (event === 'SIGNED_OUT') {
+        setUser(null);
+        setLoading(false);
+      }
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
+
+  // Загружаем профиль пользователя из базы данных
+  const loadUserProfile = async (userId) => {
+    try {
+      const { data: profile, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', userId)
+        .single();
+
+      if (error) {
+        console.error('Ошибка загрузки профиля:', error);
+        setLoading(false);
+        return;
+      }
+
+      setUser(profile);
+      setLoading(false);
+    } catch (error) {
+      console.error('Ошибка загрузки профиля:', error);
+      setLoading(false);
+    }
+  };
 
   // Функция регистрации
   const register = async (userData) => {
     try {
-      // Проверяем, есть ли уже пользователь с таким email
-      const existingUsers = JSON.parse(localStorage.getItem('jarvis_users') || '[]');
-      const userExists = existingUsers.find(u => u.email === userData.email);
-      
-      if (userExists) {
-        throw new Error('Пользователь с таким email уже существует');
+      setLoading(true);
+
+      // Регистрируем пользователя в Supabase Auth
+      const { data: authData, error: authError } = await supabase.auth.signUp({
+        email: userData.email,
+        password: userData.password,
+        options: {
+          data: {
+            name: userData.name
+          }
+        }
+      });
+
+      if (authError) {
+        throw new Error(authError.message);
       }
 
-      // Создаем нового пользователя
-      const newUser = {
-        id: Date.now().toString(),
-        email: userData.email,
-        name: userData.name,
-        password: userData.password, // В реальном приложении пароль должен быть захеширован
-        createdAt: new Date().toISOString(),
-        plan: 'basic',
-        avatar: null
-      };
+      // Если пользователь был создан, создаем профиль
+      if (authData.user) {
+        const { error: profileError } = await supabase
+          .from('profiles')
+          .insert([
+            {
+              id: authData.user.id,
+              email: userData.email,
+              name: userData.name,
+              plan: 'basic'
+            }
+          ]);
 
-      // Сохраняем пользователя в "базе данных"
-      existingUsers.push(newUser);
-      localStorage.setItem('jarvis_users', JSON.stringify(existingUsers));
+        if (profileError) {
+          console.error('Ошибка создания профиля:', profileError);
+          // Профиль может быть создан автоматически через триггер
+        }
 
-      // Авторизуем пользователя
-      const userForAuth = { ...newUser };
-      delete userForAuth.password; // Удаляем пароль из состояния
-      
-      setUser(userForAuth);
-      localStorage.setItem('jarvis_user', JSON.stringify(userForAuth));
+        // Загружаем профиль
+        await loadUserProfile(authData.user.id);
+      }
 
-      return { success: true };
+      setLoading(false);
+      return { success: true, needsConfirmation: !authData.session };
     } catch (error) {
+      setLoading(false);
       return { success: false, error: error.message };
     }
   };
@@ -71,53 +115,181 @@ export const AuthProvider = ({ children }) => {
   // Функция входа
   const login = async (credentials) => {
     try {
-      // Получаем всех пользователей
-      const existingUsers = JSON.parse(localStorage.getItem('jarvis_users') || '[]');
-      const foundUser = existingUsers.find(
-        u => u.email === credentials.email && u.password === credentials.password
-      );
+      setLoading(true);
 
-      if (!foundUser) {
-        throw new Error('Неверный email или пароль');
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: credentials.email,
+        password: credentials.password
+      });
+
+      if (error) {
+        throw new Error(error.message);
       }
 
-      // Авторизуем пользователя
-      const userForAuth = { ...foundUser };
-      delete userForAuth.password; // Удаляем пароль из состояния
-      
-      setUser(userForAuth);
-      localStorage.setItem('jarvis_user', JSON.stringify(userForAuth));
+      if (data.user) {
+        await loadUserProfile(data.user.id);
+      }
 
+      setLoading(false);
+      return { success: true };
+    } catch (error) {
+      setLoading(false);
+      return { success: false, error: error.message };
+    }
+  };
+
+  // Функция выхода
+  const logout = async () => {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) {
+        console.error('Ошибка выхода:', error);
+      }
+      setUser(null);
+    } catch (error) {
+      console.error('Ошибка выхода:', error);
+    }
+  };
+
+  // Функция обновления профиля
+  const updateProfile = async (updates) => {
+    if (!user) return { success: false, error: 'Пользователь не авторизован' };
+
+    try {
+      const { data, error } = await supabase
+        .from('profiles')
+        .update(updates)
+        .eq('id', user.id)
+        .select()
+        .single();
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      setUser(data);
       return { success: true };
     } catch (error) {
       return { success: false, error: error.message };
     }
   };
 
-  // Функция выхода
-  const logout = () => {
-    setUser(null);
-    localStorage.removeItem('jarvis_user');
-  };
-
-  // Функция обновления профиля
-  const updateProfile = (updates) => {
+  // Функция загрузки проектов пользователя
+  const loadUserProjects = async () => {
     if (!user) return { success: false, error: 'Пользователь не авторизован' };
 
     try {
-      const updatedUser = { ...user, ...updates };
-      setUser(updatedUser);
-      localStorage.setItem('jarvis_user', JSON.stringify(updatedUser));
+      const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('created_at', { ascending: false });
 
-      // Обновляем в "базе данных"
-      const existingUsers = JSON.parse(localStorage.getItem('jarvis_users') || '[]');
-      const userIndex = existingUsers.findIndex(u => u.id === user.id);
-      if (userIndex !== -1) {
-        existingUsers[userIndex] = { ...existingUsers[userIndex], ...updates };
-        localStorage.setItem('jarvis_users', JSON.stringify(existingUsers));
+      if (error) {
+        throw new Error(error.message);
       }
 
-      return { success: true };
+      return { success: true, data };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  };
+
+  // Функция создания нового проекта
+  const createProject = async (projectData) => {
+    if (!user) return { success: false, error: 'Пользователь не авторизован' };
+
+    try {
+      const { data, error } = await supabase
+        .from('projects')
+        .insert([
+          {
+            ...projectData,
+            user_id: user.id
+          }
+        ])
+        .select()
+        .single();
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      return { success: true, data };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  };
+
+  // Функция загрузки чатов пользователя
+  const loadUserChats = async () => {
+    if (!user) return { success: false, error: 'Пользователь не авторизован' };
+
+    try {
+      const { data, error } = await supabase
+        .from('chats')
+        .select('*')
+        .eq('user_id', user.id)
+        .order('updated_at', { ascending: false });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      return { success: true, data };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  };
+
+  // Функция создания нового чата
+  const createChat = async (title) => {
+    if (!user) return { success: false, error: 'Пользователь не авторизован' };
+
+    try {
+      const { data, error } = await supabase
+        .from('chats')
+        .insert([
+          {
+            title,
+            user_id: user.id
+          }
+        ])
+        .select()
+        .single();
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      return { success: true, data };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  };
+
+  // Функция сохранения сообщения чата
+  const saveChatMessage = async (chatId, sender, content) => {
+    if (!user) return { success: false, error: 'Пользователь не авторизован' };
+
+    try {
+      const { data, error } = await supabase
+        .from('chat_messages')
+        .insert([
+          {
+            chat_id: chatId,
+            sender,
+            content
+          }
+        ])
+        .select()
+        .single();
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      return { success: true, data };
     } catch (error) {
       return { success: false, error: error.message };
     }
@@ -130,6 +302,11 @@ export const AuthProvider = ({ children }) => {
     register,
     logout,
     updateProfile,
+    loadUserProjects,
+    createProject,
+    loadUserChats,
+    createChat,
+    saveChatMessage,
     isAuthenticated: !!user
   };
 
