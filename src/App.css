@@ -2953,13 +2953,29 @@ body {
 
 /* Responsive для How It Works */
 @media (max-width: 1024px) {
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+  .intro-section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
   }
 
-  .steps-grid::before,
-  .steps-grid::after {
+  .stats-bar {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .process-timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+
+  .process-timeline::before {
     display: none;
   }
 }
@@ -2973,58 +2989,44 @@ body {
     gap: 4rem;
   }
 
-  .main-description h3 {
-    font-size: 2rem;
+  .intro-text h3 {
+    font-size: 2.2rem;
   }
 
-  .main-description p {
+  .intro-text p {
+    font-size: 1.1rem;
+  }
+
+  .stat {
+    padding: 1rem;
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+  }
+
+  .capability-item {
+    padding: 1.5rem;
+  }
+
+  .capability-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .capability-item h4 {
     font-size: 1.2rem;
   }
 
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    perspective: none;
-  }
-
-  .feature-card {
-    min-height: 280px;
-    transform: none !important;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-10px) !important;
-  }
-
-  .feature-card > * {
-    padding: 2rem 1.5rem;
-  }
-
-  .feature-icon {
-    font-size: 3.5rem;
-  }
-
-  .steps-grid {
+  .process-timeline {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  .step-item {
-    flex-direction: row;
-    text-align: left;
-    padding: 2rem;
-    gap: 1.5rem;
-  }
-
-  .step-item:nth-child(odd) {
-    flex-direction: row;
-    text-align: left;
-  }
-
-  .step-number {
+  .timeline-step {
     width: 50px;
     height: 50px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -3037,64 +3039,76 @@ body {
     gap: 3rem;
   }
 
-  .main-description h3 {
+  .intro-text h3 {
     font-size: 1.8rem;
   }
 
-  .main-description p {
-    font-size: 1.1rem;
+  .intro-text p {
+    font-size: 1rem;
   }
 
-  .feature-card {
-    min-height: 260px;
-    transform: none !important;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-8px) !important;
-  }
-
-  .feature-card > * {
-    padding: 1.5rem 1rem;
-  }
-
-  .feature-icon {
-    font-size: 3rem;
-  }
-
-  .feature-card h4 {
-    font-size: 1.2rem;
-  }
-
-  .feature-card p {
-    font-size: 0.9rem;
-  }
-
-  .how-it-works-steps h3 {
-    font-size: 1.8rem;
-    margin-bottom: 3rem;
-  }
-
-  .step-item {
+  .stats-bar {
     flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
+    gap: 1rem;
   }
 
-  .step-number {
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-    align-self: center;
+  .stat {
+    padding: 0.8rem;
   }
 
-  .step-content h4 {
+  .stat-value {
     font-size: 1.4rem;
   }
 
-  .step-content p {
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .capabilities-section h3 {
+    font-size: 1.8rem;
+  }
+
+  .capability-item {
+    padding: 1.2rem;
+  }
+
+  .capability-header {
+    gap: 0.8rem;
+  }
+
+  .capability-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .capability-item h4 {
+    font-size: 1.1rem;
+  }
+
+  .capability-item p {
+    font-size: 0.9rem;
+  }
+
+  .process-header h3 {
+    font-size: 1.8rem;
+  }
+
+  .process-header p {
     font-size: 1rem;
+  }
+
+  .timeline-step {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
   }
 }
 
