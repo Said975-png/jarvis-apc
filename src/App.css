@@ -177,51 +177,55 @@ body {
 
 /* Top positions */
 .top-left {
-  top: 2rem;
-  left: 2rem;
+  top: 6rem;
+  left: 3rem;
 }
 
 .top-center {
-  top: 2rem;
+  top: 6rem;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .top-right {
-  top: 2rem;
-  right: 2rem;
+  top: 6rem;
+  right: 3rem;
 }
 
 /* Bottom positions */
 .bottom-left {
-  bottom: 2rem;
-  left: 2rem;
+  bottom: 6rem;
+  left: 3rem;
 }
 
 .bottom-center {
-  bottom: 2rem;
+  bottom: 6rem;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .bottom-right {
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 6rem;
+  right: 3rem;
 }
 
 /* Side positions */
 .left-center {
   top: 50%;
-  left: 2rem;
+  left: 1rem;
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: center;
+  width: 120px;
+  text-align: center;
 }
 
 .right-center {
   top: 50%;
-  right: 2rem;
+  right: 1rem;
   transform: translateY(-50%) rotate(90deg);
   transform-origin: center;
+  width: 120px;
+  text-align: center;
 }
 
 /* Grid Overlay */
