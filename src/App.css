@@ -1246,6 +1246,8 @@ body {
   perspective: 1000px;
   cursor: pointer;
   position: relative;
+  flex: 0 0 100%;
+  min-width: 100%;
 }
 
 .ai-card::before {
