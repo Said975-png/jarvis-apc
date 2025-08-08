@@ -457,6 +457,12 @@ body {
   z-index: 3;
 }
 
+/* Hero section specific container */
+.hero-section .container {
+  max-width: 1200px;
+  padding: 0 3rem;
+}
+
 .content-wrapper {
   display: flex;
   justify-content: center;
