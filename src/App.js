@@ -38,7 +38,7 @@ function App() {
   const jarvisResponses = [
     "Отличный вопрос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
-    "Интересно! Расскажите больше о ваше�� проекте, и я подберу идеальное решение.",
+    "Интересно! Расскажите больше о вашем проек��е, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обеспечить максимальное качество продукта.",
     "Хотите узнать больше о наших тарифных планах? Я могу помочь выбрать подходящий вариант.",
     "Наша команда имеет более 15 лет опыта в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
@@ -200,7 +200,7 @@ function App() {
               <div className="title-underline"></div>
               <div className="brand-description-wrapper">
                 <h2 className="brand-description">
-                  Создаем <span className="highlight-text">крутые дизайн��</span> сайтов<br />
+                  Создаем <span className="highlight-text">крутые дизайны</span> сайтов<br />
                   с искусственным интеллектом
                 </h2>
                 <div className="brand-features">
@@ -542,7 +542,7 @@ function App() {
             <div className="process-section">
               <div className="process-header">
                 <h3>Простая интеграция</h3>
-                <p>Запуск за 24 часа без изменения сущест��ующего сайта</p>
+                <p>Запуск за 24 часа без изменения существующего с��йта</p>
               </div>
 
               <div className="process-timeline">
@@ -631,7 +631,7 @@ function App() {
 
               <div className="sidebar-history">
                 <div className="history-header">
-                  <h4>История ча��ов</h4>
+                  <h4>История чатов</h4>
                 </div>
                 <div className="history-list">
                   {chatHistory.length === 0 ? (
