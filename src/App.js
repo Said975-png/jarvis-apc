@@ -122,8 +122,8 @@ function App() {
 
         {/* Side Texts */}
         <div className="side-texts">
-          <div className="side-text left-center">AI POWERED</div>
-          <div className="side-text right-center">JARVIS WEBSITE</div>
+          <div className="side-text left-center">JARVIS WEBSITE</div>
+          <div className="side-text right-center">AI POWERED</div>
         </div>
 
         <div className="container">
@@ -211,7 +211,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Инновационные технологии</h4>
                 </div>
-                <p>Используем самые современные AI-решения и передовые технологии разработки</p>
+                <p>Используем самые современные AI-решения и передовые технолог��и разработки</p>
               </div>
 
               <div className="advantage-item">
