@@ -392,37 +392,34 @@ body {
   animation-delay: 0s;
 }
 
-@keyframes jellySphere {
+@keyframes floatingJelly {
   0% {
-    border-radius: 50% 50% 50% 50%;
-    transform: translateX(-50%) scale(1) rotate(0deg);
+    border-radius: 65% 35% 70% 30%;
+    transform: translateX(-50%) translateY(-50%) scale(1) rotateX(0deg) rotateY(0deg);
   }
-  25% {
-    border-radius: 60% 40% 60% 40%;
-    transform: translateX(-50%) scale(1.05) rotate(90deg);
+  16.66% {
+    border-radius: 30% 70% 40% 60%;
+    transform: translateX(-50%) translateY(-45%) scale(1.08) rotateX(5deg) rotateY(15deg);
+  }
+  33.33% {
+    border-radius: 75% 25% 55% 45%;
+    transform: translateX(-50%) translateY(-55%) scale(0.92) rotateX(-3deg) rotateY(30deg);
   }
   50% {
-    border-radius: 40% 60% 40% 60%;
-    transform: translateX(-50%) scale(0.95) rotate(180deg);
+    border-radius: 45% 55% 35% 65%;
+    transform: translateX(-50%) translateY(-50%) scale(1.05) rotateX(8deg) rotateY(45deg);
   }
-  75% {
-    border-radius: 55% 45% 55% 45%;
-    transform: translateX(-50%) scale(1.02) rotate(270deg);
+  66.66% {
+    border-radius: 60% 40% 80% 20%;
+    transform: translateX(-50%) translateY(-48%) scale(0.95) rotateX(-2deg) rotateY(60deg);
+  }
+  83.33% {
+    border-radius: 35% 65% 50% 50%;
+    transform: translateX(-50%) translateY(-52%) scale(1.03) rotateX(4deg) rotateY(75deg);
   }
   100% {
-    border-radius: 50% 50% 50% 50%;
-    transform: translateX(-50%) scale(1) rotate(360deg);
-  }
-}
-
-@keyframes sphereFloat {
-  0%, 100% {
-    bottom: -30%;
-    transform: translateX(-50%) translateY(0px);
-  }
-  50% {
-    bottom: -25%;
-    transform: translateX(-50%) translateY(-20px);
+    border-radius: 65% 35% 70% 30%;
+    transform: translateX(-50%) translateY(-50%) scale(1) rotateX(0deg) rotateY(90deg);
   }
 }
 
