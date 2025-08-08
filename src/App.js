@@ -105,7 +105,7 @@ function App() {
   const handleChatHistory = () => {
     // Показать историю чатов (пока простой alert, можно расширить)
     if (chatHistory.length === 0) {
-      alert('История чатов пус��а');
+      alert('История чатов пуста');
     } else {
       const historyText = chatHistory.map(chat =>
         `${chat.title} - ${chat.timestamp.toLocaleString('ru-RU')}`
@@ -200,7 +200,7 @@ function App() {
               <div className="title-underline"></div>
               <div className="brand-description-wrapper">
                 <h2 className="brand-description">
-                  Создаем <span className="highlight-text">крут��е дизайны</span> сайтов<br />
+                  Создаем <span className="highlight-text">крутые дизайны</span> сайтов<br />
                   с искусственным интеллектом
                 </h2>
                 <div className="brand-features">
