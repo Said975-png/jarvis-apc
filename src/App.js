@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-import { AuthProvider, useAuth } from './AuthContext';
-import AuthModal from './AuthModal';
-import Dashboard from './Dashboard';
+import { AuthProvider } from './AuthContext';
+import Navbar from './Navbar';
 
-function App() {
+function AppContent() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -501,7 +500,7 @@ function App() {
                     </div>
                     <h4>Умная рекомендация</h4>
                   </div>
-                  <p>Анализирует историю покупок, поведение на сайте и предпочтения для точных рекомендаций товаров</p>
+                  <p>Анализирует историю покупок, поведение на сайте и предпочтения дл�� точных рекомендаций товаров</p>
                 </div>
 
                 <div className="capability-item">
