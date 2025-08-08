@@ -632,36 +632,20 @@ body {
 }
 
 .primary-button {
-  padding: 1.2rem 3rem;
-  background: linear-gradient(135deg,
-    #0ea5e9 0%,
-    #8b5cf6 50%,
-    #06b6d4 100%);
-  color: #ffffff;
-  border: 2px solid transparent;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+  color: #000;
+  border: none;
   border-radius: 3rem;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow:
-    0 15px 40px rgba(14, 165, 233, 0.4),
-    0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
-  background-size: 200% 200%;
-  animation: buttonGradient 3s ease-in-out infinite;
-}
-
-@keyframes buttonGradient {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
 }
 
 .primary-button::before {
