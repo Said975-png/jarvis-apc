@@ -23,13 +23,24 @@ function App() {
     scrollToBottom();
   }, [messages]);
 
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isChatOpen) {
+        setIsChatOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isChatOpen]);
+
   const jarvisResponses = [
     "Отличный во��рос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обесп��чить максимальное качество продукта.",
     "Хотите узнать больше о наших тарифных ��ланах? Я могу помочь выбрать подходящий вариант.",
-    "Наша к��манда имеет более 15 лет оп��та в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
+    "Наша к��манда имеет более 15 лет оп����та в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
     "Безопасность данных - наш приоритет. Мы используем шифрование и соблюдаем все международные стандарты."
   ];
 
@@ -65,6 +76,7 @@ function App() {
       handleSendMessage();
     }
   };
+
 
   return (
     <div className="jarvis-app">
@@ -149,22 +161,19 @@ function App() {
                 <span className="jarvis-text">JARVIS</span>
               </h1>
               <div className="title-underline"></div>
-              <p className="brand-description">
-                Создаем крутые дизайны сайтов с искусственным интеллектом
-              </p>
-              <p className="brand-subtitle">
-                Современные решения для цифрового мира
-              </p>
-              <div className="cta-section">
-                <button className="primary-button">Начать проект</button>
-                <div className="stats">
-                  <div className="stat-item">
-                    <span className="stat-number">100+</span>
-                    <span className="stat-label">Проектов</span>
+              <div className="brand-description-wrapper">
+                <h2 className="brand-description">
+                  Создаем <span className="highlight-text">крутые дизайны</span> сайтов<br />
+                  с искусственным интеллектом
+                </h2>
+                <div className="brand-features">
+                  <div className="feature-point">
+                    <span className="feature-icon">✨</span>
+                    <span>Современные решения</span>
                   </div>
-                  <div className="stat-item">
-                    <span className="stat-number">24/7</span>
-                    <span className="stat-label">Поддержка</span>
+                  <div className="feature-point">
+                    <span className="feature-icon">🚀</span>
+                    <span>Цифровые технологии</span>
                   </div>
                 </div>
               </div>
@@ -197,7 +206,7 @@ function App() {
             <span className="section-number">01</span>
             <div className="section-info">
               <div className="section-badge">НАШИ ПРЕИМУЩЕСТВА</div>
-              <h2 className="section-title">Почему мы лучшие?</h2>
+              <h2 className="section-title">Почему мы лу��шие?</h2>
             </div>
           </div>
 
@@ -226,7 +235,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Инновационные технологии</h4>
                 </div>
-                <p>Используем самые современные AI-решения и передовые технологии разработки</p>
+                <p>Используем самые современные AI-реш��ния и передовые технологии разработки</p>
               </div>
 
               <div className="advantage-item">
@@ -297,7 +306,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Адаптивная верстка</span>
+                  <span>Адап��ивная верстка</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -420,17 +429,20 @@ function App() {
         {isChatOpen && (
           <div className="chat-window">
             <div className="chat-header">
-              <div className="jarvis-avatar">
-                <div className="avatar-glow"></div>
-                <span className="avatar-text">J</span>
-              </div>
-              <div className="chat-info">
-                <h3>Джарвис</h3>
-                <span className="status">В сети</span>
+              <div className="chat-header-center">
+                <div className="jarvis-avatar">
+                  <div className="avatar-glow"></div>
+                  <span className="avatar-text">J</span>
+                </div>
+                <div className="chat-info">
+                  <h3>Джарвис</h3>
+                  <span className="status">В сети</span>
+                </div>
               </div>
               <button
                 className="close-chat"
                 onClick={() => setIsChatOpen(false)}
+                title="Закрыть чат"
               >
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
