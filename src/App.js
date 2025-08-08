@@ -26,6 +26,7 @@ function App() {
 
       <section className="hero-section">
         <div className="background-overlay"></div>
+        <div className="planet-arc"></div>
         <div className="container">
           <div className="content-wrapper">
             <div className="main-content">
@@ -38,7 +39,7 @@ function App() {
                 Создаем крутые дизайны сайтов с искусственным интеллектом
               </p>
               <p className="brand-subtitle">
-                С��временные ре��ения для цифрового мира
+                Современные ре��ения для цифрового мира
               </p>
               <div className="cta-section">
                 <button className="primary-button">Начать проект</button>
