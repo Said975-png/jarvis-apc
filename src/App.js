@@ -345,7 +345,7 @@ function AppContent() {
               <div className="plan-features">
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Все функции Basic</span>
+                  <span>Вс�� функции Basic</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -399,7 +399,7 @@ function AppContent() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Индивидуальные решения</span>
+                  <span>Инди��идуальные решения</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -411,6 +411,8 @@ function AppContent() {
           </div>
         </div>
       </section>
+
+      <PricingSection />
 
       <section className="how-it-works-section">
         <div className="geometric-bg">
