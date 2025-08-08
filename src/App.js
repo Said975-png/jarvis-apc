@@ -27,9 +27,9 @@ function App() {
     "Отличный вопрос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
-    "Наши разработчики работают 24/7, чтобы обеспечить максимальное качество продукта.",
+    "Наши разработчики работают 24/7, чтобы обесп��чить максимальное качество продукта.",
     "Хотите узнать больше о наших тарифных ��ланах? Я могу помочь выбрать подходящий вариант.",
-    "Наша команда имеет более 15 лет оп��та в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
+    "Наша к��манда имеет более 15 лет оп��та в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
     "Безопасность данных - наш приоритет. Мы используем шифрование и соблюдаем все международные стандарты."
   ];
 
@@ -76,14 +76,17 @@ function App() {
           </div>
 
           <div className="navbar-menu">
-            <a href="#services" className="navbar-link">Услуги</a>
-            <a href="#portfolio" className="navbar-link">Портфолио</a>
-            <a href="#about" className="navbar-link">О нас</a>
             <a href="#contact" className="navbar-link">Контакты</a>
           </div>
 
           <div className="navbar-actions">
-            <button className="navbar-button">Заказать проект</button>
+            <button className="navbar-icon-button" title="Корзина">
+              <svg viewBox="0 0 24 24" fill="none" className="navbar-icon">
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 002 2h6a2 2 0 002-2v-6m-9 0h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button className="navbar-button">Регистрация</button>
+            <button className="navbar-button-primary">Вход</button>
           </div>
         </div>
       </nav>
@@ -211,7 +214,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Инновационные технологии</h4>
                 </div>
-                <p>Используем самые современные AI-решения и передовые технолог��и разработки</p>
+                <p>Используем самые современные AI-решения и передовые технологии разработки</p>
               </div>
 
               <div className="advantage-item">
@@ -355,7 +358,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Огромный функционал</span>
+                  <span>Огро��ный функционал</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
