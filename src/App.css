@@ -138,8 +138,9 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hero section decorative elements - показываем частицы для эффекта */
+/* Hero section decorative elements - скрываем все */
 .hero-section .background-overlay,
+.hero-section .planet-arc,
 .hero-section .geometric-bg,
 .hero-section .neural-network {
   display: none;
@@ -1813,7 +1814,7 @@ body {
 .ai-cards-slider {
   display: flex;
   transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-  width: 400%; /* 4 карточки * 100% */
+  width: 400%; /* 4 карто��ки * 100% */
 }
 
 .ai-cards-container {
