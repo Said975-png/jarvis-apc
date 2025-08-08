@@ -347,19 +347,19 @@ body {
 .planet-arc::before {
   content: '';
   position: absolute;
-  top: 10%;
-  left: 15%;
-  width: 40%;
-  height: 40%;
+  top: 15%;
+  left: 20%;
+  width: 35%;
+  height: 35%;
   border-radius: 50%;
   background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(255, 255, 255, 0.4) 30%,
-    transparent 70%
+    ellipse at 30% 30%,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.5) 40%,
+    transparent 80%
   );
-  animation: highlight 3s ease-in-out infinite alternate;
-  filter: blur(3px);
+  animation: jellyHighlight 4s ease-in-out infinite;
+  filter: blur(2px);
 }
 
 .planet-arc::after {
