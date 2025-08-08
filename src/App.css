@@ -138,46 +138,14 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #000000;
-  pointer-events: none;
-}
-
-.planet-arc {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150vw;
-  height: 150vw;
-  max-width: 2000px;
-  max-height: 2000px;
-  background: transparent;
-  border: 8px solid transparent;
-  border-top: 8px solid rgba(138, 43, 226, 1);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 2;
-  animation: planetRise 3s ease-out forwards;
-  opacity: 0;
-  box-shadow:
-    0 0 80px rgba(138, 43, 226, 0.9),
-    0 0 120px rgba(147, 51, 234, 0.6),
-    inset 0 0 80px rgba(168, 85, 247, 0.5);
-}
-
-.hero-section .geometric-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
+/* Hero section decorative elements hidden */
+.hero-section .background-overlay,
+.hero-section .planet-arc,
+.hero-section .geometric-bg,
+.hero-section .grid-overlay,
+.hero-section .particle-system,
+.hero-section .neural-network {
+  display: none;
 }
 
 /* Grid Overlay */
