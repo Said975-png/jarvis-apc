@@ -26,13 +26,9 @@ function App() {
 
       <section className="hero-section">
         <div className="background-overlay"></div>
+        <div className="planet-arc"></div>
         <div className="container">
           <div className="content-wrapper">
-            <div className="side-decoration left-side">
-              <div className="vertical-line"></div>
-              <div className="side-text">INNOVATIVE</div>
-            </div>
-            
             <div className="main-content">
               <div className="brand-badge">AI POWERED</div>
               <h1 className="brand-title">
@@ -58,11 +54,6 @@ function App() {
                   </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="side-decoration right-side">
-              <div className="vertical-line"></div>
-              <div className="side-text">FUTURE</div>
             </div>
           </div>
         </div>
