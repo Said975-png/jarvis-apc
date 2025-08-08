@@ -2752,6 +2752,8 @@ body {
   transition: all 0.3s ease;
   z-index: 10;
   position: relative;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .close-chat:hover {
