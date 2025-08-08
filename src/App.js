@@ -67,7 +67,7 @@ function App() {
                 Создаем крутые дизайны сайтов с искусственным интеллектом
               </p>
               <p className="brand-subtitle">
-                Со��ременные решения для ц��фрового мира
+                Современные решения для цифрового мира
               </p>
               <div className="cta-section">
                 <button className="primary-button">Начать проект</button>
@@ -162,7 +162,7 @@ function App() {
               <div className="advantage-item">
                 <div className="advantage-header">
                   <div className="advantage-dot"></div>
-                  <h4>Быст��ые сроки</h4>
+                  <h4>Быстрые сроки</h4>
                 </div>
                 <p>Оптимизированные процессы позволяют сократить время разработки вдвое</p>
               </div>
