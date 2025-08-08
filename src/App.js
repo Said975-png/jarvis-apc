@@ -1,7 +1,70 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
 function App() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      text: "Привет! Я Джарвис, ваш ИИ помощник. Как дела? Чем могу помочь?",
+      sender: "jarvis",
+      timestamp: new Date()
+    }
+  ]);
+  const [inputMessage, setInputMessage] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const jarvisResponses = [
+    "Отличный вопрос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
+    "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
+    "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
+    "Наши разработчики работают 24/7, чтобы обеспечить максимальное качество продукта.",
+    "Хотите узнать больше о наших тарифных планах? Я могу помочь выбрать подходящий вариант.",
+    "Наша команда имеет более 15 лет опыта в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
+    "Безопасность данных - наш приоритет. Мы используем шифрование и соблюдаем все международные стандарты."
+  ];
+
+  const handleSendMessage = () => {
+    if (inputMessage.trim() === "") return;
+
+    const newMessage = {
+      id: messages.length + 1,
+      text: inputMessage,
+      sender: "user",
+      timestamp: new Date()
+    };
+
+    setMessages(prev => [...prev, newMessage]);
+    setInputMessage("");
+    setIsTyping(true);
+
+    // Симуляция ответа Джарвиса
+    setTimeout(() => {
+      const jarvisResponse = {
+        id: messages.length + 2,
+        text: jarvisResponses[Math.floor(Math.random() * jarvisResponses.length)],
+        sender: "jarvis",
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, jarvisResponse]);
+      setIsTyping(false);
+    }, 1500);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
+  };
 
   return (
     <div className="jarvis-app">
@@ -263,7 +326,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Техподдержка 6 месяцев</span>
+                  <span>Техподдержка 6 месяц��в</span>
                 </div>
               </div>
               <button className="plan-button">Выбрать план</button>
