@@ -742,11 +742,35 @@ body {
 
 /* Hero section specific underline */
 .hero-section .title-underline {
-  width: 60px;
-  height: 2px;
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  margin: 0 auto 3rem;
+  border-radius: 2px;
+  position: relative;
+  animation: underlineGlow 2s ease-in-out infinite alternate;
+}
+
+.hero-section .title-underline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
   background: #ffffff;
-  margin: 0 auto 2.5rem;
-  border-radius: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes underlineGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
 }
 
 .brand-description {
