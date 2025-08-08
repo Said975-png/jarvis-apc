@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: 'Exo 2', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   background: #000;
   color: #fff;
   overflow-x: hidden;
@@ -186,6 +186,23 @@ body {
   }
 }
 
+@keyframes jarvisGlow {
+  0% {
+    background-position: 0% 50%;
+    text-shadow:
+      0 0 20px rgba(0, 212, 255, 0.8),
+      0 0 40px rgba(0, 212, 255, 0.6),
+      0 0 60px rgba(0, 212, 255, 0.4);
+  }
+  100% {
+    background-position: 100% 50%;
+    text-shadow:
+      0 0 30px rgba(0, 212, 255, 1),
+      0 0 50px rgba(0, 212, 255, 0.8),
+      0 0 80px rgba(0, 212, 255, 0.6);
+  }
+}
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -268,33 +285,45 @@ body {
 .brand-badge {
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  background: linear-gradient(135deg, #ffffff10, #ffffff05);
-  border: 1px solid #ffffff20;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 212, 255, 0.05));
+  border: 1px solid rgba(0, 212, 255, 0.3);
   border-radius: 2rem;
+  font-family: 'Orbitron', monospace;
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: #ffffff80;
+  color: #ffffff;
   margin-bottom: 2rem;
   backdrop-filter: blur(10px);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
 }
 
 .brand-title {
+  font-family: 'Orbitron', 'Exo 2', monospace;
   font-size: clamp(4rem, 8vw, 8rem);
   font-weight: 900;
   margin-bottom: 1rem;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
 .jarvis-text {
-  background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #00d4ff 0%, #ffffff 25%, #00d4ff 50%, #ffffff 75%, #00d4ff 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-  letter-spacing: 0.1em;
+  background-size: 200% 100%;
+  animation: jarvisGlow 3s ease-in-out infinite alternate;
+  text-shadow:
+    0 0 20px rgba(0, 212, 255, 0.8),
+    0 0 40px rgba(0, 212, 255, 0.6),
+    0 0 60px rgba(0, 212, 255, 0.4);
+  letter-spacing: 0.15em;
   position: relative;
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.7));
 }
 
 .title-underline {
@@ -306,18 +335,25 @@ body {
 }
 
 .brand-description {
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: #ffffff90;
+  font-family: 'Rajdhani', 'Exo 2', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ffffff;
   margin-bottom: 0.5rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .brand-subtitle {
-  font-size: 1rem;
-  color: #ffffff60;
+  font-family: 'Rajdhani', 'Exo 2', sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
   margin-bottom: 3rem;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  opacity: 0.9;
 }
 
 .cta-section {
