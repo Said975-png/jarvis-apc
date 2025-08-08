@@ -220,6 +220,130 @@ body {
   z-index: 1;
 }
 
+/* Яркая дуга */
+.planet-arc {
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120vw;
+  height: 120vw;
+  max-width: 1400px;
+  max-height: 1400px;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid transparent;
+  background-image: conic-gradient(
+    from 180deg,
+    rgba(0, 212, 255, 0) 0deg,
+    rgba(0, 212, 255, 0.8) 45deg,
+    rgba(138, 43, 226, 0.9) 90deg,
+    rgba(255, 20, 147, 0.8) 135deg,
+    rgba(0, 212, 255, 0.8) 180deg,
+    rgba(0, 212, 255, 0) 225deg,
+    rgba(0, 212, 255, 0) 360deg
+  );
+  background-clip: padding-box;
+  z-index: 1;
+  animation: arcRise 8s ease-out infinite, arcRotate 20s linear infinite;
+  filter: blur(1px);
+  box-shadow:
+    0 0 50px rgba(0, 212, 255, 0.4),
+    0 0 100px rgba(138, 43, 226, 0.3),
+    inset 0 0 50px rgba(255, 20, 147, 0.2);
+}
+
+.planet-arc::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg,
+    rgba(0, 212, 255, 0) 0deg,
+    rgba(0, 212, 255, 0.6) 45deg,
+    rgba(138, 43, 226, 0.7) 90deg,
+    rgba(255, 20, 147, 0.6) 135deg,
+    rgba(0, 212, 255, 0.6) 180deg,
+    rgba(0, 212, 255, 0) 225deg,
+    rgba(0, 212, 255, 0) 360deg
+  );
+  z-index: -1;
+  animation: arcGlow 3s ease-in-out infinite alternate;
+}
+
+.planet-arc::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0, 212, 255, 0.8) 25%,
+    rgba(255, 20, 147, 1) 50%,
+    rgba(138, 43, 226, 0.8) 75%,
+    transparent 100%
+  );
+  border-radius: 2px;
+  animation: energyPulse 2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
+}
+
+@keyframes arcRise {
+  0% {
+    bottom: -60%;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+  25% {
+    opacity: 0.7;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    bottom: -40%;
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes arcRotate {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes arcGlow {
+  0% {
+    filter: blur(2px);
+    opacity: 0.6;
+  }
+  100% {
+    filter: blur(4px);
+    opacity: 0.9;
+  }
+}
+
+@keyframes energyPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.5);
+  }
+}
+
 @keyframes gridPulse {
   0%, 100% {
     opacity: 0.03;
