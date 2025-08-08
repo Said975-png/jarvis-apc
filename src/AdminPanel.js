@@ -72,14 +72,109 @@ const AdminPanel = () => {
   }, []);
 
   const loadOrders = () => {
-    const allOrders = getAllOrders();
-    setOrders(allOrders);
+    // Загружаем заказы напрямую из localStorage
+    const savedOrders = localStorage.getItem('jarvis_orders');
+    if (savedOrders) {
+      try {
+        const parsedOrders = JSON.parse(savedOrders);
+        setOrders(parsedOrders);
+        console.log('Загружено заказов:', parsedOrders.length);
+      } catch (error) {
+        console.error('Ошибка загрузки заказов:', error);
+        setOrders([]);
+      }
+    } else {
+      // Если заказов нет, создаем тестовые
+      const testOrders = [
+        {
+          id: '1701234567890',
+          userId: 'test-user-1',
+          customerInfo: {
+            fullName: 'Иван Петров',
+            phone: '+998901234567',
+            email: 'ivan@example.com',
+            name: 'Иван Петров'
+          },
+          items: [
+            {
+              id: 'item-1',
+              planType: 'pro',
+              name: 'PRO План',
+              price: 299000,
+              quantity: 1,
+              features: ['Все функции Basic', 'ИИ помощник', 'Расширенная аналитика']
+            }
+          ],
+          total: 299000,
+          status: 'pending',
+          statusText: 'В ожидании',
+          createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+          updatedAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+          notes: 'Тестовый заказ для демонстрации'
+        },
+        {
+          id: '1701234567891',
+          userId: 'test-user-2',
+          customerInfo: {
+            fullName: 'Анна Сидорова',
+            phone: '+998901234568',
+            email: 'anna@example.com',
+            name: 'Анна Сидорова'
+          },
+          items: [
+            {
+              id: 'item-2',
+              planType: 'basic',
+              name: 'BASIC План',
+              price: 149000,
+              quantity: 1,
+              features: ['Базовый дизайн', 'Адаптивная верстка', 'SEO оптимизация']
+            }
+          ],
+          total: 149000,
+          status: 'accepted',
+          statusText: 'Принято',
+          createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
+          updatedAt: new Date(Date.now() - 23 * 60 * 60 * 1000).toISOString(),
+          notes: ''
+        }
+      ];
+      localStorage.setItem('jarvis_orders', JSON.stringify(testOrders));
+      setOrders(testOrders);
+      console.log('Созданы тестовые заказы:', testOrders.length);
+    }
   };
 
   const handleStatusChange = (orderId, newStatus) => {
-    updateOrderStatus(orderId, newStatus);
-    loadOrders(); // Перезагружаем заказы
-    
+    const statusMap = {
+      'pending': 'В ожидании',
+      'accepted': 'Принято',
+      'rejected': 'Отклонено',
+      'completed': 'Выполнено'
+    };
+
+    // Обновляем заказы в localStorage напрямую
+    const savedOrders = localStorage.getItem('jarvis_orders');
+    if (savedOrders) {
+      try {
+        const parsedOrders = JSON.parse(savedOrders);
+        const updatedOrders = parsedOrders.map(order =>
+          order.id === orderId
+            ? {
+                ...order,
+                status: newStatus,
+                statusText: statusMap[newStatus] || newStatus,
+                updatedAt: new Date().toISOString()
+              }
+            : order
+        );
+        localStorage.setItem('jarvis_orders', JSON.stringify(updatedOrders));
+        setOrders(updatedOrders);
+      } catch (error) {
+        console.error('Ошибка обновления статуса:', error);
+      }
+    }
+
     // Показываем уведомление
     const notification = document.createElement('div');
     notification.innerHTML = `
@@ -92,23 +187,33 @@ const AdminPanel = () => {
         padding: 15px 20px;
         border-radius: 10px;
         z-index: 50000;
-        font-family: 'Exo 2', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-weight: 600;
         backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
       ">
         ✅ Статус заказа обновлен!
       </div>
     `;
-    
+
     document.body.appendChild(notification);
     setTimeout(() => notification.remove(), 3000);
   };
 
   const handleDeleteOrder = (orderId) => {
     if (window.confirm('Вы уверены, что хотите удалить этот заказ?')) {
-      deleteOrder(orderId);
-      loadOrders();
-      setSelectedOrder(null);
+      const savedOrders = localStorage.getItem('jarvis_orders');
+      if (savedOrders) {
+        try {
+          const parsedOrders = JSON.parse(savedOrders);
+          const filteredOrders = parsedOrders.filter(order => order.id !== orderId);
+          localStorage.setItem('jarvis_orders', JSON.stringify(filteredOrders));
+          setOrders(filteredOrders);
+          setSelectedOrder(null);
+        } catch (error) {
+          console.error('Ошибка удаления заказа:', error);
+        }
+      }
     }
   };
 
