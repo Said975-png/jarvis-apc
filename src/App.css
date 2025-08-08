@@ -613,19 +613,19 @@ body {
 
 /* Hero section specific title */
 .hero-section .brand-title {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: clamp(3.5rem, 7vw, 7rem);
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 2rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   line-height: 0.9;
 }
 
 .hero-section .jarvis-text {
   color: #ffffff;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   text-shadow: none;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .title-underline {
