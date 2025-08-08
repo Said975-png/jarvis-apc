@@ -508,7 +508,7 @@ body {
   filter: blur(8px);
 }
 
-/* Дополнительные желейные волны */
+/* Дополнительные жел��йные волны */
 .planet-arc {
   position: relative;
 }
@@ -2778,17 +2778,22 @@ body {
 }
 
 .close-chat {
-  background: transparent;
-  border: none;
-  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
-  padding: 8px;
+  padding: 10px;
   border-radius: 50%;
   transition: all 0.3s ease;
   z-index: 10;
   position: relative;
   flex-shrink: 0;
-  margin-left: auto;
+  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .close-chat:hover {
