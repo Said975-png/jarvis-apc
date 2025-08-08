@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 
 function App() {
@@ -130,7 +130,7 @@ function App() {
                 <div className="advantage-number">500+</div>
                 <div className="advantage-text">
                   <h3>Проектов</h3>
-                  <p>успешно реализовано</p>
+                  <p>усп��шно реализовано</p>
                 </div>
               </div>
             </div>
@@ -147,7 +147,7 @@ function App() {
               <div className="advantage-item">
                 <div className="advantage-header">
                   <div className="advantage-dot"></div>
-                  <h4>Пе��сональный подход</h4>
+                  <h4>Персональный подход</h4>
                 </div>
                 <p>Каждый проект уникален - создаем индивидуальные решения под ваши задачи</p>
               </div>
@@ -157,7 +157,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Гарантия качества</h4>
                 </div>
-                <p>Предоставляем гарантию на все работы и бесплатную техподдержку</p>
+                <p>Предоставляем гаранти�� на все работы и бесплатную техподдержку</p>
               </div>
 
               <div className="advantage-item">
@@ -445,7 +445,7 @@ function App() {
                     <h3 className="card-title-back">Безопасность и надежность</h3>
                     <p className="card-description">
                       Все данные обрабатываются с максимальной защитой, соблюдаются международные 
-                      стандарты безопасности, а система работает стабильно 99.9% времени
+                      стандарты безопасности, а система работ��ет стабильно 99.9% времени
                     </p>
                     <div className="card-features">
                       <span className="feature-tag">Шифрование данных</span>
