@@ -878,6 +878,28 @@ body {
   font-weight: 500;
 }
 
+/* Hero section specific scroll arrow */
+.hero-section .scroll-arrow {
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.hero-section .scroll-arrow::after {
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 5px solid rgba(255, 255, 255, 0.4);
+}
+
+.hero-section .scroll-text {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
 @keyframes scrollBounce {
   0%, 100% {
     transform: translateX(-50%) translateY(0);
