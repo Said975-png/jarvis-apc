@@ -1948,6 +1948,25 @@ body {
     padding: 0 1.5rem;
   }
 
+  /* Hide some side texts on mobile */
+  .hero-section .side-text.left-center,
+  .hero-section .side-text.right-center,
+  .hero-section .side-text.top-center {
+    display: none;
+  }
+
+  .hero-section .side-text {
+    font-size: 0.65rem;
+  }
+
+  .hero-section .top-left,
+  .hero-section .top-right,
+  .hero-section .bottom-left,
+  .hero-section .bottom-right,
+  .hero-section .bottom-center {
+    margin: 1rem;
+  }
+
   .hero-section .brand-title {
     font-size: clamp(2.5rem, 12vw, 4rem);
   }
