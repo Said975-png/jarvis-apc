@@ -2017,7 +2017,7 @@ body {
     gap: 1.5rem;
   }
 
-  /* Hide all side texts on very small screens */
+  /* Hide side texts on very small screens */
   .hero-section .side-text {
     display: none;
   }
