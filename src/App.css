@@ -2471,19 +2471,6 @@ body {
     gap: 3rem;
   }
 
-  .demo-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .chat-demo {
-    max-width: 100%;
-  }
-
-  .demo-messages {
-    height: 280px;
-  }
-
   .cta-section {
     gap: 1.5rem;
   }
