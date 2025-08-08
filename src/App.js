@@ -24,11 +24,11 @@ function App() {
   }, [messages]);
 
   const jarvisResponses = [
-    "Отличный вопрос! Наша ком��нда использует самые современные AI технологии для создания уникальных решений.",
+    "Отличный вопрос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обеспечить максимальное качество продукта.",
-    "Хотите узнать больше о наших тарифных планах? Я могу помочь выбрать подходящий вариант.",
+    "Хотите узнать больше о наших тарифных ��ланах? Я могу помочь выбрать подходящий вариант.",
     "Наша команда имеет более 15 лет опыта в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
     "Безопасность данных - наш приоритет. Мы используем шифрование и соблюдаем все международные стандарты."
   ];
@@ -78,7 +78,7 @@ function App() {
           <div className="navbar-menu">
             <a href="#services" className="navbar-link">Услуги</a>
             <a href="#portfolio" className="navbar-link">Портфолио</a>
-            <a href="#about" className="navbar-link">О нас</a>
+            <a href="#about" className="navbar-link">�� нас</a>
             <a href="#contact" className="navbar-link">Контакты</a>
           </div>
 
@@ -119,6 +119,19 @@ function App() {
           <div className="neural-node node-3"></div>
           <div className="neural-node node-4"></div>
         </div>
+
+        {/* Side Texts */}
+        <div className="side-texts">
+          <div className="side-text top-left">AI DESIGN</div>
+          <div className="side-text top-center">JARVISUI2024</div>
+          <div className="side-text top-right">v3</div>
+          <div className="side-text bottom-left">NEXT.JS</div>
+          <div className="side-text bottom-center">REACT</div>
+          <div className="side-text bottom-right">TYPESCRIPT</div>
+          <div className="side-text left-center">NEURAL NETWORKS</div>
+          <div className="side-text right-center">MACHINE LEARNING</div>
+        </div>
+
         <div className="container">
           <div className="content-wrapper">
             <div className="main-content">
@@ -210,7 +223,7 @@ function App() {
               <div className="advantage-item">
                 <div className="advantage-header">
                   <div className="advantage-dot"></div>
-                  <h4>Персональный подход</h4>
+                  <h4>Персо��альный подход</h4>
                 </div>
                 <p>Каждый проект уникален - создаем индивидуальные решения под ваши задачи</p>
               </div>
@@ -253,7 +266,7 @@ function App() {
           <div className="section-header">
             <span className="section-number">02</span>
             <div className="section-info">
-              <div className="section-badge">НАШИ ТАРИФ��</div>
+              <div className="section-badge">НАШИ ТАРИФЫ</div>
               <h2 className="section-title">Выберите свой план</h2>
             </div>
           </div>
