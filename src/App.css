@@ -3233,7 +3233,7 @@ body {
   border-bottom: none;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
