@@ -26,7 +26,7 @@ function App() {
   const jarvisResponses = [
     "Отличный во��рос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
-    "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
+    "Интересно! Расскажите ��ольше о вашем проекте, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обесп��чить максимальное качество продукта.",
     "Хотите узнать больше о наших тарифных ��ланах? Я могу помочь выбрать подходящий вариант.",
     "Наша к��манда имеет более 15 лет оп����та в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
@@ -172,7 +172,7 @@ function App() {
         
         <div className="scroll-indicator">
           <div className="scroll-arrow"></div>
-          <span className="scroll-text">Прокрутите вниз</span>
+          <span className="scroll-text">Прокрутите ��низ</span>
         </div>
       </section>
 
@@ -388,6 +388,114 @@ function App() {
                 </div>
               </div>
               <button className="plan-button">Выбрать план</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="jarvis-demo-section">
+        <div className="geometric-bg">
+          <div className="floating-element element-1"></div>
+          <div className="floating-element element-2"></div>
+          <div className="floating-element element-3"></div>
+          <div className="floating-element element-4"></div>
+          <div className="floating-element element-5"></div>
+        </div>
+        <div className="data-stream">
+          <div className="stream-line stream-1"></div>
+          <div className="stream-line stream-2"></div>
+          <div className="stream-line stream-3"></div>
+        </div>
+
+        <div className="container">
+          <div className="section-header">
+            <span className="section-number">03</span>
+            <div className="section-info">
+              <div className="section-badge">ДЖАРВИС В ДЕЙСТВИИ</div>
+              <h2 className="section-title">Как работает ИИ помощник?</h2>
+            </div>
+          </div>
+
+          <div className="demo-layout">
+            <div className="demo-left">
+              <div className="demo-card">
+                <div className="demo-icon">
+                  <svg viewBox="0 0 24 24" fill="none" className="icon">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3>Общение как с человеком</h3>
+                <p>Джарвис понимает естественную речь и отвечает так, будто вы разговариваете с настоящим консультантом</p>
+              </div>
+
+              <div className="demo-card">
+                <div className="demo-icon">
+                  <svg viewBox="0 0 24 24" fill="none" className="icon">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Умный выбор товаров</h3>
+                <p>Анализирует ваши потребности и предлагает идеально подходящие решения из всего ассортимента</p>
+              </div>
+
+              <div className="demo-card">
+                <div className="demo-icon">
+                  <svg viewBox="0 0 24 24" fill="none" className="icon">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Мгновенные ответы</h3>
+                <p>Получайте помощь 24/7 без ожидания. Джарвис всегда готов ответить на ваши вопросы</p>
+              </div>
+            </div>
+
+            <div className="demo-right">
+              <div className="chat-demo">
+                <div className="demo-chat-header">
+                  <div className="demo-avatar">
+                    <span>J</span>
+                  </div>
+                  <div className="demo-info">
+                    <h4>Джарвис</h4>
+                    <span className="demo-status">В сети</span>
+                  </div>
+                </div>
+
+                <div className="demo-messages">
+                  <div className="demo-message user">
+                    <div className="demo-message-content">
+                      Привет! Мне нужен сайт для моего бизнеса, но я не знаю, какой план выбрать
+                    </div>
+                  </div>
+
+                  <div className="demo-message jarvis">
+                    <div className="demo-message-content">
+                      Привет! Я помогу вам выбрать идеальный план. Расскажите, какой у вас бизнес и какие функции важны для сайта?
+                    </div>
+                  </div>
+
+                  <div className="demo-message user">
+                    <div className="demo-message-content">
+                      У м��ня интернет-магазин одежды, нужен каталог товаров и онлайн-оплата
+                    </div>
+                  </div>
+
+                  <div className="demo-message jarvis">
+                    <div className="demo-message-content">
+                      Отлично! Для интернет-магазина рекомендую PRO план. Он включает каталог товаров, систему оплаты, и ИИ помощника для ваших клиентов. Хотите узнать больше?
+                    </div>
+                  </div>
+
+                  <div className="demo-typing">
+                    <div className="demo-typing-indicator">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <span className="typing-text">Джарвис печатает...</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
