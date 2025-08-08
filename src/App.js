@@ -37,7 +37,7 @@ function App() {
   const jarvisResponses = [
     "Отличный во��рос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
-    "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
+    "Инте��есно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обесп��чить максимальное качество продукта.",
     "Хотите узнать больше о наших тарифных ��ланах? Я могу помочь выбрать подходящий вариант.",
     "Наша к��манда имеет более 15 лет оп����та в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
@@ -243,7 +243,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Персональный подход</h4>
                 </div>
-                <p>Каждый проект уникален - создаем индивидуальные решения под ваши задачи</p>
+                <p>Ка��дый проект уникален - создаем индивидуальные решения под ваши задачи</p>
               </div>
 
               <div className="advantage-item">
@@ -357,7 +357,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Техподдержка 6 месяц��в</span>
+                  <span>Техподдерж��а 6 месяц��в</span>
                 </div>
               </div>
               <button className="plan-button">Выбрать план</button>
@@ -429,17 +429,21 @@ function App() {
         {isChatOpen && (
           <div className="chat-window">
             <div className="chat-header">
-              <div className="jarvis-avatar">
-                <div className="avatar-glow"></div>
-                <span className="avatar-text">J</span>
-              </div>
-              <div className="chat-info">
-                <h3>Джарвис</h3>
-                <span className="status">В сети</span>
+              <div></div>
+              <div className="chat-header-center">
+                <div className="jarvis-avatar">
+                  <div className="avatar-glow"></div>
+                  <span className="avatar-text">J</span>
+                </div>
+                <div className="chat-info">
+                  <h3>Джарвис</h3>
+                  <span className="status">В сети</span>
+                </div>
               </div>
               <button
                 className="close-chat"
                 onClick={() => setIsChatOpen(false)}
+                title="Закрыть чат"
               >
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
