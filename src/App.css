@@ -491,10 +491,8 @@ body {
     gap: 2rem;
   }
 
-  .tech-stack {
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 0 1rem;
+  .scroll-indicator {
+    bottom: 1.5rem;
   }
 
   .cta-section {
