@@ -2591,7 +2591,7 @@ body {
 .chat-icon {
   width: 24px;
   height: 24px;
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   z-index: 2;
   position: relative;
 }
