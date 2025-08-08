@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from './AuthContext';
+import { useCart } from './CartContext';
 
 const Dashboard = ({ isOpen, onClose }) => {
   const { user, logout, updateProfile, databaseStatus, useSupabase } = useAuth();
@@ -240,7 +241,7 @@ const Dashboard = ({ isOpen, onClose }) => {
           {activeTab === 'plan' && (
             <div className="plan-section">
               <div className="current-plan">
-                <h4>Теку��ий тарифный план</h4>
+                <h4>Текущий тарифный план</h4>
                 <div className="plan-card current">
                   <h5>{user?.plan?.toUpperCase()} план</h5>
                   <div className="plan-features">
