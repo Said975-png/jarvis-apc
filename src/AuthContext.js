@@ -370,6 +370,11 @@ export const AuthProvider = ({ children }) => {
   const saveChatMessage = async (chatId, sender, content) => {
     if (!user) return { success: false, error: 'Пользователь не авторизован' };
 
+    if (!useSupabase) {
+      // В fallback версии пока не сохраняем отдельные сообщения
+      return { success: true, data: { chat_id: chatId, sender, content } };
+    }
+
     try {
       const { data, error } = await supabase
         .from('chat_messages')
