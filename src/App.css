@@ -423,14 +423,31 @@ body {
   }
 }
 
-@keyframes highlight {
+@keyframes jellyHighlight {
   0% {
-    opacity: 0.6;
+    opacity: 0.7;
     transform: scale(1);
+    border-radius: 60% 40% 70% 30%;
+  }
+  25% {
+    opacity: 0.9;
+    transform: scale(1.15);
+    border-radius: 40% 60% 30% 70%;
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.95);
+    border-radius: 70% 30% 60% 40%;
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.08);
+    border-radius: 35% 65% 45% 55%;
   }
   100% {
-    opacity: 1;
-    transform: scale(1.1);
+    opacity: 0.7;
+    transform: scale(1);
+    border-radius: 60% 40% 70% 30%;
   }
 }
 
