@@ -20,26 +20,59 @@ export const AuthProvider = ({ children }) => {
 
   // Проверяем авторизацию при загрузке
   useEffect(() => {
-    // Получаем текущую сессию
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) {
-        loadUserProfile(session.user.id);
-      } else {
+    const initAuth = async () => {
+      try {
+        // Проверяем доступность Supabase
+        const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+        const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+
+        if (!supabaseUrl || supabaseUrl.includes('demo-project') || !supabaseKey || supabaseKey.includes('demo-anon-key')) {
+          console.log('Supabase не настроен, используем localStorage');
+          setUseSupabase(false);
+
+          // Загружаем пользователя из localStorage
+          const savedUser = localStorage.getItem('jarvis_current_user');
+          if (savedUser) {
+            try {
+              const parsedUser = JSON.parse(savedUser);
+              setUser(parsedUser);
+            } catch (error) {
+              console.error('О��ибка при загрузке пользователя из localStorage:', error);
+              localStorage.removeItem('jarvis_current_user');
+            }
+          }
+          setLoading(false);
+          return;
+        }
+
+        // Получаем текущую сессию из Supabase
+        supabase.auth.getSession().then(({ data: { session } }) => {
+          if (session?.user) {
+            loadUserProfile(session.user.id);
+          } else {
+            setLoading(false);
+          }
+        });
+
+        // Слушаем изменения аутентификации
+        const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+          if (event === 'SIGNED_IN' && session?.user) {
+            await loadUserProfile(session.user.id);
+          } else if (event === 'SIGNED_OUT') {
+            setUser(null);
+            setLoading(false);
+          }
+        });
+
+        return () => subscription.unsubscribe();
+      } catch (error) {
+        console.error('Ошибка инициализации аутентификации:', error);
+        setUseSupabase(false);
         setLoading(false);
       }
-    });
+    };
 
-    // Слушаем изменения аутентификации
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if (event === 'SIGNED_IN' && session?.user) {
-        await loadUserProfile(session.user.id);
-      } else if (event === 'SIGNED_OUT') {
-        setUser(null);
-        setLoading(false);
-      }
-    });
-
-    return () => subscription.unsubscribe();
+    initAuth();
   }, []);
 
   // Загружаем профиль пользователя из базы данных
