@@ -2506,8 +2506,18 @@ body {
     font-size: 3rem;
   }
 
-  .brand-description {
-    font-size: 1rem;
+  .hero-section .brand-description {
+    font-size: 1.1rem;
+  }
+
+  .brand-features {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .feature-point {
+    font-size: 0.85rem;
+    justify-content: center;
   }
 
   .primary-button {
