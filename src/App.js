@@ -27,6 +27,11 @@ function App() {
       <section className="hero-section">
         <div className="background-overlay"></div>
         <div className="planet-arc"></div>
+        <div className="geometric-bg">
+          <div className="floating-element element-1"></div>
+          <div className="floating-element element-2"></div>
+          <div className="floating-element element-3"></div>
+        </div>
         <div className="container">
           <div className="content-wrapper">
             <div className="main-content">
@@ -105,7 +110,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Инновационные технологии</h4>
                 </div>
-                <p>Используем самые современные AI-решения и передовые технологии разработки</p>
+                <p>Используем самые современны�� AI-решения и передовые технологии разработки</p>
               </div>
 
               <div className="advantage-item">
