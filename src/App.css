@@ -1767,6 +1767,7 @@ body {
 
 .plan-features {
   margin-bottom: 2.5rem;
+  flex-grow: 1;
 }
 
 .feature-item {
