@@ -102,7 +102,7 @@ function AppContent() {
     setMessages([
       {
         id: 1,
-        text: "Привет! Я Джарвис, ваш ИИ помощник. Как дела? Чем могу помочь?",
+        text: "Привет! Я Джарви��, ваш ИИ помощник. Как дела? Чем могу помочь?",
         sender: "jarvis",
         timestamp: new Date()
       }
@@ -122,6 +122,15 @@ function AppContent() {
     }
   };
 
+
+  // Если это страница админ панели, показываем только админ панель
+  if (isAdminPage) {
+    return (
+      <div className="jarvis-app">
+        <AdminPanel />
+      </div>
+    );
+  }
 
   return (
     <div className="jarvis-app">
