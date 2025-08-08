@@ -187,6 +187,8 @@ body {
   transform-origin: center;
   width: 120px;
   text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 .right-center {
@@ -196,6 +198,8 @@ body {
   transform-origin: center;
   width: 120px;
   text-align: center;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 }
 
 /* Grid Overlay */
