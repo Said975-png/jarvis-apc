@@ -271,7 +271,7 @@ function App() {
             <div className="pricing-card max-plan">
               <div className="plan-header">
                 <div className="plan-badge">MAX</div>
-                <h3 className="plan-name">Макси��альный сайт</h3>
+                <h3 className="plan-name">Максимальный сайт</h3>
                 <div className="plan-price">
                   <span className="price-amount">5.000.000</span>
                   <span className="price-currency">сум</span>
@@ -345,7 +345,13 @@ function App() {
               <div className="card-inner">
                 <div className="card-front">
                   <div className="card-icon">
-                    <div className="icon-brain"></div>
+                    <svg className="icon-brain" viewBox="0 0 24 24" fill="none">
+                      <path d="M9.5 2a6.5 6.5 0 0 1 5 2.4A6.5 6.5 0 0 1 19 11c0 .7-.1 1.4-.4 2a1 1 0 0 1-.2.3c-.2.2-.5.4-.9.4h-.5c-.3 0-.6.2-.8.4-.2.3-.2.7 0 1 .2.2.5.4.8.4h.5c.4 0 .7.2.9.4.1.1.2.2.2.3.3.6.4 1.3.4 2a6.5 6.5 0 0 1-4.5 6.2A6.5 6.5 0 0 1 9.5 22 6.5 6.5 0 0 1 5 15.8 6.5 6.5 0 0 1 5 8.2 6.5 6.5 0 0 1 9.5 2z" stroke="currentColor" strokeWidth="2"/>
+                      <circle cx="8" cy="8" r="1" fill="currentColor"/>
+                      <circle cx="12" cy="8" r="1" fill="currentColor"/>
+                      <circle cx="16" cy="8" r="1" fill="currentColor"/>
+                      <path d="M8 12c0 1.1.9 2 2 2s2-.9 2-2" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    </svg>
                   </div>
                   <h3 className="card-title">Умный анализ</h3>
                   <div className="card-number">01</div>
