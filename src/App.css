@@ -2526,22 +2526,23 @@ body {
 .chat-button-container {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  flex-direction: row;
+  gap: 0.8rem;
+  flex-direction: column;
 }
 
 .chat-label {
   font-family: 'Exo 2', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.8);
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
   backdrop-filter: blur(10px);
   white-space: nowrap;
   font-weight: 500;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 
 .chat-button {
