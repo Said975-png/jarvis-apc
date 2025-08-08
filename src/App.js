@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -164,7 +164,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Быстрые сроки</h4>
                 </div>
-                <p>О��тимизированные процессы позволяют сократить время разработки вдвое</p>
+                <p>Оптимизированные процессы позволяют сократить время разработки вдвое</p>
               </div>
             </div>
           </div>
@@ -355,7 +355,7 @@ function App() {
                   <div className="slide-features">
                     <span className="feature-tag">Машинное обучение</span>
                     <span className="feature-tag">Анализ данных</span>
-                    <span className="feature-tag">Прогнозирован��е</span>
+                    <span className="feature-tag">Прогнозирование</span>
                   </div>
                 </div>
               </div>
