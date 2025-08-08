@@ -636,6 +636,15 @@ body {
   border-radius: 2px;
 }
 
+/* Hero section specific underline */
+.hero-section .title-underline {
+  width: 60px;
+  height: 2px;
+  background: #ffffff;
+  margin: 0 auto 2.5rem;
+  border-radius: 0;
+}
+
 .brand-description {
   font-family: 'Rajdhani', 'Exo 2', sans-serif;
   font-size: 1.4rem;
