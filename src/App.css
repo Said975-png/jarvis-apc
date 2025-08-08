@@ -4251,6 +4251,12 @@ body {
   font-size: 0.9rem;
 }
 
+.user-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .user-plan {
   background: linear-gradient(135deg, #00d4ff, #8a2be2);
   color: white;
@@ -4260,6 +4266,27 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.database-status {
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.database-status.connected {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.database-status.local {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .dashboard-close {
