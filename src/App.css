@@ -765,10 +765,11 @@ body {
   grid-template-columns: 1fr;
   gap: 0;
   min-height: calc(100vh - 100px);
-  align-content: center;
+  align-content: start;
   text-align: center;
   position: relative;
   z-index: 5;
+  padding-top: 2rem;
 }
 
 .side-decoration {
@@ -1814,7 +1815,7 @@ body {
 .ai-cards-slider {
   display: flex;
   transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-  width: 400%; /* 4 карто��ки * 100% */
+  width: 400%; /* 4 карточки * 100% */
 }
 
 .ai-cards-container {
