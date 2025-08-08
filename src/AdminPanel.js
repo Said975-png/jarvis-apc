@@ -100,7 +100,7 @@ const AdminPanel = () => {
             {
               id: 'item-1',
               planType: 'pro',
-              name: 'PRO ��лан',
+              name: 'PRO План',
               price: 299000,
               quantity: 1,
               features: ['Все функции Basic', 'ИИ помощник', 'Расширенная аналитика']
@@ -218,6 +218,13 @@ const AdminPanel = () => {
     }
   };
 
+  const resetOrders = () => {
+    if (window.confirm('Это удалит все заказы и создаст новые тестовые. Продолжить?')) {
+      localStorage.removeItem('jarvis_orders');
+      loadOrders(); // Это создаст новые тестовые заказы
+    }
+  };
+
   const formatPrice = (price) => {
     return price.toLocaleString('ru-RU');
   };
@@ -310,7 +317,7 @@ const AdminPanel = () => {
             <div className="empty-orders">
               <div className="empty-icon">📋</div>
               <h3>Заказы не найдены</h3>
-              <p>Пока нет заказов{filterStatus !== 'all' ? ` со статусом "${filterStatus}"` : ''}</p>
+              <p>Пока нет зак��зов{filterStatus !== 'all' ? ` со статусом "${filterStatus}"` : ''}</p>
             </div>
           ) : (
             <div className="orders-grid">
