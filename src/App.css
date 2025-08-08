@@ -880,15 +880,22 @@ body {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  z-index: 3;
-  animation: scrollBounce 2s ease-in-out infinite;
+  gap: 0.8rem;
+  z-index: 5;
+  animation: scrollBounce 2.5s ease-in-out infinite;
+  padding: 1rem;
+  background: linear-gradient(135deg,
+    rgba(14, 165, 233, 0.1) 0%,
+    rgba(139, 92, 246, 0.08) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
 }
 
 .scroll-arrow {
