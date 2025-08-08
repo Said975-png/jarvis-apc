@@ -36,7 +36,7 @@ function App() {
   }, [isChatOpen]);
 
   const jarvisResponses = [
-    "Отличный во��рос! Наша команда используе�� самые современные AI технологии для создания уникальных решений.",
+    "Отличный во��рос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обесп��чить максимальное качество продукта.",
@@ -242,7 +242,7 @@ function App() {
           <div className="section-header">
             <span className="section-number">01</span>
             <div className="section-info">
-              <div className="section-badge">НАШИ ПРЕИМУЩЕСТВА</div>
+              <div className="section-badge">НАШИ ПРЕИМ��ЩЕСТВА</div>
               <h2 className="section-title">Почему мы лу��шие?</h2>
             </div>
           </div>
@@ -362,7 +362,7 @@ function App() {
             </div>
 
             <div className="pricing-card pro-plan featured">
-              <div className="featured-badge">ПОПУЛЯРНЫЙ</div>
+              <div className="featured-badge">ПОПУЛЯР��ЫЙ</div>
               <div className="plan-header">
                 <div className="plan-badge">PRO</div>
                 <h3 className="plan-name">Профессиональный сайт</h3>
@@ -416,7 +416,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Огро��ный функционал</span>
+                  <span>��гро��ный функционал</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -496,7 +496,7 @@ function App() {
                         <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" stroke="currentColor" strokeWidth="2"/>
                       </svg>
                     </div>
-                    <h4>Умная рекомендация</h4>
+                    <h4>Умная рекомен��ация</h4>
                   </div>
                   <p>Анализирует историю покупок, поведение на сайте и предпочтения для точных рекомендаций товаров</p>
                 </div>
@@ -541,7 +541,7 @@ function App() {
 
             <div className="process-section">
               <div className="process-header">
-                <h3>Простая ��нтеграция</h3>
+                <h3>Простая интеграция</h3>
                 <p>Запуск за 24 часа без изменения существующего сайта</p>
               </div>
 
@@ -608,6 +608,28 @@ function App() {
         {isChatOpen && (
           <div className="chat-window">
             <div className="chat-header">
+              <div className="chat-header-buttons">
+                <button
+                  className="chat-action-button new-chat-button"
+                  onClick={handleNewChat}
+                  title="Новый чат"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" className="button-icon">
+                    <path d="M12 5v14m-7-7h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Новый чат
+                </button>
+                <button
+                  className="chat-action-button history-button"
+                  onClick={handleChatHistory}
+                  title="История чатов"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" className="button-icon">
+                    <path d="M3 3v5h5M3.05 13a9 9 0 1 0 2.5-9L3 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  История
+                </button>
+              </div>
               <button
                 className="close-chat"
                 onClick={() => setIsChatOpen(false)}
