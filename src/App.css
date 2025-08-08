@@ -737,11 +737,9 @@ body {
 @keyframes scrollBounce {
   0%, 100% {
     transform: translateX(-50%) translateY(0);
-    opacity: 0.8;
   }
   50% {
-    transform: translateX(-50%) translateY(-12px);
-    opacity: 1;
+    transform: translateX(-50%) translateY(-8px);
   }
 }
 
