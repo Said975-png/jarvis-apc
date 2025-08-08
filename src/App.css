@@ -763,9 +763,11 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 100px);
   align-content: center;
   text-align: center;
+  position: relative;
+  z-index: 5;
 }
 
 .side-decoration {
