@@ -670,62 +670,27 @@ body {
 
 .stats {
   display: flex;
-  gap: 4rem;
-  margin-top: 1rem;
+  gap: 3rem;
 }
 
 .stat-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(135deg,
-    rgba(14, 165, 233, 0.1) 0%,
-    rgba(139, 92, 246, 0.08) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  animation: statFloat 4s ease-in-out infinite;
-}
-
-.stat-item:nth-child(2) {
-  animation-delay: 0.5s;
-}
-
-.stat-item:hover {
-  transform: translateY(-5px);
-  background: linear-gradient(135deg,
-    rgba(14, 165, 233, 0.15) 0%,
-    rgba(139, 92, 246, 0.12) 100%);
-  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
-}
-
-@keyframes statFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
+  gap: 0.3rem;
 }
 
 .stat-number {
-  font-size: 1.8rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #ffffff 0%, #0ea5e9 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
 }
 
 .stat-label {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+  color: #ffffff60;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 600;
 }
 
 .scroll-indicator {
