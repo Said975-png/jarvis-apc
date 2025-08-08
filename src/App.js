@@ -156,19 +156,6 @@ function App() {
               <p className="brand-subtitle">
                 Современные решения для цифрового мира
               </p>
-              <div className="cta-section">
-                <button className="primary-button">Начать проект</button>
-                <div className="stats">
-                  <div className="stat-item">
-                    <span className="stat-number">100+</span>
-                    <span className="stat-label">Проектов</span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="stat-number">24/7</span>
-                    <span className="stat-label">Поддержка</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -198,7 +185,7 @@ function App() {
             <span className="section-number">01</span>
             <div className="section-info">
               <div className="section-badge">НАШИ ПРЕИМУЩЕСТВА</div>
-              <h2 className="section-title">Почему мы лучшие?</h2>
+              <h2 className="section-title">Почему мы лу��шие?</h2>
             </div>
           </div>
 
