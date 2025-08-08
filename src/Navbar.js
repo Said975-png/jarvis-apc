@@ -3,6 +3,7 @@ import { useAuth } from './AuthContext';
 import { useCart } from './CartContext';
 import AuthModal from './AuthModal';
 import Dashboard from './Dashboard';
+import Cart from './Cart';
 
 const Navbar = () => {
   const { user, isAuthenticated } = useAuth();
