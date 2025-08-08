@@ -1954,23 +1954,37 @@ body {
     padding: 0 1.5rem;
   }
 
-  /* Hide some side texts on mobile */
+  /* Hide side texts on mobile to prevent overlap */
   .hero-section .side-text.left-center,
   .hero-section .side-text.right-center,
-  .hero-section .side-text.top-center {
+  .hero-section .side-text.top-center,
+  .hero-section .side-text.bottom-center {
     display: none;
   }
 
   .hero-section .side-text {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
   }
 
   .hero-section .top-left,
-  .hero-section .top-right,
+  .hero-section .top-right {
+    top: 5rem;
+  }
+
   .hero-section .bottom-left,
-  .hero-section .bottom-right,
-  .hero-section .bottom-center {
-    margin: 1rem;
+  .hero-section .bottom-right {
+    bottom: 4rem;
+  }
+
+  .hero-section .top-left,
+  .hero-section .bottom-left {
+    left: 1.5rem;
+  }
+
+  .hero-section .top-right,
+  .hero-section .bottom-right {
+    right: 1.5rem;
   }
 
   .hero-section .brand-title {
