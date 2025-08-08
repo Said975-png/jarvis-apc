@@ -27,7 +27,7 @@ function App() {
     "Отличный вопрос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
-    "Наши разработчики работают 24/7, чтобы обесп��чить максимальное каче��тво продукта.",
+    "Наши разработчики работают 24/7, чтобы обесп��чить максимальное качество продукта.",
     "Хотите узнать больше о наших тарифных ��ланах? Я могу помочь выбрать подходящий вариант.",
     "Наша к��манда имеет более 15 лет оп��та в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
     "Безопасность данных - наш приоритет. Мы используем шифрование и соблюдаем все международные стандарты."
@@ -85,6 +85,10 @@ function App() {
                 <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 002 2h6a2 2 0 002-2v-6m-9 0h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
+            <div className="auth-buttons-wrapper">
+              <button className="navbar-button">Регистрация</button>
+              <button className="navbar-button-primary">Вход</button>
+            </div>
             <div className="navbar-search">
               <input
                 type="text"
@@ -97,10 +101,6 @@ function App() {
                   <path d="m21 21-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-            </div>
-            <div className="auth-buttons-wrapper">
-              <button className="navbar-button">Регистрация</button>
-              <button className="navbar-button-primary">Вход</button>
             </div>
           </div>
         </div>
@@ -351,7 +351,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Техпод��ержка 6 месяц��в</span>
+                  <span>Техподдержка 6 месяц��в</span>
                 </div>
               </div>
               <button className="plan-button">Выбрать план</button>
