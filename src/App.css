@@ -388,7 +388,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Side positions - только два текста */
+/* Side positions - только дв�� текста */
 .left-center {
   top: 50%;
   left: 1rem;
@@ -4433,8 +4433,8 @@ body {
 }
 
 .save-button {
-  background: linear-gradient(135deg, #00d4ff, #8a2be2);
-  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   color: white;
   font-family: 'Exo 2', sans-serif;
@@ -4447,8 +4447,9 @@ body {
 }
 
 .save-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
 }
 
 .account-actions {
