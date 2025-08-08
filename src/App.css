@@ -2573,13 +2573,11 @@ body {
   transition: transform 0.6s ease;
 }
 
-.chat-button:hover::before,
-.action-button:hover::before {
+.chat-button:hover::before {
   transform: translateX(100%);
 }
 
-.chat-button:hover,
-.action-button:hover {
+.chat-button:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
