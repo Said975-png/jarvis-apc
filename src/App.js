@@ -63,6 +63,56 @@ function App() {
           <span className="scroll-text">Прокрутите вниз</span>
         </div>
       </section>
+
+      <section className="advantages-section">
+        <div className="background-overlay"></div>
+        <div className="planet-arc-reverse"></div>
+        <div className="container">
+          <div className="content-wrapper">
+            <div className="main-content">
+              <div className="brand-badge">ПРЕИМУЩЕСТВА</div>
+              <h2 className="section-title">
+                <span className="jarvis-text">ПОЧЕМУ ВЫБИРАЮТ НАС</span>
+              </h2>
+              <div className="title-underline"></div>
+
+              <div className="advantages-grid">
+                <div className="advantage-card">
+                  <div className="advantage-icon">🤖</div>
+                  <h3 className="advantage-title">ИИ-технологии</h3>
+                  <p className="advantage-description">
+                    Используем передовые технологии искусственного интеллекта для создания уникальных дизайнов
+                  </p>
+                </div>
+
+                <div className="advantage-card">
+                  <div className="advantage-icon">⚡</div>
+                  <h3 className="advantage-title">Быстрая разработка</h3>
+                  <p className="advantage-description">
+                    Сокращаем время разработки в 3 раза благодаря автоматизации процессов
+                  </p>
+                </div>
+
+                <div className="advantage-card">
+                  <div className="advantage-icon">🎨</div>
+                  <h3 className="advantage-title">Современный дизайн</h3>
+                  <p className="advantage-description">
+                    Создаем актуальные дизайны, соответствующие последним трендам
+                  </p>
+                </div>
+
+                <div className="advantage-card">
+                  <div className="advantage-icon">🔧</div>
+                  <h3 className="advantage-title">Полная поддержка</h3>
+                  <p className="advantage-description">
+                    Обеспечиваем техническую поддержку и сопровождение проектов 24/7
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
