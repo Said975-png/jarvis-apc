@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
   const [useSupabase, setUseSupabase] = useState(true);
   const fallbackAuth = createFallbackAuth();
 
-  // Проверяем авторизацию при загрузке
+  // Проверяем авторизаци�� при загрузке
   useEffect(() => {
     const initAuth = async () => {
       try {
@@ -209,19 +209,37 @@ export const AuthProvider = ({ children }) => {
   // Функция выхода
   const logout = async () => {
     try {
-      const { error } = await supabase.auth.signOut();
-      if (error) {
-        console.error('Ошибка выхода:', error);
+      if (useSupabase) {
+        const { error } = await supabase.auth.signOut();
+        if (error) {
+          console.error('Ошибка выхода:', error);
+        }
+      } else {
+        localStorage.removeItem('jarvis_current_user');
       }
       setUser(null);
     } catch (error) {
       console.error('Ошибка выхода:', error);
+      setUser(null);
     }
   };
 
   // Функция обновления профиля
   const updateProfile = async (updates) => {
     if (!user) return { success: false, error: 'Пользователь не авторизован' };
+
+    if (!useSupabase) {
+      try {
+        const result = await fallbackAuth.updateProfile(user.id, updates);
+        if (result.success) {
+          setUser(result.data);
+          localStorage.setItem('jarvis_current_user', JSON.stringify(result.data));
+        }
+        return result;
+      } catch (error) {
+        return { success: false, error: error.message };
+      }
+    }
 
     try {
       const { data, error } = await supabase
@@ -245,6 +263,10 @@ export const AuthProvider = ({ children }) => {
   // Функция загрузки проектов пользователя
   const loadUserProjects = async () => {
     if (!user) return { success: false, error: 'Пользователь не авторизован' };
+
+    if (!useSupabase) {
+      return await fallbackAuth.loadUserProjects();
+    }
 
     try {
       const { data, error } = await supabase
@@ -310,7 +332,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Функция создания нового чата
+  // Функция создания новог�� чата
   const createChat = async (title) => {
     if (!user) return { success: false, error: 'Пользователь не авторизован' };
 
