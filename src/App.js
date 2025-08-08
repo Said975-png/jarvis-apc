@@ -378,7 +378,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>И�� помощник для клиентов</span>
+                  <span>ИИ помощник для клиентов</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -416,7 +416,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>��гро��ный функционал</span>
+                  <span>Огромный функционал</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -460,7 +460,7 @@ function App() {
             <span className="section-number">03</span>
             <div className="section-info">
               <div className="section-badge">КАК РАБОТАЕТ ДЖАРВИС</div>
-              <h2 className="section-title">Умный помощник для ваших клиентов</h2>
+              <h2 className="section-title">Умный помощник для ваших кли��нтов</h2>
             </div>
           </div>
 
@@ -487,7 +487,7 @@ function App() {
             </div>
 
             <div className="capabilities-section">
-              <h3>Возможности системы</h3>
+              <h3>Возмо��ности системы</h3>
               <div className="capabilities-grid">
                 <div className="capability-item">
                   <div className="capability-header">
