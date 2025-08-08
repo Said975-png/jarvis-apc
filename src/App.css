@@ -899,31 +899,38 @@ body {
 }
 
 .scroll-arrow {
-  width: 2px;
-  height: 30px;
-  background: linear-gradient(180deg, transparent 0%, #ffffff60 50%, transparent 100%);
+  width: 3px;
+  height: 35px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(14, 165, 233, 0.8) 30%,
+    rgba(139, 92, 246, 0.9) 70%,
+    transparent 100%);
   position: relative;
+  border-radius: 2px;
 }
 
 .scroll-arrow::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 6px solid #ffffff60;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid rgba(14, 165, 233, 0.8);
+  filter: drop-shadow(0 0 5px rgba(14, 165, 233, 0.5));
 }
 
 .scroll-text {
-  font-size: 0.7rem;
-  color: #ffffff40;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 500;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 @keyframes scrollBounce {
