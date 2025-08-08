@@ -2859,12 +2859,15 @@ body {
 }
 
 .chat-input {
-  padding: 20px;
+  padding: 30px;
   background: rgba(255, 255, 255, 0.02);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .chat-input input {
