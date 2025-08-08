@@ -163,7 +163,7 @@ function App() {
               <div className="title-underline"></div>
               <div className="brand-description-wrapper">
                 <h2 className="brand-description">
-                  Создаем <span className="highlight-text">крутые дизайны</span> сайтов<br />
+                  Создаем <span className="highlight-text">крутые дизайн��</span> сайтов<br />
                   с искусственным интеллектом
                 </h2>
                 <div className="brand-features">
@@ -383,7 +383,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Улучшенный И�� помощник</span>
+                  <span>Улучшенн��й И�� помощник</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -399,6 +399,148 @@ function App() {
                 </div>
               </div>
               <button className="plan-button">Выбрать план</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="how-it-works-section">
+        <div className="geometric-bg">
+          <div className="floating-element element-1"></div>
+          <div className="floating-element element-2"></div>
+          <div className="floating-element element-3"></div>
+          <div className="floating-element element-4"></div>
+          <div className="floating-element element-5"></div>
+        </div>
+        <div className="data-stream">
+          <div className="stream-line stream-1"></div>
+          <div className="stream-line stream-2"></div>
+          <div className="stream-line stream-3"></div>
+        </div>
+
+        <div className="container">
+          <div className="section-header">
+            <span className="section-number">03</span>
+            <div className="section-info">
+              <div className="section-badge">КАК РАБОТАЕТ ДЖАРВИС</div>
+              <h2 className="section-title">Умный помощник для ваших клиентов</h2>
+            </div>
+          </div>
+
+          <div className="how-it-works-content">
+            <div className="intro-section">
+              <div className="intro-text">
+                <h3>Превратите каждого посетителя в клиента</h3>
+                <p>Джарвис анализирует поведение пользователей и предлагает персонализированные решения в режиме реального времени</p>
+              </div>
+              <div className="stats-bar">
+                <div className="stat">
+                  <span className="stat-value">+40%</span>
+                  <span className="stat-label">Конверсия</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-value">3x</span>
+                  <span className="stat-label">Время на сайте</span>
+                </div>
+                <div className="stat">
+                  <span className="stat-value">-60%</span>
+                  <span className="stat-label">Отказов</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="capabilities-section">
+              <h3>Возможности системы</h3>
+              <div className="capabilities-grid">
+                <div className="capability-item">
+                  <div className="capability-header">
+                    <div className="capability-icon">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" stroke="currentColor" strokeWidth="2"/>
+                      </svg>
+                    </div>
+                    <h4>Умная рекомендация</h4>
+                  </div>
+                  <p>Анализирует историю покупок, поведение на сайте и предпочтения для точных рекомендаций товаров</p>
+                </div>
+
+                <div className="capability-item">
+                  <div className="capability-header">
+                    <div className="capability-icon">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M21 15.46L19.59 16.88L18.17 15.46L19.59 14.05L21 15.46ZM20.71 7.04C20.31 6.65 19.68 6.65 19.29 7.04L18.17 8.16L20.84 10.83L21.96 9.71C22.35 9.32 22.35 8.69 21.96 8.3L20.71 7.04ZM17.46 8.87L10 16.33V19H12.67L20.13 11.54L17.46 8.87Z" fill="currentColor"/>
+                      </svg>
+                    </div>
+                    <h4>Персонализация</h4>
+                  </div>
+                  <p>Адаптирует интерфейс и контент под каждого пользователя, создавая уникальный опыт покупок</p>
+                </div>
+
+                <div className="capability-item">
+                  <div className="capability-header">
+                    <div className="capability-icon">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 3.5C14.8 3.4 14.6 3.4 14.4 3.5L9 7V9L15 11.5C15.2 11.6 15.4 11.6 15.6 11.5L21 9Z" fill="currentColor"/>
+                      </svg>
+                    </div>
+                    <h4>Поддержка 24/7</h4>
+                  </div>
+                  <p>Мгновенные ответы на вопросы клиентов в любое время, без выходных и праздников</p>
+                </div>
+
+                <div className="capability-item">
+                  <div className="capability-header">
+                    <div className="capability-icon">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M3 13H11V3H3V13ZM3 21H11V15H3V21ZM13 21H21V11H13V21ZM13 3V9H21V3H13Z" fill="currentColor"/>
+                      </svg>
+                    </div>
+                    <h4>Аналитика продаж</h4>
+                  </div>
+                  <p>Детальная отчетность по эффективности, популярным товарам и поведению покупателей</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="process-section">
+              <div className="process-header">
+                <h3>Простая интеграция</h3>
+                <p>Запуск за 24 часа без изменения существующего сайта</p>
+              </div>
+
+              <div className="process-timeline">
+                <div className="timeline-item">
+                  <div className="timeline-content">
+                    <div className="timeline-step">01</div>
+                    <h4>Анализ сайта</h4>
+                    <p>Изучаем структуру каталога и особенности бизнеса</p>
+                  </div>
+                </div>
+
+                <div className="timeline-item">
+                  <div className="timeline-content">
+                    <div className="timeline-step">02</div>
+                    <h4>Настройка ИИ</h4>
+                    <p>Обучаем систему на ваших данных и товарах</p>
+                  </div>
+                </div>
+
+                <div className="timeline-item">
+                  <div className="timeline-content">
+                    <div className="timeline-step">03</div>
+                    <h4>Интеграция</h4>
+                    <p>Встраиваем Джарвис в ваш сайт одной строкой кода</p>
+                  </div>
+                </div>
+
+                <div className="timeline-item">
+                  <div className="timeline-content">
+                    <div className="timeline-step">04</div>
+                    <h4>Запуск</h4>
+                    <p>Система готова к работе и начинает помогать клиентам</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -429,16 +571,6 @@ function App() {
         {isChatOpen && (
           <div className="chat-window">
             <div className="chat-header">
-              <div className="chat-header-center">
-                <div className="jarvis-avatar">
-                  <div className="avatar-glow"></div>
-                  <span className="avatar-text">J</span>
-                </div>
-                <div className="chat-info">
-                  <h3>Джарвис</h3>
-                  <span className="status">В сети</span>
-                </div>
-              </div>
               <button
                 className="close-chat"
                 onClick={() => setIsChatOpen(false)}
