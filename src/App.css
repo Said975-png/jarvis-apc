@@ -2567,6 +2567,32 @@ body {
   .particle-system, .neural-network, .data-stream {
     display: none;
   }
+
+  .jarvis-demo-section {
+    padding: 4rem 0;
+  }
+
+  .demo-card {
+    padding: 1.5rem;
+  }
+
+  .demo-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .demo-card p {
+    font-size: 0.9rem;
+  }
+
+  .demo-messages {
+    height: 250px;
+    padding: 1rem;
+  }
+
+  .demo-message-content {
+    font-size: 0.85rem;
+    padding: 0.7rem 0.9rem;
+  }
 }
 
 /* Jarvis Demo Section */
