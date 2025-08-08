@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 
 function App() {
-
   return (
     <div className="jarvis-app">
       <nav className="navbar">
@@ -149,7 +148,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Персональный подход</h4>
                 </div>
-                <p>Каж��ый проект уникален - создаем индивидуальные решения под ваши задачи</p>
+                <p>Каждый проект уникален - создаем индивидуальные решения под ваши задачи</p>
               </div>
 
               <div className="advantage-item">
@@ -272,7 +271,7 @@ function App() {
             <div className="pricing-card max-plan">
               <div className="plan-header">
                 <div className="plan-badge">MAX</div>
-                <h3 className="plan-name">Максимальный сайт</h3>
+                <h3 className="plan-name">Макси��альный сайт</h3>
                 <div className="plan-price">
                   <span className="price-amount">5.000.000</span>
                   <span className="price-currency">сум</span>
@@ -342,92 +341,100 @@ function App() {
           </div>
 
           <div className="ai-cards-container">
-            <div className="ai-slider">
-              <div className={`slide ${currentSlide === 0 ? 'active' : ''}`}>
-                <div className="slide-content">
-                  <div className="slide-icon">
+            <div className="ai-card">
+              <div className="card-inner">
+                <div className="card-front">
+                  <div className="card-icon">
                     <div className="icon-brain"></div>
                   </div>
-                  <h3 className="slide-title">Умный анализ</h3>
-                  <p className="slide-description">
-                    Джарвис анализирует поведение пользователей на сайте в реальном времени,
+                  <h3 className="card-title">Умный анализ</h3>
+                  <div className="card-number">01</div>
+                </div>
+                <div className="card-back">
+                  <h3 className="card-title-back">Умный анализ</h3>
+                  <p className="card-description">
+                    Джарвис анализирует поведение пользователей на сайте в реальном времени, 
                     понимает их потребности и предлагает персонализированные решения
                   </p>
-                  <div className="slide-features">
+                  <div className="card-features">
                     <span className="feature-tag">Машинное обучение</span>
                     <span className="feature-tag">Анализ данных</span>
                     <span className="feature-tag">Прогнозирование</span>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className={`slide ${currentSlide === 1 ? 'active' : ''}`}>
-                <div className="slide-content">
-                  <div className="slide-icon">
+            <div className="ai-card">
+              <div className="card-inner">
+                <div className="card-front">
+                  <div className="card-icon">
                     <div className="icon-chat"></div>
                   </div>
-                  <h3 className="slide-title">Живое общение</h3>
-                  <p className="slide-description">
-                    ИИ помощник общается с клиентами как настоящий человек, понимает контекст,
-                    эмоции и дает персональн��е рекомендации по товарам и услугам
+                  <h3 className="card-title">Живое общение</h3>
+                  <div className="card-number">02</div>
+                </div>
+                <div className="card-back">
+                  <h3 className="card-title-back">Живое общение</h3>
+                  <p className="card-description">
+                    ИИ помощник общается с клиентами как настоящий человек, понимает контекст, 
+                    эмоции и дает персональные рекомендации по товарам и услугам
                   </p>
-                  <div className="slide-features">
+                  <div className="card-features">
                     <span className="feature-tag">НЛП технологии</span>
                     <span className="feature-tag">Эмоциональный интеллект</span>
                     <span className="feature-tag">24/7 поддержка</span>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className={`slide ${currentSlide === 2 ? 'active' : ''}`}>
-                <div className="slide-content">
-                  <div className="slide-icon">
+            <div className="ai-card">
+              <div className="card-inner">
+                <div className="card-front">
+                  <div className="card-icon">
                     <div className="icon-target"></div>
                   </div>
-                  <h3 className="slide-title">Точные рекомендации</h3>
-                  <p className="slide-description">
-                    Анализируя предпочтения и историю покупок, Джарвис предлагает именно те товары,
+                  <h3 className="card-title">Точные рекомендации</h3>
+                  <div className="card-number">03</div>
+                </div>
+                <div className="card-back">
+                  <h3 className="card-title-back">Точные рекомендации</h3>
+                  <p className="card-description">
+                    Анализируя предпочтения и историю покупок, Джарвис предлагает именно те товары, 
                     которые нужны клиенту, увеличивая конверсию на 300%
                   </p>
-                  <div className="slide-features">
+                  <div className="card-features">
                     <span className="feature-tag">Персонализация</span>
                     <span className="feature-tag">Увеличение продаж</span>
                     <span className="feature-tag">Конверсия +300%</span>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className={`slide ${currentSlide === 3 ? 'active' : ''}`}>
-                <div className="slide-content">
-                  <div className="slide-icon">
+            <div className="ai-card">
+              <div className="card-inner">
+                <div className="card-front">
+                  <div className="card-icon">
                     <div className="icon-shield"></div>
                   </div>
-                  <h3 className="slide-title">Безопас��ость и надежность</h3>
-                  <p className="slide-description">
-                    Все данные обрабатываются с максимальной защитой, соблюдаются международные
-                    стандарды безопасности, а система работает стабильно 99.9% времени
+                  <h3 className="card-title">Безопасность</h3>
+                  <div className="card-number">04</div>
+                </div>
+                <div className="card-back">
+                  <h3 className="card-title-back">Безопасность и надежность</h3>
+                  <p className="card-description">
+                    Все данные обрабатываются с максимальной защитой, соблюдаются международные 
+                    стандарты безопасности, а система работает стабильно 99.9% времени
                   </p>
-                  <div className="slide-features">
+                  <div className="card-features">
                     <span className="feature-tag">Шифрование данных</span>
                     <span className="feature-tag">99.9% Uptime</span>
                     <span className="feature-tag">GDPR соответствие</span>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="slider-indicators">
-              {[0, 1, 2, 3].map((index) => (
-                <div
-                  key={index}
-                  className={`indicator ${currentSlide === index ? 'active' : ''}`}
-                  onClick={() => handleIndicatorClick(index)}
-                ></div>
-              ))}
-            </div>
-
-            <div className="slider-progress">
-              <div className={`progress-bar ${isPaused ? 'paused' : ''}`}></div>
             </div>
           </div>
         </div>
