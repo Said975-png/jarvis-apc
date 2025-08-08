@@ -13,6 +13,7 @@ function App() {
   ]);
   const [inputMessage, setInputMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [chatHistory, setChatHistory] = useState([]);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -35,7 +36,7 @@ function App() {
   }, [isChatOpen]);
 
   const jarvisResponses = [
-    "Отличный во��рос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
+    "Отличный во��рос! Наша команда используе�� самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обесп��чить максимальное качество продукта.",
@@ -74,6 +75,42 @@ function App() {
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleSendMessage();
+    }
+  };
+
+  const handleNewChat = () => {
+    // Сохранить текущий чат в историю, если есть сообщения
+    if (messages.length > 1) {
+      const currentChat = {
+        id: Date.now(),
+        messages: [...messages],
+        timestamp: new Date(),
+        title: `Чат ${new Date().toLocaleDateString('ru-RU')}`
+      };
+      setChatHistory(prev => [currentChat, ...prev]);
+    }
+
+    // Очистить текущий чат
+    setMessages([
+      {
+        id: 1,
+        text: "Привет! Я Джарвис, ваш ИИ помощник. Как дела? Чем могу помочь?",
+        sender: "jarvis",
+        timestamp: new Date()
+      }
+    ]);
+    setInputMessage("");
+  };
+
+  const handleChatHistory = () => {
+    // Показать историю чатов (пока простой alert, можно расширить)
+    if (chatHistory.length === 0) {
+      alert('История чатов пуста');
+    } else {
+      const historyText = chatHistory.map(chat =>
+        `${chat.title} - ${chat.timestamp.toLocaleString('ru-RU')}`
+      ).join('\n');
+      alert('История чатов:\n' + historyText);
     }
   };
 
@@ -504,7 +541,7 @@ function App() {
 
             <div className="process-section">
               <div className="process-header">
-                <h3>Простая интеграция</h3>
+                <h3>Простая ��нтеграция</h3>
                 <p>Запуск за 24 часа без изменения существующего сайта</p>
               </div>
 
