@@ -36,7 +36,7 @@ function App() {
               </h1>
               <div className="title-underline"></div>
               <p className="brand-description">
-                Создаем крутые диз��йны сайтов с искусственным интеллектом
+                Создаем крутые дизайны сайтов с искусственным интелл��ктом
               </p>
               <p className="brand-subtitle">
                 Современные решения для цифрового мира
