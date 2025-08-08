@@ -22,9 +22,41 @@ const Dashboard = ({ isOpen, onClose }) => {
     }
   };
 
+  useEffect(() => {
+    if (isOpen && user) {
+      // Загружаем заказы п��льзователя при открытии Dashboard
+      const orders = getUserOrders();
+      setUserOrders(orders);
+    }
+  }, [isOpen, user, getUserOrders]);
+
   const handleLogout = () => {
     logout();
     onClose();
+  };
+
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleString('ru-RU', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
+
+  const formatPrice = (price) => {
+    return price.toLocaleString('ru-RU');
+  };
+
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'pending': return '#f59e0b';
+      case 'accepted': return '#10b981';
+      case 'rejected': return '#ef4444';
+      case 'completed': return '#8b5cf6';
+      default: return '#6b7280';
+    }
   };
 
   const projects = [
@@ -191,7 +223,7 @@ const Dashboard = ({ isOpen, onClose }) => {
                     <polyline points="16,17 21,12 16,7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <line x1="21" y1="12" x2="9" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  Выйти из аккаунта
+                  Вый��и из аккаунта
                 </button>
               </div>
             </div>
