@@ -219,6 +219,18 @@ body {
   height: 18px;
 }
 
+.navbar-icon-button.admin-button {
+  background: rgba(245, 101, 101, 0.15);
+  border: 1px solid rgba(245, 101, 101, 0.3);
+  color: rgba(245, 101, 101, 0.9);
+}
+
+.navbar-icon-button.admin-button:hover {
+  background: rgba(245, 101, 101, 0.25);
+  border-color: rgba(245, 101, 101, 0.5);
+  color: #f56565;
+}
+
 .navbar-button-primary {
   padding: 0.5rem 1.2rem;
   background: transparent;
@@ -257,7 +269,7 @@ body {
   display: none;
 }
 
-/* Желеобразные частицы */
+/* Желе��бразные частицы */
 .hero-section .particle-system {
   display: block;
 }
