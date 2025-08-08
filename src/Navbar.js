@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
+import { useCart } from './CartContext';
 import AuthModal from './AuthModal';
 import Dashboard from './Dashboard';
 
