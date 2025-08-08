@@ -39,7 +39,7 @@ function App() {
     "Отличный во��рос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
-    "Наши разработчики работают 24/7, чтобы обесп��чить максимальное качество продукта.",
+    "Наши разработчики ра��отают 24/7, чтобы обесп��чить максимальное качество продукта.",
     "Хотите узнать больше о наших тарифных ��ланах? Я могу помочь выбрать подходящий вариант.",
     "Наша к��манда имеет более 15 лет оп����та в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
     "Безопасность данных - наш приоритет. Мы используем шифрование и соблюдаем все международные стандарты."
@@ -288,7 +288,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Гарантия качества</h4>
                 </div>
-                <p>Предоставляем гарантию на все работы и бесплатную техподдержку</p>
+                <p>Предоставляем гарантию на все работы и бесплат��ую техподдержку</p>
               </div>
 
               <div className="advantage-item">
@@ -607,86 +607,130 @@ function App() {
         {/* Chat Window */}
         {isChatOpen && (
           <div className="chat-window">
-            <div className="chat-header">
-              <div className="chat-header-buttons">
+            {/* Left Sidebar */}
+            <div className="chat-sidebar">
+              <div className="sidebar-header">
+                <div className="jarvis-logo">
+                  <span className="logo-text">JARVIS</span>
+                  <span className="logo-subtitle">AI Assistant</span>
+                </div>
+              </div>
+
+              <div className="sidebar-actions">
                 <button
-                  className="chat-action-button new-chat-button"
+                  className="sidebar-button new-chat-button"
                   onClick={handleNewChat}
                   title="Новый чат"
                 >
-                  <svg viewBox="0 0 24 24" fill="none" className="button-icon">
+                  <svg viewBox="0 0 24 24" fill="none" className="sidebar-icon">
                     <path d="M12 5v14m-7-7h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   Новый чат
                 </button>
-                <button
-                  className="chat-action-button history-button"
-                  onClick={handleChatHistory}
-                  title="История чатов"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" className="button-icon">
-                    <path d="M3 3v5h5M3.05 13a9 9 0 1 0 2.5-9L3 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  История
-                </button>
               </div>
-              <button
-                className="close-chat"
-                onClick={() => setIsChatOpen(false)}
-                title="Закрыть чат"
-              >
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </button>
+
+              <div className="sidebar-history">
+                <div className="history-header">
+                  <h4>История чатов</h4>
+                </div>
+                <div className="history-list">
+                  {chatHistory.length === 0 ? (
+                    <div className="no-history">Пока нет истории чатов</div>
+                  ) : (
+                    chatHistory.map(chat => (
+                      <div key={chat.id} className="history-item">
+                        <svg viewBox="0 0 24 24" fill="none" className="history-icon">
+                          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" strokeWidth="2"/>
+                        </svg>
+                        <div className="history-content">
+                          <div className="history-title">{chat.title}</div>
+                          <div className="history-time">{chat.timestamp.toLocaleString('ru-RU', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                          })}</div>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
             </div>
 
-            <div className="chat-messages">
-              {messages.map(message => (
-                <div key={message.id} className={`message ${message.sender}`}>
-                  <div className="message-content">
-                    {message.text}
+            {/* Chat Content */}
+            <div className="chat-content">
+              <div className="chat-header">
+                <div className="chat-info">
+                  <div className="jarvis-avatar">
+                    <div className="avatar-glow"></div>
+                    <span className="avatar-text">J</span>
                   </div>
-                  <div className="message-time">
-                    {message.timestamp.toLocaleTimeString('ru-RU', {
-                      hour: '2-digit',
-                      minute: '2-digit'
-                    })}
-                  </div>
-                </div>
-              ))}
-
-              {isTyping && (
-                <div className="message jarvis">
-                  <div className="message-content typing">
-                    <div className="typing-indicator">
-                      <span></span>
-                      <span></span>
-                      <span></span>
+                  <div className="chat-title">
+                    <h3>Джарвис</h3>
+                    <div className="status">
+                      <span>Онлайн</span>
                     </div>
                   </div>
                 </div>
-              )}
-              <div ref={messagesEndRef} />
-            </div>
+                <button
+                  className="close-chat"
+                  onClick={() => setIsChatOpen(false)}
+                  title="Закрыть чат"
+                >
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </button>
+              </div>
 
-            <div className="chat-input">
-              <input
-                type="text"
-                placeholder="Напишите сообщение..."
-                value={inputMessage}
-                onChange={(e) => setInputMessage(e.target.value)}
-                onKeyPress={handleKeyPress}
-              />
-              <button
-                className="send-button"
-                onClick={handleSendMessage}
-                disabled={inputMessage.trim() === ""}
-              >
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
+              <div className="chat-messages">
+                {messages.map(message => (
+                  <div key={message.id} className={`message ${message.sender}`}>
+                    <div className="message-content">
+                      {message.text}
+                    </div>
+                    <div className="message-time">
+                      {message.timestamp.toLocaleTimeString('ru-RU', {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                      })}
+                    </div>
+                  </div>
+                ))}
+
+                {isTyping && (
+                  <div className="message jarvis">
+                    <div className="message-content typing">
+                      <div className="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+
+              <div className="chat-input">
+                <input
+                  type="text"
+                  placeholder="Напишите сообщение..."
+                  value={inputMessage}
+                  onChange={(e) => setInputMessage(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                />
+                <button
+                  className="send-button"
+                  onClick={handleSendMessage}
+                  disabled={inputMessage.trim() === ""}
+                >
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         )}
