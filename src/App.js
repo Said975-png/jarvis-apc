@@ -164,7 +164,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Быстрые сроки</h4>
                 </div>
-                <p>Оптимизированные процессы позволяют сократить время разработки вдвое</p>
+                <p>О��тимизированные процессы позволяют сократить время разработки вдвое</p>
               </div>
             </div>
           </div>
@@ -304,6 +304,126 @@ function App() {
                 </div>
               </div>
               <button className="plan-button">Выбрать план</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="ai-showcase-section">
+        <div className="geometric-bg">
+          <div className="floating-element element-1"></div>
+          <div className="floating-element element-2"></div>
+          <div className="floating-element element-3"></div>
+          <div className="floating-element element-4"></div>
+          <div className="floating-element element-5"></div>
+        </div>
+        <div className="data-stream">
+          <div className="stream-line stream-1"></div>
+          <div className="stream-line stream-2"></div>
+          <div className="stream-line stream-3"></div>
+        </div>
+        <div className="neural-network">
+          <div className="neural-line line-1"></div>
+          <div className="neural-line line-2"></div>
+          <div className="neural-line line-3"></div>
+          <div className="neural-node node-1"></div>
+          <div className="neural-node node-2"></div>
+          <div className="neural-node node-3"></div>
+        </div>
+
+        <div className="container">
+          <div className="section-header">
+            <span className="section-number">03</span>
+            <div className="section-info">
+              <div className="section-badge">ИИ ВОЗМОЖНОСТИ</div>
+              <h2 className="section-title">Как работает Джарвис</h2>
+            </div>
+          </div>
+
+          <div className="ai-slider-container">
+            <div className="ai-slider">
+              <div className="slide active" data-slide="0">
+                <div className="slide-content">
+                  <div className="slide-icon">
+                    <div className="icon-brain"></div>
+                  </div>
+                  <h3 className="slide-title">Умный анализ</h3>
+                  <p className="slide-description">
+                    Джарвис анализирует поведение пользователей на сайте в реальном времени,
+                    понимает их потребности и предлагает персонализированные решения
+                  </p>
+                  <div className="slide-features">
+                    <span className="feature-tag">Машинное обучение</span>
+                    <span className="feature-tag">Анализ данных</span>
+                    <span className="feature-tag">Прогнозирован��е</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="slide" data-slide="1">
+                <div className="slide-content">
+                  <div className="slide-icon">
+                    <div className="icon-chat"></div>
+                  </div>
+                  <h3 className="slide-title">Живое общение</h3>
+                  <p className="slide-description">
+                    ИИ помощник общается с клиентами как настоящий человек, понимает контекст,
+                    эмоции и дает персональные рекомендации по товарам и услугам
+                  </p>
+                  <div className="slide-features">
+                    <span className="feature-tag">НЛП технологии</span>
+                    <span className="feature-tag">Эмоциональный интеллект</span>
+                    <span className="feature-tag">24/7 поддержка</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="slide" data-slide="2">
+                <div className="slide-content">
+                  <div className="slide-icon">
+                    <div className="icon-target"></div>
+                  </div>
+                  <h3 className="slide-title">Точные рекомендации</h3>
+                  <p className="slide-description">
+                    Анализируя предпочтения и историю покупок, Джарвис предлагает именно те товары,
+                    которые нужны клиенту, увеличивая конверсию на 300%
+                  </p>
+                  <div className="slide-features">
+                    <span className="feature-tag">Персонализация</span>
+                    <span className="feature-tag">Увеличение продаж</span>
+                    <span className="feature-tag">Конверсия +300%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="slide" data-slide="3">
+                <div className="slide-content">
+                  <div className="slide-icon">
+                    <div className="icon-shield"></div>
+                  </div>
+                  <h3 className="slide-title">Безопасность и надежность</h3>
+                  <p className="slide-description">
+                    Все данные обрабатываются с максимальной защитой, соблюдаются международные
+                    стандарты безопасности, а система работает стабильно 99.9% времени
+                  </p>
+                  <div className="slide-features">
+                    <span className="feature-tag">Шифрование данных</span>
+                    <span className="feature-tag">99.9% Uptime</span>
+                    <span className="feature-tag">GDPR соответствие</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="slider-indicators">
+              <div className="indicator active" data-slide="0"></div>
+              <div className="indicator" data-slide="1"></div>
+              <div className="indicator" data-slide="2"></div>
+              <div className="indicator" data-slide="3"></div>
+            </div>
+
+            <div className="slider-progress">
+              <div className="progress-bar"></div>
             </div>
           </div>
         </div>
