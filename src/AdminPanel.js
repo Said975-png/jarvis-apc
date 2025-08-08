@@ -7,6 +7,66 @@ const AdminPanel = () => {
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [filterStatus, setFilterStatus] = useState('all');
 
+  const addTestOrder = () => {
+    const testOrder = {
+      id: Date.now().toString(),
+      userId: 'test-user-' + Date.now(),
+      customerInfo: {
+        fullName: 'Тестовый Клиент',
+        phone: '+998901234567',
+        email: 'test@example.com',
+        name: 'Тестовый Клиент'
+      },
+      items: [
+        {
+          id: 'test-item-' + Date.now(),
+          planType: 'pro',
+          name: 'PRO План',
+          price: 299000,
+          quantity: 1,
+          features: ['Все функции Basic', 'ИИ помощник', 'Расширенная аналитика']
+        }
+      ],
+      total: 299000,
+      status: 'pending',
+      statusText: 'В ожидании',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      notes: 'Тестовый заказ для проверки системы'
+    };
+
+    // Добавляем тестовый заказ в localStorage
+    const existingOrders = JSON.parse(localStorage.getItem('jarvis_orders') || '[]');
+    const updatedOrders = [testOrder, ...existingOrders];
+    localStorage.setItem('jarvis_orders', JSON.stringify(updatedOrders));
+
+    // Обновляем список заказов
+    loadOrders();
+
+    // Показываем уведомление
+    const notification = document.createElement('div');
+    notification.innerHTML = `
+      <div style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(34, 197, 94, 0.9);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        z-index: 50000;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+      ">
+        ✅ Тестовый заказ добавлен!
+      </div>
+    `;
+
+    document.body.appendChild(notification);
+    setTimeout(() => notification.remove(), 3000);
+  };
+
   useEffect(() => {
     loadOrders();
   }, []);
@@ -123,6 +183,12 @@ const AdminPanel = () => {
                 </svg>
                 Обновить
               </button>
+              <button onClick={addTestOrder} className="refresh-btn">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 5v14m-7-7h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Тестовый заказ
+              </button>
             </div>
           </div>
 
@@ -234,7 +300,7 @@ const AdminPanel = () => {
                   <strong>Создан:</strong> {formatDate(selectedOrder.createdAt)}
                 </div>
                 <div className="detail-item">
-                  <strong>Обновлен:</strong> {formatDate(selectedOrder.updatedAt)}
+                  <strong>О��новлен:</strong> {formatDate(selectedOrder.updatedAt)}
                 </div>
               </div>
 

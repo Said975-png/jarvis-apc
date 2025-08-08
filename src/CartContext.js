@@ -38,6 +38,89 @@ export const CartProvider = ({ children }) => {
         console.error('Ошибка загрузки заказов:', error);
         localStorage.removeItem('jarvis_orders');
       }
+    } else {
+      // Добавляем тестовые заказы если их нет
+      const testOrders = [
+        {
+          id: '1701234567890',
+          userId: 'test-user-1',
+          customerInfo: {
+            fullName: 'Иван Петров',
+            phone: '+998901234567',
+            email: 'ivan@example.com',
+            name: 'Иван Петров'
+          },
+          items: [
+            {
+              id: 'item-1',
+              planType: 'pro',
+              name: 'PRO План',
+              price: 299000,
+              quantity: 1,
+              features: ['Все функции Basic', 'ИИ помощник', 'Расширенная аналитика']
+            }
+          ],
+          total: 299000,
+          status: 'pending',
+          statusText: 'В ожидании',
+          createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(), // 2 часа назад
+          updatedAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+          notes: 'Срочный заказ для корпоративного сайта'
+        },
+        {
+          id: '1701234567891',
+          userId: 'test-user-2',
+          customerInfo: {
+            fullName: 'Анна Сидорова',
+            phone: '+998901234568',
+            email: 'anna@example.com',
+            name: 'Анна Сидорова'
+          },
+          items: [
+            {
+              id: 'item-2',
+              planType: 'basic',
+              name: 'BASIC План',
+              price: 149000,
+              quantity: 1,
+              features: ['Базовый дизайн', 'Адаптивная верстка', 'SEO оптимизация']
+            }
+          ],
+          total: 149000,
+          status: 'accepted',
+          statusText: 'Принято',
+          createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(), // 1 день назад
+          updatedAt: new Date(Date.now() - 23 * 60 * 60 * 1000).toISOString(),
+          notes: ''
+        },
+        {
+          id: '1701234567892',
+          userId: 'test-user-3',
+          customerInfo: {
+            fullName: 'Олег Васильев',
+            phone: '+998901234569',
+            email: 'oleg@example.com',
+            name: 'Олег Васильев'
+          },
+          items: [
+            {
+              id: 'item-3',
+              planType: 'max',
+              name: 'MAX План',
+              price: 499000,
+              quantity: 2,
+              features: ['Все функции Pro', 'Огромный функционал', 'Улучшенный ИИ']
+            }
+          ],
+          total: 998000,
+          status: 'pending',
+          statusText: 'В ожидании',
+          createdAt: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(), // 3 часа назад
+          updatedAt: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
+          notes: 'Заказ для интернет-магазина с расширенной аналитикой'
+        }
+      ];
+      setOrders(testOrders);
     }
   }, []);
 
