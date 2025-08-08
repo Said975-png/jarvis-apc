@@ -2523,7 +2523,15 @@ body {
   z-index: 10000;
 }
 
-.chat-button-container {
+.widget-buttons-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.chat-button-container,
+.action-button-container {
   display: flex;
   align-items: center;
   gap: 0.8rem;
