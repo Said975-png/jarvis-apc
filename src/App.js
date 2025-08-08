@@ -107,7 +107,7 @@ function AppContent() {
   const handleChatHistory = () => {
     // Показать историю чатов (пока простой alert, можно расширить)
     if (chatHistory.length === 0) {
-      alert('История чатов пуста');
+      alert('История чатов пуст��');
     } else {
       const historyText = chatHistory.map(chat =>
         `${chat.title} - ${chat.timestamp.toLocaleString('ru-RU')}`
@@ -119,40 +119,7 @@ function AppContent() {
 
   return (
     <div className="jarvis-app">
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="navbar-brand">
-            <span className="brand-logo">JARVIS</span>
-            <span className="brand-tagline">AI Design</span>
-          </div>
-
-
-          <div className="navbar-actions">
-            <button className="navbar-icon-button" title="Корзина">
-              <svg viewBox="0 0 24 24" fill="none" className="navbar-icon">
-                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 002 2h6a2 2 0 002-2v-6m-9 0h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <div className="auth-buttons-wrapper">
-              <button className="navbar-button">Регистрация</button>
-              <button className="navbar-button-primary">Вход</button>
-            </div>
-            <div className="navbar-search">
-              <input
-                type="text"
-                placeholder="Поиск..."
-                className="search-input"
-              />
-              <button className="search-button">
-                <svg viewBox="0 0 24 24" fill="none" className="search-icon">
-                  <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
-                  <path d="m21 21-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       <section className="hero-section">
         <div className="background-overlay"></div>
@@ -263,7 +230,7 @@ function AppContent() {
                 <div className="advantage-number">500+</div>
                 <div className="advantage-text">
                   <h3>Проектов</h3>
-                  <p>успешно реализовано</p>
+                  <p>у��пешно реализовано</p>
                 </div>
               </div>
             </div>
@@ -290,7 +257,7 @@ function AppContent() {
                   <div className="advantage-dot"></div>
                   <h4>Гарантия качества</h4>
                 </div>
-                <p>Предоставляем гарантию на все работы и бесплатную техподдержку</p>
+                <p>Предоставляем гаран��ию на все работы и бесплатную техподдержку</p>
               </div>
 
               <div className="advantage-item">
@@ -500,7 +467,7 @@ function AppContent() {
                     </div>
                     <h4>Умная рекомендация</h4>
                   </div>
-                  <p>Анализирует историю покупок, поведение на сайте и предпочтения дл�� точных рекомендаций товаров</p>
+                  <p>Анализирует историю покупок, поведение на сайте и предпочтения для точных рекомендаций товаров</p>
                 </div>
 
                 <div className="capability-item">
