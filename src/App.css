@@ -388,7 +388,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Side positions - только дв�� текста */
+/* Side positions - только два текста */
 .left-center {
   top: 50%;
   left: 1rem;
@@ -4334,7 +4334,7 @@ body {
 
 .nav-tab.active {
   color: white;
-  border-bottom-color: #00d4ff;
+  border-bottom-color: rgba(255, 255, 255, 0.6);
   background: rgba(255, 255, 255, 0.05);
 }
 
