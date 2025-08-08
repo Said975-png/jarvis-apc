@@ -4527,19 +4527,11 @@ body {
   text-transform: uppercase;
 }
 
-.project-status.в-разработке {
-  background: rgba(59, 130, 246, 0.2);
-  color: #93c5fd;
-}
-
-.project-status.завершен {
-  background: rgba(34, 197, 94, 0.2);
-  color: #86efac;
-}
-
+.project-status.в-разработке,
+.project-status.завершен,
 .project-status.на-паузе {
-  background: rgba(245, 158, 11, 0.2);
-  color: #fbbf24;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .project-details {
