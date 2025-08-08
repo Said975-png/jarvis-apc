@@ -68,6 +68,7 @@ const AdminPanel = () => {
   };
 
   useEffect(() => {
+    console.log('AdminPanel: загружаем заказы...');
     loadOrders();
   }, []);
 
@@ -241,9 +242,11 @@ const AdminPanel = () => {
     }
   };
 
-  const filteredOrders = filterStatus === 'all' 
-    ? orders 
+  const filteredOrders = filterStatus === 'all'
+    ? orders
     : orders.filter(order => order.status === filterStatus);
+
+  console.log('AdminPanel render:', { orders: orders.length, filtered: filteredOrders.length, filterStatus });
 
   return (
     <div className="admin-panel">
