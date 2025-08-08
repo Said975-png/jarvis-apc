@@ -3618,10 +3618,26 @@ body {
 @media (max-width: 768px) {
   .chat-header {
     padding: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .chat-header-center {
     gap: 15px;
+  }
+
+  .chat-header-buttons {
+    gap: 8px;
+  }
+
+  .chat-action-button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .button-icon {
+    width: 14px;
+    height: 14px;
   }
 
   .chat-messages {
