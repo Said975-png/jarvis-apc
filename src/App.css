@@ -395,32 +395,54 @@ body {
   letter-spacing: 1px;
 }
 
-.tech-stack {
+.scroll-indicator {
   position: absolute;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   z-index: 3;
+  animation: scrollBounce 2s ease-in-out infinite;
 }
 
-.tech-item {
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  font-size: 0.8rem;
+.scroll-arrow {
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(180deg, transparent 0%, #ffffff60 50%, transparent 100%);
+  position: relative;
+}
+
+.scroll-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #ffffff60;
+}
+
+.scroll-text {
+  font-size: 0.7rem;
+  color: #ffffff40;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-weight: 500;
-  color: #ffffff80;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
 }
 
-.tech-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  transform: translateY(-2px);
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
 }
 
 /* Responsive Design */
