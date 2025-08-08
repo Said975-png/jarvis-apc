@@ -177,56 +177,56 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Top positions */
+/* Top positions - более широкое расстояние */
 .top-left {
-  top: 6rem;
-  left: 3rem;
+  top: 7rem;
+  left: 2rem;
 }
 
 .top-center {
-  top: 6rem;
+  top: 5rem;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .top-right {
-  top: 6rem;
-  right: 3rem;
+  top: 7rem;
+  right: 2rem;
 }
 
-/* Bottom positions */
+/* Bottom positions - более широкое расстояние */
 .bottom-left {
-  bottom: 6rem;
-  left: 3rem;
+  bottom: 7rem;
+  left: 2rem;
 }
 
 .bottom-center {
-  bottom: 6rem;
+  bottom: 5rem;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .bottom-right {
-  bottom: 6rem;
-  right: 3rem;
+  bottom: 7rem;
+  right: 2rem;
 }
 
-/* Side positions */
+/* Side positions - правильное позиционирование с отступами */
 .left-center {
-  top: 50%;
-  left: 1rem;
+  top: 35%;
+  left: 0.5rem;
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: center;
-  width: 120px;
+  width: 150px;
   text-align: center;
 }
 
 .right-center {
-  top: 50%;
-  right: 1rem;
+  top: 65%;
+  right: 0.5rem;
   transform: translateY(-50%) rotate(90deg);
   transform-origin: center;
-  width: 120px;
+  width: 150px;
   text-align: center;
 }
 
