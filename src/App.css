@@ -2063,17 +2063,22 @@ body {
   .brand-title {
     font-size: 3rem;
   }
-  
+
   .brand-description {
     font-size: 1rem;
   }
-  
+
   .primary-button {
     padding: 0.8rem 2rem;
   }
-  
+
   .stats {
     gap: 1.5rem;
+  }
+
+  /* Hide all side texts on very small screens */
+  .hero-section .side-text {
+    display: none;
   }
 
   .advantages-left {
