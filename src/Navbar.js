@@ -6,6 +6,7 @@ import Dashboard from './Dashboard';
 
 const Navbar = () => {
   const { user, isAuthenticated } = useAuth();
+  const { getCartItemsCount } = useCart();
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authModalMode, setAuthModalMode] = useState('login');
   const [dashboardOpen, setDashboardOpen] = useState(false);
