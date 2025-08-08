@@ -1138,34 +1138,57 @@ body {
   opacity: 0.9;
 }
 
-/* Hero section specific description */
-.hero-section .brand-description {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
+/* Hero section description wrapper */
+.brand-description-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
   animation: fadeInUp 1s ease-out 0.5s both;
 }
 
-.hero-section .brand-subtitle {
+/* Hero section specific description */
+.hero-section .brand-description {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  max-width: 700px;
+  text-align: center;
+  margin: 0;
+}
+
+.highlight-text {
+  background: linear-gradient(135deg, #00d4ff, #8a2be2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.brand-features {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-point {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: 'Exo 2', sans-serif;
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 4rem;
-  font-weight: 400;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
   letter-spacing: 0.03em;
-  opacity: 1;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
 }
 
 @keyframes fadeInUp {
