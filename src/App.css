@@ -107,12 +107,25 @@ body {
   gap: 1rem;
 }
 
+.auth-buttons-wrapper {
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  padding: 2px;
+  transition: all 0.3s ease;
+}
+
+.auth-buttons-wrapper:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
 .navbar-button {
   padding: 0.5rem 1.2rem;
   background: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
+  border: none;
+  border-radius: 23px;
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
@@ -122,9 +135,7 @@ body {
 
 .navbar-button:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
 .navbar-icon-button {
@@ -158,8 +169,8 @@ body {
   padding: 0.5rem 1.2rem;
   background: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
+  border: none;
+  border-radius: 23px;
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
@@ -169,9 +180,7 @@ body {
 
 .navbar-button-primary:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
 .hero-section {
