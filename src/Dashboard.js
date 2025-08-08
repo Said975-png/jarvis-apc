@@ -4,6 +4,7 @@ import { useCart } from './CartContext';
 
 const Dashboard = ({ isOpen, onClose }) => {
   const { user, logout, updateProfile, databaseStatus, useSupabase } = useAuth();
+  const { getUserOrders } = useCart();
   const [activeTab, setActiveTab] = useState('profile');
   const [editMode, setEditMode] = useState(false);
   const [profileData, setProfileData] = useState({
