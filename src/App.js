@@ -149,7 +149,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Персональный подход</h4>
                 </div>
-                <p>Каждый проект уникален - создаем индивидуальные решения под ваши задачи</p>
+                <p>Каж��ый проект уникален - создаем индивидуальные решения под ваши задачи</p>
               </div>
 
               <div className="advantage-item">
@@ -341,9 +341,7 @@ function App() {
             </div>
           </div>
 
-          <div className="ai-slider-container"
-               onMouseEnter={handleMouseEnter}
-               onMouseLeave={handleMouseLeave}>
+          <div className="ai-cards-container">
             <div className="ai-slider">
               <div className={`slide ${currentSlide === 0 ? 'active' : ''}`}>
                 <div className="slide-content">
@@ -371,7 +369,7 @@ function App() {
                   <h3 className="slide-title">Живое общение</h3>
                   <p className="slide-description">
                     ИИ помощник общается с клиентами как настоящий человек, понимает контекст,
-                    эмоции и дает персональные рекомендации по товарам и услугам
+                    эмоции и дает персональн��е рекомендации по товарам и услугам
                   </p>
                   <div className="slide-features">
                     <span className="feature-tag">НЛП технологии</span>
