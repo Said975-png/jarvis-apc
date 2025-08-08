@@ -702,19 +702,34 @@ body {
 
 /* Hero section specific title */
 .hero-section .brand-title {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: clamp(3.5rem, 7vw, 7rem);
-  font-weight: 700;
-  margin-bottom: 2rem;
-  letter-spacing: 0.02em;
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
   line-height: 0.9;
+  position: relative;
 }
 
 .hero-section .jarvis-text {
-  color: #ffffff;
-  letter-spacing: 0.02em;
-  text-shadow: none;
-  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 25%, #ffffff 50%, #e5e5e5 75%, #ffffff 100%);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s ease-in-out infinite;
+  font-weight: 900;
+  position: relative;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes textShimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .title-underline {
