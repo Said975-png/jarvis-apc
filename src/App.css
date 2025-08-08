@@ -2921,11 +2921,36 @@ body {
 }
 
 /* Mobile Responsive */
+@media (max-width: 768px) {
+  .chat-header {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .chat-messages {
+    padding: 20px;
+  }
+
+  .chat-input {
+    padding: 20px;
+    gap: 12px;
+  }
+}
+
 @media (max-width: 480px) {
-  .chat-window {
-    width: calc(100vw - 40px);
-    height: 450px;
-    right: -10px;
+  .chat-header {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .chat-messages {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .chat-input {
+    padding: 15px;
+    gap: 10px;
   }
 
   .chat-button {
@@ -2936,5 +2961,18 @@ body {
   .chat-icon {
     width: 22px;
     height: 22px;
+  }
+
+  .jarvis-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .avatar-text {
+    font-size: 16px;
+  }
+
+  .chat-info h3 {
+    font-size: 16px;
   }
 }
