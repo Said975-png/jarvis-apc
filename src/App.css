@@ -364,8 +364,6 @@ body {
 /* Responsive Design */
 @media (max-width: 1024px) {
   .content-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2rem;
     text-align: center;
   }
 
