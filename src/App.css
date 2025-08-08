@@ -604,10 +604,12 @@ body {
 
 /* Hero section specific main content */
 .hero-section .main-content {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 6rem 0;
   text-align: center;
+  position: relative;
+  z-index: 3;
 }
 
 .brand-badge {
