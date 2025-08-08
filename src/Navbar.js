@@ -100,9 +100,14 @@ const Navbar = () => {
         initialMode={authModalMode}
       />
 
-      <Dashboard 
+      <Dashboard
         isOpen={dashboardOpen}
         onClose={() => setDashboardOpen(false)}
+      />
+
+      <Cart
+        isOpen={cartOpen}
+        onClose={() => setCartOpen(false)}
       />
     </>
   );
