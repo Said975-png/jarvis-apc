@@ -795,6 +795,42 @@ body {
   letter-spacing: 1px;
 }
 
+/* Hero section specific stats */
+.hero-section .stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.hero-section .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.hero-section .stat-number {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.hero-section .stat-label {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
