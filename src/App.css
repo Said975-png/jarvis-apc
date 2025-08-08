@@ -2729,12 +2729,22 @@ body {
   position: relative;
 }
 
+.chat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
 .chat-info h3 {
   color: white;
   font-family: 'Rajdhani', sans-serif;
   font-size: 18px;
   font-weight: 600;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .status {
