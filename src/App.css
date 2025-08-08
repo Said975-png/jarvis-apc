@@ -3042,15 +3042,24 @@ body {
   .features-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    perspective: none;
   }
 
   .feature-card {
-    min-height: 250px;
+    min-height: 280px;
+    transform: none !important;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px) !important;
+  }
+
+  .feature-card > * {
     padding: 2rem 1.5rem;
   }
 
   .feature-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .steps-grid {
