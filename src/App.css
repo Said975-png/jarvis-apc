@@ -257,7 +257,7 @@ body {
   display: none;
 }
 
-/* Желеобразные частицы */
+/* Желеоб��азные частицы */
 .hero-section .particle-system {
   display: block;
 }
@@ -2538,7 +2538,8 @@ body {
   flex-direction: column;
 }
 
-.chat-label {
+.chat-label,
+.action-label {
   font-family: 'Exo 2', sans-serif;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.8);
