@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
+import { AuthProvider, useAuth } from './AuthContext';
+import AuthModal from './AuthModal';
+import Dashboard from './Dashboard';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
