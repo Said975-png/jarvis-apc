@@ -170,6 +170,144 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section className="pricing-section">
+        <div className="geometric-bg">
+          <div className="floating-element element-1"></div>
+          <div className="floating-element element-2"></div>
+          <div className="floating-element element-3"></div>
+          <div className="floating-element element-4"></div>
+          <div className="floating-element element-5"></div>
+        </div>
+        <div className="data-stream">
+          <div className="stream-line stream-1"></div>
+          <div className="stream-line stream-2"></div>
+          <div className="stream-line stream-3"></div>
+        </div>
+
+        <div className="container">
+          <div className="section-header">
+            <span className="section-number">02</span>
+            <div className="section-info">
+              <div className="section-badge">НАШИ ТАРИФЫ</div>
+              <h2 className="section-title">Выберите свой план</h2>
+            </div>
+          </div>
+
+          <div className="pricing-grid">
+            <div className="pricing-card basic-plan">
+              <div className="plan-header">
+                <div className="plan-badge">BASIC</div>
+                <h3 className="plan-name">Базовый сайт</h3>
+                <div className="plan-price">
+                  <span className="price-amount">2.500.000</span>
+                  <span className="price-currency">сум</span>
+                </div>
+              </div>
+              <div className="plan-features">
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Современный дизайн</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Адаптивная верстка</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>SEO оптимизация</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Базовый функционал</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Техподдержка 3 месяца</span>
+                </div>
+              </div>
+              <button className="plan-button">Выбрать план</button>
+            </div>
+
+            <div className="pricing-card pro-plan featured">
+              <div className="featured-badge">ПОПУЛЯРНЫЙ</div>
+              <div className="plan-header">
+                <div className="plan-badge">PRO</div>
+                <h3 className="plan-name">Профессиональный сайт</h3>
+                <div className="plan-price">
+                  <span className="price-amount">4.000.000</span>
+                  <span className="price-currency">сум</span>
+                </div>
+              </div>
+              <div className="plan-features">
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Все функции Basic</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>ИИ помощник для клиентов</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Ответы на вопросы как человек</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Предложение товаров</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Расширенная аналитика</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Техподдержка 6 месяцев</span>
+                </div>
+              </div>
+              <button className="plan-button">Выбрать план</button>
+            </div>
+
+            <div className="pricing-card max-plan">
+              <div className="plan-header">
+                <div className="plan-badge">MAX</div>
+                <h3 className="plan-name">Максимальный сайт</h3>
+                <div className="plan-price">
+                  <span className="price-amount">5.000.000</span>
+                  <span className="price-currency">сум</span>
+                </div>
+              </div>
+              <div className="plan-features">
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Все функции Pro</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Огромный функционал</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Улучшенный ИИ помощник</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Крутой премиум дизайн</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Индивидуальные решения</span>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-dot"></div>
+                  <span>Техподдержка 12 месяцев</span>
+                </div>
+              </div>
+              <button className="plan-button">Выбрать план</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
