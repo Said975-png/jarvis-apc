@@ -40,10 +40,13 @@ const Navbar = () => {
           </div>
 
           <div className="navbar-actions">
-            <button className="navbar-icon-button" title="Корзина">
+            <button className="navbar-icon-button cart-button" title="Корзина" onClick={openCart}>
               <svg viewBox="0 0 24 24" fill="none" className="navbar-icon">
                 <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 002 2h6a2 2 0 002-2v-6m-9 0h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
+              {getCartItemsCount() > 0 && (
+                <span className="cart-badge">{getCartItemsCount()}</span>
+              )}
             </button>
 
             {isAuthenticated ? (
