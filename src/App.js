@@ -8,7 +8,7 @@ function AppContent() {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Привет! Я Джарвис, ваш ИИ помощник. Как дела? Чем могу помочь?",
+      text: "При��ет! Я Джарвис, ваш ИИ помощник. Как дела? Чем могу помочь?",
       sender: "jarvis",
       timestamp: new Date()
     }
@@ -107,7 +107,7 @@ function AppContent() {
   const handleChatHistory = () => {
     // Показать историю чатов (пока простой alert, можно расширить)
     if (chatHistory.length === 0) {
-      alert('История чатов пуст��');
+      alert('История чатов пуста');
     } else {
       const historyText = chatHistory.map(chat =>
         `${chat.title} - ${chat.timestamp.toLocaleString('ru-RU')}`
@@ -230,7 +230,7 @@ function AppContent() {
                 <div className="advantage-number">500+</div>
                 <div className="advantage-text">
                   <h3>Проектов</h3>
-                  <p>у��пешно реализовано</p>
+                  <p>успешно реализовано</p>
                 </div>
               </div>
             </div>
@@ -257,7 +257,7 @@ function AppContent() {
                   <div className="advantage-dot"></div>
                   <h4>Гарантия качества</h4>
                 </div>
-                <p>Предоставляем гаран��ию на все работы и бесплатную техподдержку</p>
+                <p>Предоставляем гарантию на все работы и бесплатную техподдержку</p>
               </div>
 
               <div className="advantage-item">
@@ -556,7 +556,7 @@ function AppContent() {
       <div className="chat-widget">
         {/* Chat Button */}
         <div className="chat-button-container">
-          <span className="chat-label">👋 Джарвис - ИИ помощник</span>
+          <span className="chat-label">👋 Д��арвис - ИИ помощник</span>
           <button
             className={`chat-button ${isChatOpen ? 'open' : ''}`}
             onClick={() => setIsChatOpen(!isChatOpen)}
@@ -709,4 +709,10 @@ function AppContent() {
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+  );
+}
