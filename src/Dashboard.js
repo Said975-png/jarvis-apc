@@ -13,6 +13,7 @@ const Dashboard = ({ isOpen, onClose }) => {
     phone: user?.phone || '',
     company: user?.company || ''
   });
+  const [userOrders, setUserOrders] = useState([]);
 
   const handleProfileUpdate = () => {
     const result = updateProfile(profileData);
