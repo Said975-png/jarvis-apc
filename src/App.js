@@ -31,6 +31,29 @@ function App() {
           <div className="floating-element element-1"></div>
           <div className="floating-element element-2"></div>
           <div className="floating-element element-3"></div>
+          <div className="floating-element element-4"></div>
+          <div className="floating-element element-5"></div>
+          <div className="floating-element element-6"></div>
+        </div>
+        <div className="grid-overlay"></div>
+        <div className="particle-system">
+          <div className="particle particle-1"></div>
+          <div className="particle particle-2"></div>
+          <div className="particle particle-3"></div>
+          <div className="particle particle-4"></div>
+          <div className="particle particle-5"></div>
+          <div className="particle particle-6"></div>
+          <div className="particle particle-7"></div>
+          <div className="particle particle-8"></div>
+        </div>
+        <div className="neural-network">
+          <div className="neural-line line-1"></div>
+          <div className="neural-line line-2"></div>
+          <div className="neural-line line-3"></div>
+          <div className="neural-node node-1"></div>
+          <div className="neural-node node-2"></div>
+          <div className="neural-node node-3"></div>
+          <div className="neural-node node-4"></div>
         </div>
         <div className="container">
           <div className="content-wrapper">
@@ -74,6 +97,13 @@ function App() {
           <div className="floating-element element-1"></div>
           <div className="floating-element element-2"></div>
           <div className="floating-element element-3"></div>
+          <div className="floating-element element-4"></div>
+          <div className="floating-element element-5"></div>
+        </div>
+        <div className="data-stream">
+          <div className="stream-line stream-1"></div>
+          <div className="stream-line stream-2"></div>
+          <div className="stream-line stream-3"></div>
         </div>
 
         <div className="container">
@@ -110,7 +140,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Инновационные технологии</h4>
                 </div>
-                <p>Используем самые современны�� AI-решения и передовые технологии разработки</p>
+                <p>Используем самые современные AI-решения и передовые технологии разработки</p>
               </div>
 
               <div className="advantage-item">
