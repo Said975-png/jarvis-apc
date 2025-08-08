@@ -3448,6 +3448,26 @@ body {
   backdrop-filter: blur(10px);
 }
 
+.chat-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.chat-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chat-title h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+}
+
 .chat-header-center {
   display: flex;
   align-items: center;
