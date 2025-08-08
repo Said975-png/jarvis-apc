@@ -1606,6 +1606,10 @@ body {
     margin-bottom: 2rem;
   }
 
+  .ai-slider-container {
+    max-width: 280px;
+  }
+
   .ai-card {
     height: 320px;
   }
