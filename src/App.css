@@ -2560,8 +2560,7 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.chat-button::before,
-.action-button::before {
+.chat-button::before {
   content: '';
   position: absolute;
   top: 0;
