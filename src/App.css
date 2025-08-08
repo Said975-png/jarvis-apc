@@ -2218,7 +2218,7 @@ body {
   box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
 }
 
-/* Responsive д��я pricing */
+/* Responsive для pricing */
 @media (max-width: 1024px) {
   .pricing-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
