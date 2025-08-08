@@ -471,6 +471,16 @@ body {
   position: relative;
 }
 
+/* Hero section specific content wrapper */
+.hero-section .content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  min-height: calc(100vh - 140px);
+  align-content: center;
+  text-align: center;
+}
+
 .side-decoration {
   display: flex;
   flex-direction: column;
