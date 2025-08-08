@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 4; // Общее количество карточек
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }, 4000); // Переключение каждые 4 секунды
+
+    return () => clearInterval(slideInterval);
+  }, []);
+
   return (
     <div className="jarvis-app">
       <nav className="navbar">
@@ -340,118 +351,130 @@ function App() {
             </div>
           </div>
 
-          <div className="ai-cards-container">
-            <div className="ai-card">
-              <div className="card-inner">
-                <div className="card-front">
-                  <div className="card-icon">
-                    <svg className="icon-brain" viewBox="0 0 24 24" fill="none">
-                      <path d="M9.5 2a6.5 6.5 0 0 1 5 2.4A6.5 6.5 0 0 1 19 11c0 .7-.1 1.4-.4 2a1 1 0 0 1-.2.3c-.2.2-.5.4-.9.4h-.5c-.3 0-.6.2-.8.4-.2.3-.2.7 0 1 .2.2.5.4.8.4h.5c.4 0 .7.2.9.4.1.1.2.2.2.3.3.6.4 1.3.4 2a6.5 6.5 0 0 1-4.5 6.2A6.5 6.5 0 0 1 9.5 22 6.5 6.5 0 0 1 5 15.8 6.5 6.5 0 0 1 5 8.2 6.5 6.5 0 0 1 9.5 2z" stroke="currentColor" strokeWidth="2"/>
-                      <circle cx="8" cy="8" r="1" fill="currentColor"/>
-                      <circle cx="12" cy="8" r="1" fill="currentColor"/>
-                      <circle cx="16" cy="8" r="1" fill="currentColor"/>
-                      <path d="M8 12c0 1.1.9 2 2 2s2-.9 2-2" stroke="currentColor" strokeWidth="2" fill="none"/>
-                    </svg>
+          <div className="ai-slider-container">
+            <div className="ai-cards-slider" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+              <div className="ai-card">
+                <div className="card-inner">
+                  <div className="card-front">
+                    <div className="card-icon">
+                      <svg className="icon-brain" viewBox="0 0 24 24" fill="none">
+                        <path d="M9.5 2a6.5 6.5 0 0 1 5 2.4A6.5 6.5 0 0 1 19 11c0 .7-.1 1.4-.4 2a1 1 0 0 1-.2.3c-.2.2-.5.4-.9.4h-.5c-.3 0-.6.2-.8.4-.2.3-.2.7 0 1 .2.2.5.4.8.4h.5c.4 0 .7.2.9.4.1.1.2.2.2.3.3.6.4 1.3.4 2a6.5 6.5 0 0 1-4.5 6.2A6.5 6.5 0 0 1 9.5 22 6.5 6.5 0 0 1 5 15.8 6.5 6.5 0 0 1 5 8.2 6.5 6.5 0 0 1 9.5 2z" stroke="currentColor" strokeWidth="2"/>
+                        <circle cx="8" cy="8" r="1" fill="currentColor"/>
+                        <circle cx="12" cy="8" r="1" fill="currentColor"/>
+                        <circle cx="16" cy="8" r="1" fill="currentColor"/>
+                        <path d="M8 12c0 1.1.9 2 2 2s2-.9 2-2" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      </svg>
+                    </div>
+                    <h3 className="card-title">Умный анализ</h3>
+                    <div className="card-number">01</div>
                   </div>
-                  <h3 className="card-title">Умный анализ</h3>
-                  <div className="card-number">01</div>
+                  <div className="card-back">
+                    <h3 className="card-title-back">Умный анализ</h3>
+                    <p className="card-description">
+                      Джарвис анализирует поведение пользователей на сайте в реальном времени, 
+                      понимает их потребности и предлагает персонализированные решения
+                    </p>
+                    <div className="card-features">
+                      <span className="feature-tag">Машинное обучение</span>
+                      <span className="feature-tag">Анализ данных</span>
+                      <span className="feature-tag">Прогнозирование</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="card-back">
-                  <h3 className="card-title-back">Умный анализ</h3>
-                  <p className="card-description">
-                    Джарвис анализирует поведение пользователей на сайте в реальном времени, 
-                    понимает ��х потребности и предлагает персонализированные решения
-                  </p>
-                  <div className="card-features">
-                    <span className="feature-tag">Машинное обучение</span>
-                    <span className="feature-tag">Анализ данных</span>
-                    <span className="feature-tag">Прогнозирование</span>
+              </div>
+
+              <div className="ai-card">
+                <div className="card-inner">
+                  <div className="card-front">
+                    <div className="card-icon">
+                      <svg className="icon-chat" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" strokeWidth="2"/>
+                        <path d="M8 12h.01M12 12h.01M16 12h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                    </div>
+                    <h3 className="card-title">Живое общение</h3>
+                    <div className="card-number">02</div>
+                  </div>
+                  <div className="card-back">
+                    <h3 className="card-title-back">Живое общение</h3>
+                    <p className="card-description">
+                      ИИ помощник общается с клиентами как настоящий человек, понимает контекст, 
+                      эмоции и дает персональные рекомендации по товарам и услугам
+                    </p>
+                    <div className="card-features">
+                      <span className="feature-tag">НЛП технологии</span>
+                      <span className="feature-tag">Эмоциональный интеллект</span>
+                      <span className="feature-tag">24/7 поддержка</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="ai-card">
+                <div className="card-inner">
+                  <div className="card-front">
+                    <div className="card-icon">
+                      <svg className="icon-target" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                        <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2"/>
+                        <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                        <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" strokeWidth="2"/>
+                      </svg>
+                    </div>
+                    <h3 className="card-title">Точные рекомендации</h3>
+                    <div className="card-number">03</div>
+                  </div>
+                  <div className="card-back">
+                    <h3 className="card-title-back">Точные рекомендации</h3>
+                    <p className="card-description">
+                      Анализируя предпочтения и историю покупок, Джарвис предлагает именно те товары, 
+                      которые нужны клиенту, увеличивая конверсию на 300%
+                    </p>
+                    <div className="card-features">
+                      <span className="feature-tag">Персонализация</span>
+                      <span className="feature-tag">Увеличение продаж</span>
+                      <span className="feature-tag">Конверсия +300%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="ai-card">
+                <div className="card-inner">
+                  <div className="card-front">
+                    <div className="card-icon">
+                      <svg className="icon-shield" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1v7z" stroke="currentColor" strokeWidth="2"/>
+                        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <h3 className="card-title">Безопасность</h3>
+                    <div className="card-number">04</div>
+                  </div>
+                  <div className="card-back">
+                    <h3 className="card-title-back">Безопасность и надежность</h3>
+                    <p className="card-description">
+                      Все данные обрабатываются с максимальной защитой, соблюдаются международные 
+                      стандарты безопасности, а система работает стабильно 99.9% времени
+                    </p>
+                    <div className="card-features">
+                      <span className="feature-tag">Шифрование данных</span>
+                      <span className="feature-tag">99.9% Uptime</span>
+                      <span className="feature-tag">GDPR соответствие</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="ai-card">
-              <div className="card-inner">
-                <div className="card-front">
-                  <div className="card-icon">
-                    <svg className="icon-chat" viewBox="0 0 24 24" fill="none">
-                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" strokeWidth="2"/>
-                      <path d="M8 12h.01M12 12h.01M16 12h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                  </div>
-                  <h3 className="card-title">Живое общение</h3>
-                  <div className="card-number">02</div>
-                </div>
-                <div className="card-back">
-                  <h3 className="card-title-back">Живое общение</h3>
-                  <p className="card-description">
-                    ИИ помощник общается с клиентами как настоящий человек, понимает контекст, 
-                    эмоции и дает персональные рекомендации по товарам и услугам
-                  </p>
-                  <div className="card-features">
-                    <span className="feature-tag">НЛП технологии</span>
-                    <span className="feature-tag">Эмоциональный интеллект</span>
-                    <span className="feature-tag">24/7 поддержка</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="ai-card">
-              <div className="card-inner">
-                <div className="card-front">
-                  <div className="card-icon">
-                    <svg className="icon-target" viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2"/>
-                      <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                      <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" strokeWidth="2"/>
-                    </svg>
-                  </div>
-                  <h3 className="card-title">Точные рекомендации</h3>
-                  <div className="card-number">03</div>
-                </div>
-                <div className="card-back">
-                  <h3 className="card-title-back">Точные рекомендации</h3>
-                  <p className="card-description">
-                    Анализируя предпочтения и историю покупок, Джарвис предлагает именно те товары, 
-                    которые нужны клиенту, увеличивая конверсию на 300%
-                  </p>
-                  <div className="card-features">
-                    <span className="feature-tag">Персонализация</span>
-                    <span className="feature-tag">Увеличение продаж</span>
-                    <span className="feature-tag">Конверсия +300%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="ai-card">
-              <div className="card-inner">
-                <div className="card-front">
-                  <div className="card-icon">
-                    <svg className="icon-shield" viewBox="0 0 24 24" fill="none">
-                      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1v7z" stroke="currentColor" strokeWidth="2"/>
-                      <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <h3 className="card-title">Безопасность</h3>
-                  <div className="card-number">04</div>
-                </div>
-                <div className="card-back">
-                  <h3 className="card-title-back">Безопасность и надежность</h3>
-                  <p className="card-description">
-                    Все данные обрабатываются с максимальной защитой, собл��даются международные 
-                    стандарты безопасности, а система работает стабильно 99.9% времени
-                  </p>
-                  <div className="card-features">
-                    <span className="feature-tag">Шифрование данных</span>
-                    <span className="feature-tag">99.9% Uptime</span>
-                    <span className="feature-tag">GDPR соответствие</span>
-                  </div>
-                </div>
-              </div>
+            
+            <div className="slider-indicators">
+              {[...Array(totalSlides)].map((_, index) => (
+                <div 
+                  key={index}
+                  className={`indicator ${currentSlide === index ? 'active' : ''}`}
+                  onClick={() => setCurrentSlide(index)}
+                ></div>
+              ))}
             </div>
           </div>
         </div>
