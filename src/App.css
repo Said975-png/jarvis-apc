@@ -844,6 +844,12 @@ body {
   animation: scrollBounce 2s ease-in-out infinite;
 }
 
+/* Hero section specific scroll indicator */
+.hero-section .scroll-indicator {
+  bottom: 3rem;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
 .scroll-arrow {
   width: 2px;
   height: 30px;
