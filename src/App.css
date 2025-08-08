@@ -4612,7 +4612,7 @@ body {
 .plan-features .feature-item svg {
   width: 16px;
   height: 16px;
-  color: #00d4ff;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .usage-stats {
