@@ -160,11 +160,18 @@ body {
   max-height: 2000px;
   background: transparent;
   border: 8px solid transparent;
-  border-top: 8px solid rgba(138, 43, 226, 1);
+  border-top: 8px solid;
+  border-image: linear-gradient(90deg,
+    rgba(138, 43, 226, 1) 0%,
+    rgba(147, 51, 234, 1) 25%,
+    rgba(168, 85, 247, 1) 50%,
+    rgba(196, 125, 255, 1) 75%,
+    rgba(138, 43, 226, 1) 100%
+  ) 1;
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
-  animation: planetRise 3s ease-out forwards;
+  animation: planetRise 3s ease-out forwards, arcShimmer 4s ease-in-out infinite;
   opacity: 0;
   box-shadow:
     0 0 80px rgba(138, 43, 226, 0.9),
