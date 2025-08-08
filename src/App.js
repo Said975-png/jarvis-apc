@@ -2,16 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 4; // Общее количество карточек
-
-  useEffect(() => {
-    const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 4000); // Переключение каждые 4 секунды
-
-    return () => clearInterval(slideInterval);
-  }, []);
 
   return (
     <div className="jarvis-app">
@@ -157,7 +147,7 @@ function App() {
               <div className="advantage-item">
                 <div className="advantage-header">
                   <div className="advantage-dot"></div>
-                  <h4>Персональный подход</h4>
+                  <h4>Пе��сональный подход</h4>
                 </div>
                 <p>Каждый проект уникален - создаем индивидуальные решения под ваши задачи</p>
               </div>
