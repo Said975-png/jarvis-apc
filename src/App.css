@@ -766,12 +766,21 @@ body {
     gap: 1.5rem;
   }
 
-  .advantage-card {
+  .advantages-left {
+    gap: 2rem;
+  }
+
+  .big-advantage {
+    flex-direction: column;
+    text-align: center;
     padding: 1.5rem;
   }
 
-  .advantage-icon {
+  .advantage-number {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+  }
+
+  .floating-element {
+    display: none;
   }
 }
