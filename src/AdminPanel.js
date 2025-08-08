@@ -100,7 +100,7 @@ const AdminPanel = () => {
             {
               id: 'item-1',
               planType: 'pro',
-              name: 'PRO План',
+              name: 'PRO ��лан',
               price: 299000,
               quantity: 1,
               features: ['Все функции Basic', 'ИИ помощник', 'Расширенная аналитика']
@@ -296,6 +296,12 @@ const AdminPanel = () => {
                   <path d="M12 5v14m-7-7h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 Тестовый заказ
+              </button>
+              <button onClick={resetOrders} className="refresh-btn" style={{background: 'rgba(245, 101, 101, 0.2)', borderColor: 'rgba(245, 101, 101, 0.4)'}}>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Сбросить заказы
               </button>
             </div>
           </div>
