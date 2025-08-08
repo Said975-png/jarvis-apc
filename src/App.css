@@ -179,56 +179,22 @@ body {
   color: rgba(255, 255, 255, 0.4);
 }
 
-/* Top positions - более широкое расстояние */
-.top-left {
-  top: 7rem;
-  left: 2rem;
-}
-
-.top-center {
-  top: 5rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.top-right {
-  top: 7rem;
-  right: 2rem;
-}
-
-/* Bottom positions - более широкое расстояние */
-.bottom-left {
-  bottom: 7rem;
-  left: 2rem;
-}
-
-.bottom-center {
-  bottom: 5rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.bottom-right {
-  bottom: 7rem;
-  right: 2rem;
-}
-
-/* Side positions - правильное позиционирование с отступами */
+/* Side positions - только два текста */
 .left-center {
-  top: 35%;
-  left: 0.5rem;
+  top: 50%;
+  left: 1rem;
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: center;
-  width: 150px;
+  width: 120px;
   text-align: center;
 }
 
 .right-center {
-  top: 65%;
-  right: 0.5rem;
+  top: 50%;
+  right: 1rem;
   transform: translateY(-50%) rotate(90deg);
   transform-origin: center;
-  width: 150px;
+  width: 120px;
   text-align: center;
 }
 
