@@ -4,6 +4,7 @@ import { AuthProvider } from './AuthContext';
 import { CartProvider } from './CartContext';
 import Navbar from './Navbar';
 import PricingSection from './PricingSection';
+import AdminPanel from './AdminPanel';
 
 function AppContent() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -19,6 +20,9 @@ function AppContent() {
   const [isTyping, setIsTyping] = useState(false);
   const [chatHistory, setChatHistory] = useState([]);
   const messagesEndRef = useRef(null);
+
+  // Проверяем, находимся ли мы на странице админ панели
+  const isAdminPage = window.location.pathname === '/admin';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -441,7 +445,7 @@ function AppContent() {
             <div className="intro-section">
               <div className="intro-text">
                 <h3>Превратите каждого посетителя в клиента</h3>
-                <p>Джарвис анализирует поведение пользователей и предлагает персонализированные решения в режиме реального времени</p>
+                <p>Джарвис анализирует поведение пользователей и предлагает персонализиров��нные решения в режиме реального времени</p>
               </div>
               <div className="stats-bar">
                 <div className="stat">
@@ -471,7 +475,7 @@ function AppContent() {
                     </div>
                     <h4>Умная рекомендация</h4>
                   </div>
-                  <p>Анализирует историю покупок, поведение на сайте и предпочтения для точных рекомендаций товаров</p>
+                  <p>Анализирует исто��ию покупок, поведение на сайте и предпочтения для точных рекомендаций товаров</p>
                 </div>
 
                 <div className="capability-item">

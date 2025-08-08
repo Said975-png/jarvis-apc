@@ -282,6 +282,70 @@ const Dashboard = ({ isOpen, onClose }) => {
             </div>
           )}
 
+          {activeTab === 'orders' && (
+            <div className="orders-section">
+              <div className="section-header">
+                <h4>Мои заказы</h4>
+                <span className="orders-count">{userOrders.length} заказов</span>
+              </div>
+
+              {userOrders.length === 0 ? (
+                <div className="empty-orders">
+                  <svg viewBox="0 0 24 24" fill="none" width="64" height="64">
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="currentColor" strokeWidth="2"/>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                  <h5>У вас пока нет заказов</h5>
+                  <p>Оформите заказ на наши услуги, и он появится здесь</p>
+                </div>
+              ) : (
+                <div className="orders-grid">
+                  {userOrders.map(order => (
+                    <div key={order.id} className="order-card">
+                      <div className="order-header">
+                        <div className="order-number">
+                          Заказ #{order.id}
+                        </div>
+                        <div
+                          className="order-status"
+                          style={{ color: getStatusColor(order.status) }}
+                        >
+                          {order.statusText}
+                        </div>
+                      </div>
+
+                      <div className="order-details">
+                        <div className="order-info">
+                          <p><strong>Дата:</strong> {formatDate(order.createdAt)}</p>
+                          <p><strong>Клиент:</strong> {order.customerInfo.fullName}</p>
+                          <p><strong>Телефон:</strong> {order.customerInfo.phone}</p>
+                          {order.customerInfo.email && (
+                            <p><strong>Email:</strong> {order.customerInfo.email}</p>
+                          )}
+                        </div>
+
+                        <div className="order-items">
+                          <h6>Товары:</h6>
+                          {order.items.map((item, index) => (
+                            <div key={index} className="order-item">
+                              <span>{item.name}</span>
+                              <span className="item-quantity">x{item.quantity}</span>
+                              <span className="item-price">{formatPrice(item.price * item.quantity)} ₽</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="order-total">
+                          <strong>Итого: {formatPrice(order.total)} ₽</strong>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
           {activeTab === 'plan' && (
             <div className="plan-section">
               <div className="current-plan">
