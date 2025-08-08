@@ -707,13 +707,20 @@ body {
     bottom: 1.5rem;
   }
 
-  .advantages-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .section-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    margin-bottom: 3rem;
   }
 
-  .section-title {
-    font-size: 2.5rem;
+  .section-number {
+    font-size: 4rem;
+  }
+
+  .advantages-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .cta-section {
