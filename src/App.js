@@ -254,7 +254,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Предложение тов��ров</span>
+                  <span>Предложение товаров</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -360,7 +360,7 @@ function App() {
                   <h3 className="card-title-back">Умный анализ</h3>
                   <p className="card-description">
                     Джарвис анализирует поведение пользователей на сайте в реальном времени, 
-                    понимает их потребности и предлагает персонализированные решения
+                    понимает ��х потребности и предлагает персонализированные решения
                   </p>
                   <div className="card-features">
                     <span className="feature-tag">Машинное обучение</span>
@@ -431,7 +431,10 @@ function App() {
               <div className="card-inner">
                 <div className="card-front">
                   <div className="card-icon">
-                    <div className="icon-shield"></div>
+                    <svg className="icon-shield" viewBox="0 0 24 24" fill="none">
+                      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1v7z" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </div>
                   <h3 className="card-title">Безопасность</h3>
                   <div className="card-number">04</div>
@@ -439,7 +442,7 @@ function App() {
                 <div className="card-back">
                   <h3 className="card-title-back">Безопасность и надежность</h3>
                   <p className="card-description">
-                    Все данные обрабатываются с максимальной защитой, соблюдаются международные 
+                    Все данные обрабатываются с максимальной защитой, собл��даются международные 
                     стандарты безопасности, а система работает стабильно 99.9% времени
                   </p>
                   <div className="card-features">
