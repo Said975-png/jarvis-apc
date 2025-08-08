@@ -181,9 +181,9 @@ function App() {
               <div className="advantage-item">
                 <div className="advantage-header">
                   <div className="advantage-dot"></div>
-                  <h4>Гаранти�� качества</h4>
+                  <h4>Гарантия качества</h4>
                 </div>
-                <p>Предоставляем гарантию на все работы и бесплатную техподдержку</p>
+                <p>Предоставляем гарантию на все работы и бе��платную техподдержку</p>
               </div>
 
               <div className="advantage-item">
@@ -367,9 +367,11 @@ function App() {
             </div>
           </div>
 
-          <div className="ai-slider-container">
+          <div className="ai-slider-container"
+               onMouseEnter={handleMouseEnter}
+               onMouseLeave={handleMouseLeave}>
             <div className="ai-slider">
-              <div className="slide active" data-slide="0">
+              <div className={`slide ${currentSlide === 0 ? 'active' : ''}`}>
                 <div className="slide-content">
                   <div className="slide-icon">
                     <div className="icon-brain"></div>
@@ -387,7 +389,7 @@ function App() {
                 </div>
               </div>
 
-              <div className="slide" data-slide="1">
+              <div className={`slide ${currentSlide === 1 ? 'active' : ''}`}>
                 <div className="slide-content">
                   <div className="slide-icon">
                     <div className="icon-chat"></div>
@@ -405,7 +407,7 @@ function App() {
                 </div>
               </div>
 
-              <div className="slide" data-slide="2">
+              <div className={`slide ${currentSlide === 2 ? 'active' : ''}`}>
                 <div className="slide-content">
                   <div className="slide-icon">
                     <div className="icon-target"></div>
@@ -423,7 +425,7 @@ function App() {
                 </div>
               </div>
 
-              <div className="slide" data-slide="3">
+              <div className={`slide ${currentSlide === 3 ? 'active' : ''}`}>
                 <div className="slide-content">
                   <div className="slide-icon">
                     <div className="icon-shield"></div>
@@ -431,7 +433,7 @@ function App() {
                   <h3 className="slide-title">Безопасность и надежность</h3>
                   <p className="slide-description">
                     Все данные обрабатываются с максимальной защитой, соблюдаются международные
-                    стандарты безопасности, а система работает стабильно 99.9% времени
+                    стандарды безопасности, а система работает стабильно 99.9% времени
                   </p>
                   <div className="slide-features">
                     <span className="feature-tag">Шифрование данных</span>
@@ -443,14 +445,17 @@ function App() {
             </div>
 
             <div className="slider-indicators">
-              <div className="indicator active" data-slide="0"></div>
-              <div className="indicator" data-slide="1"></div>
-              <div className="indicator" data-slide="2"></div>
-              <div className="indicator" data-slide="3"></div>
+              {[0, 1, 2, 3].map((index) => (
+                <div
+                  key={index}
+                  className={`indicator ${currentSlide === index ? 'active' : ''}`}
+                  onClick={() => handleIndicatorClick(index)}
+                ></div>
+              ))}
             </div>
 
             <div className="slider-progress">
-              <div className="progress-bar"></div>
+              <div className={`progress-bar ${isPaused ? 'paused' : ''}`}></div>
             </div>
           </div>
         </div>
