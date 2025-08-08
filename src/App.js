@@ -6,7 +6,7 @@ function App() {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Привет! Я Джарвис, ваш ИИ помощник. Как дела? Чем могу помочь?",
+      text: "Привет! Я Джарвис, ваш ИИ помощник. Как дела? Чем могу по��очь?",
       sender: "jarvis",
       timestamp: new Date()
     }
@@ -29,7 +29,7 @@ function App() {
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обеспечить максимальное качество продукта.",
     "Хотите узнать больше о наших тарифных ��ланах? Я могу помочь выбрать подходящий вариант.",
-    "Наша команда имеет более 15 лет опыта в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
+    "Наша команда имеет более 15 лет оп��та в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
     "Безопасность данных - наш приоритет. Мы используем шифрование и соблюдаем все международные стандарты."
   ];
 
@@ -78,7 +78,7 @@ function App() {
           <div className="navbar-menu">
             <a href="#services" className="navbar-link">Услуги</a>
             <a href="#portfolio" className="navbar-link">Портфолио</a>
-            <a href="#about" className="navbar-link">�� нас</a>
+            <a href="#about" className="navbar-link">О нас</a>
             <a href="#contact" className="navbar-link">Контакты</a>
           </div>
 
@@ -122,14 +122,8 @@ function App() {
 
         {/* Side Texts */}
         <div className="side-texts">
-          <div className="side-text top-left">AI DESIGN</div>
-          <div className="side-text top-center">JARVISUI2024</div>
-          <div className="side-text top-right">v3</div>
-          <div className="side-text bottom-left">NEXT.JS</div>
-          <div className="side-text bottom-center">REACT</div>
-          <div className="side-text bottom-right">TYPESCRIPT</div>
-          <div className="side-text left-center">NEURAL NETWORKS</div>
-          <div className="side-text right-center">MACHINE LEARNING</div>
+          <div className="side-text left-center">AI POWERED</div>
+          <div className="side-text right-center">JARVIS WEBSITE</div>
         </div>
 
         <div className="container">
@@ -223,7 +217,7 @@ function App() {
               <div className="advantage-item">
                 <div className="advantage-header">
                   <div className="advantage-dot"></div>
-                  <h4>Персо��альный подход</h4>
+                  <h4>Персональный подход</h4>
                 </div>
                 <p>Каждый проект уникален - создаем индивидуальные решения под ваши задачи</p>
               </div>
@@ -365,7 +359,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Улучшенный ИИ помощник</span>
+                  <span>Улучшенный И�� помощник</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
