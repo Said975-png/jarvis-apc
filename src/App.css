@@ -1922,43 +1922,10 @@ body {
     padding: 0 1.5rem;
   }
 
-  /* Tablet adjustments */
-  .hero-section .side-text.left-center,
-  .hero-section .side-text.right-center {
-    display: none;
-  }
-
+  /* Keep side texts on tablets */
   .hero-section .side-text {
-    font-size: 0.6rem;
-    letter-spacing: 0.5px;
-  }
-
-  .hero-section .top-left {
-    top: 6rem;
-    left: 1.5rem;
-  }
-
-  .hero-section .top-center {
-    top: 4.5rem;
-  }
-
-  .hero-section .top-right {
-    top: 6rem;
-    right: 1.5rem;
-  }
-
-  .hero-section .bottom-left {
-    bottom: 5rem;
-    left: 1.5rem;
-  }
-
-  .hero-section .bottom-center {
-    bottom: 3.5rem;
-  }
-
-  .hero-section .bottom-right {
-    bottom: 5rem;
-    right: 1.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
   }
 
   .hero-section .brand-title {
