@@ -721,6 +721,35 @@ body {
   overflow: hidden;
 }
 
+/* Hero section specific button */
+.hero-section .primary-button {
+  padding: 1rem 2rem;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  box-shadow: none;
+  transition: all 0.2s ease;
+  overflow: visible;
+}
+
+.hero-section .primary-button::before {
+  display: none;
+}
+
+.hero-section .primary-button:hover {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: none;
+  box-shadow: none;
+}
+
 .primary-button::before {
   content: '';
   position: absolute;
