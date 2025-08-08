@@ -40,7 +40,7 @@ function App() {
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обеспечить максимальное качество продукта.",
-    "Хотите узнать больше о наших тарифных планах? Я могу помочь выбрать подходящий вариант.",
+    "��отите узнать больше о наших тарифных планах? Я могу помочь выбрать подходящий вариант.",
     "Наша команда имеет более 15 лет опыта в разработке и дизайне. Мы создали уже более 500 успешных проектов!",
     "Безопасность данных - наш приоритет. Мы используем шифрование и соблюдаем все международные стандарты."
   ];
@@ -200,7 +200,7 @@ function App() {
               <div className="title-underline"></div>
               <div className="brand-description-wrapper">
                 <h2 className="brand-description">
-                  Создаем <span className="highlight-text">крутые дизайны</span> сайтов<br />
+                  ��оздаем <span className="highlight-text">крутые дизайны</span> сайтов<br />
                   с искусственным интеллектом
                 </h2>
                 <div className="brand-features">
@@ -260,7 +260,7 @@ function App() {
               <div className="big-advantage">
                 <div className="advantage-number">500+</div>
                 <div className="advantage-text">
-                  <h3>Проектов</h3>
+                  <h3>Проект��в</h3>
                   <p>успешно реализовано</p>
                 </div>
               </div>
@@ -420,7 +420,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Улучшенн��й И�� помощник</span>
+                  <span>Улучшенный ИИ помощник</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -460,7 +460,7 @@ function App() {
             <span className="section-number">03</span>
             <div className="section-info">
               <div className="section-badge">КАК РАБОТАЕТ ДЖАРВИС</div>
-              <h2 className="section-title">Умный помощник для ваших кли��нтов</h2>
+              <h2 className="section-title">Умный помощник для ваших клиентов</h2>
             </div>
           </div>
 
@@ -487,7 +487,7 @@ function App() {
             </div>
 
             <div className="capabilities-section">
-              <h3>Возмо��ности системы</h3>
+              <h3>Возможности системы</h3>
               <div className="capabilities-grid">
                 <div className="capability-item">
                   <div className="capability-header">
