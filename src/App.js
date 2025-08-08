@@ -2,32 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const slideInterval = 5000; // 5 секунд
-  const totalSlides = 4;
-
-  useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % totalSlides);
-      }, slideInterval);
-
-      return () => clearInterval(interval);
-    }
-  }, [currentSlide, isPaused, totalSlides]);
-
-  const handleIndicatorClick = (index) => {
-    setCurrentSlide(index);
-  };
-
-  const handleMouseEnter = () => {
-    setIsPaused(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsPaused(false);
-  };
 
   return (
     <div className="jarvis-app">
@@ -183,7 +157,7 @@ function App() {
                   <div className="advantage-dot"></div>
                   <h4>Гарантия качества</h4>
                 </div>
-                <p>Предоставляем гарантию на все работы и бе��платную техподдержку</p>
+                <p>Предоставляем гарантию на все работы и бесплатную техподдержку</p>
               </div>
 
               <div className="advantage-item">
@@ -430,7 +404,7 @@ function App() {
                   <div className="slide-icon">
                     <div className="icon-shield"></div>
                   </div>
-                  <h3 className="slide-title">Безопасность и надежность</h3>
+                  <h3 className="slide-title">Безопас��ость и надежность</h3>
                   <p className="slide-description">
                     Все данные обрабатываются с максимальной защитой, соблюдаются международные
                     стандарды безопасности, а система работает стабильно 99.9% времени
