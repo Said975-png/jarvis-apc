@@ -1606,6 +1606,10 @@ body {
   animation: progressAnimation 5s linear infinite;
 }
 
+.progress-bar.paused {
+  animation-play-state: paused;
+}
+
 @keyframes progressAnimation {
   0% {
     transform: translateX(-100%);
