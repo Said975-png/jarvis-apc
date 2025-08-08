@@ -607,6 +607,15 @@ body {
     bottom: 1.5rem;
   }
 
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
   .cta-section {
     gap: 1.5rem;
   }
