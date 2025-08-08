@@ -349,7 +349,7 @@ function App() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>Предложение товаров</span>
+                  <span>Предложение товаро��</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -399,6 +399,113 @@ function App() {
                 </div>
               </div>
               <button className="plan-button">Выбрать план</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="how-it-works-section">
+        <div className="geometric-bg">
+          <div className="floating-element element-1"></div>
+          <div className="floating-element element-2"></div>
+          <div className="floating-element element-3"></div>
+          <div className="floating-element element-4"></div>
+          <div className="floating-element element-5"></div>
+        </div>
+        <div className="data-stream">
+          <div className="stream-line stream-1"></div>
+          <div className="stream-line stream-2"></div>
+          <div className="stream-line stream-3"></div>
+        </div>
+
+        <div className="container">
+          <div className="section-header">
+            <span className="section-number">03</span>
+            <div className="section-info">
+              <div className="section-badge">КАК РАБОТАЕТ ДЖАРВИС</div>
+              <h2 className="section-title">Умный помощник для ваших клиентов</h2>
+            </div>
+          </div>
+
+          <div className="how-it-works-content">
+            <div className="main-description">
+              <h3>Джарвис - это ваш персональный ИИ консультант</h3>
+              <p>Наша система искусственного интеллекта интегрируется в любой интернет-магазин и работает как опытный продавец-конс��льтант, который никогда не устает и всегда готов помочь.</p>
+            </div>
+
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">👗</div>
+                <h4>Магазины одежды</h4>
+                <p>Помогает подобрать размер, стиль и цвет. Учитывает предпочтения клиента, тип фигуры и повод для покупки. Предлагает комплекты и аксессуары.</p>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-icon">🏠</div>
+                <h4>Товары для дома</h4>
+                <p>Консультирует по мебели, декору и бытовой технике. Учитывает размеры помещения, стиль интерьера и бюджет покупателя.</p>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-icon">📱</div>
+                <h4>Электроника</h4>
+                <p>Разбирается в характеристиках гаджетов, сравнивает модели, объясняет различия простым языком и помогает выбрать оптимальный вариант.</p>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-icon">🎁</div>
+                <h4>Подарки</h4>
+                <p>Предлагает идеи подарков по случаю, возрасту и интересам получателя. Учитывает бюджет и помогает с упаковкой.</p>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-icon">💄</div>
+                <h4>Красота и здоровье</h4>
+                <p>Консультирует по косметике и уходу, учитывая тип кожи, возраст и индивидуальные особенности. Предлагает комплексные решения.</p>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-icon">🏃</div>
+                <h4>Спорт и хобби</h4>
+                <p>Помогает выбрать спортивное снаряжение, экипировку и товары для хобби в зави��имости от уровня подготовки и целей.</p>
+              </div>
+            </div>
+
+            <div className="how-it-works-steps">
+              <h3>Как это работает:</h3>
+              <div className="steps-grid">
+                <div className="step-item">
+                  <div className="step-number">1</div>
+                  <div className="step-content">
+                    <h4>Изучает потребности</h4>
+                    <p>Джарвис задает уточняющие вопросы, чтобы понять, что именно нужно клиенту</p>
+                  </div>
+                </div>
+
+                <div className="step-item">
+                  <div className="step-number">2</div>
+                  <div className="step-content">
+                    <h4>Анализирует каталог</h4>
+                    <p>Система мгновенно обрабатывает весь ассортимент и находит подходящие варианты</p>
+                  </div>
+                </div>
+
+                <div className="step-item">
+                  <div className="step-number">3</div>
+                  <div className="step-content">
+                    <h4>��редлагает решения</h4>
+                    <p>Представляет лучшие варианты с объяснением, почему именно они подходят</p>
+                  </div>
+                </div>
+
+                <div className="step-item">
+                  <div className="step-number">4</div>
+                  <div className="step-content">
+                    <h4>Сопровождает покупку</h4>
+                    <p>Помогает оформить заказ, отвечает на вопросы о доставке и гарантии</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
