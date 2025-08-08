@@ -39,7 +39,7 @@ function App() {
                 Создаем крутые дизайны сайтов с искусственным интеллектом
               </p>
               <p className="brand-subtitle">
-                Современные ре��ения для цифрового мира
+                Со��ременные решения для ц��фрового мира
               </p>
               <div className="cta-section">
                 <button className="primary-button">Начать проект</button>
@@ -58,11 +58,81 @@ function App() {
           </div>
         </div>
         
-        <div className="tech-stack">
-          <div className="tech-item">React</div>
-          <div className="tech-item">Next.js</div>
-          <div className="tech-item">AI Design</div>
-          <div className="tech-item">Modern UI</div>
+        <div className="scroll-indicator">
+          <div className="scroll-arrow"></div>
+          <span className="scroll-text">Прокрутите вниз</span>
+        </div>
+      </section>
+
+      <section className="advantages-section">
+        <div className="geometric-bg">
+          <div className="floating-element element-1"></div>
+          <div className="floating-element element-2"></div>
+          <div className="floating-element element-3"></div>
+        </div>
+
+        <div className="container">
+          <div className="section-header">
+            <span className="section-number">01</span>
+            <div className="section-info">
+              <div className="section-badge">НАШИ ПРЕИМУЩЕСТВА</div>
+              <h2 className="section-title">Почему мы лучшие?</h2>
+            </div>
+          </div>
+
+          <div className="advantages-layout">
+            <div className="advantages-left">
+              <div className="big-advantage">
+                <div className="advantage-number">15+</div>
+                <div className="advantage-text">
+                  <h3>Лет опыта</h3>
+                  <p>в разработке и дизайне</p>
+                </div>
+              </div>
+
+              <div className="big-advantage">
+                <div className="advantage-number">500+</div>
+                <div className="advantage-text">
+                  <h3>Проектов</h3>
+                  <p>успешно реализовано</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="advantages-right">
+              <div className="advantage-item">
+                <div className="advantage-header">
+                  <div className="advantage-dot"></div>
+                  <h4>Инновационные технологии</h4>
+                </div>
+                <p>Используем самые современные AI-решения и передовые технологии разработки</p>
+              </div>
+
+              <div className="advantage-item">
+                <div className="advantage-header">
+                  <div className="advantage-dot"></div>
+                  <h4>Персональный подход</h4>
+                </div>
+                <p>Каждый проект уникален - создаем индивидуальные решения под ваши задачи</p>
+              </div>
+
+              <div className="advantage-item">
+                <div className="advantage-header">
+                  <div className="advantage-dot"></div>
+                  <h4>Гарантия качества</h4>
+                </div>
+                <p>Предоставляем гарантию на все работы и бесплатную техподдержку</p>
+              </div>
+
+              <div className="advantage-item">
+                <div className="advantage-header">
+                  <div className="advantage-dot"></div>
+                  <h4>Быст��ые сроки</h4>
+                </div>
+                <p>Оптимизированные процессы позволяют сократить время разработки вдвое</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

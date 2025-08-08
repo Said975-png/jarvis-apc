@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: 'Exo 2', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   background: #000;
   color: #fff;
   overflow-x: hidden;
@@ -149,7 +151,7 @@ body {
 
 .planet-arc {
   position: absolute;
-  top: 30%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   width: 150vw;
@@ -183,6 +185,24 @@ body {
     opacity: 1;
   }
 }
+
+@keyframes jarvisGlow {
+  0% {
+    background-position: 0% 50%;
+    text-shadow:
+      0 0 20px rgba(0, 212, 255, 0.8),
+      0 0 40px rgba(0, 212, 255, 0.6),
+      0 0 60px rgba(0, 212, 255, 0.4);
+  }
+  100% {
+    background-position: 100% 50%;
+    text-shadow:
+      0 0 30px rgba(0, 212, 255, 1),
+      0 0 50px rgba(0, 212, 255, 0.8),
+      0 0 80px rgba(0, 212, 255, 0.6);
+  }
+}
+
 
 .container {
   max-width: 1400px;
@@ -269,29 +289,29 @@ body {
   background: linear-gradient(135deg, #ffffff10, #ffffff05);
   border: 1px solid #ffffff20;
   border-radius: 2rem;
+  font-family: 'Orbitron', monospace;
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: #ffffff80;
+  color: #ffffff;
   margin-bottom: 2rem;
   backdrop-filter: blur(10px);
 }
 
 .brand-title {
+  font-family: 'Orbitron', 'Exo 2', monospace;
   font-size: clamp(4rem, 8vw, 8rem);
   font-weight: 900;
   margin-bottom: 1rem;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
 .jarvis-text {
-  background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-  letter-spacing: 0.1em;
+  color: #ffffff;
+  letter-spacing: 0.15em;
   position: relative;
 }
 
@@ -304,18 +324,23 @@ body {
 }
 
 .brand-description {
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: #ffffff90;
+  font-family: 'Rajdhani', 'Exo 2', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ffffff;
   margin-bottom: 0.5rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
 }
 
 .brand-subtitle {
-  font-size: 1rem;
-  color: #ffffff60;
+  font-family: 'Rajdhani', 'Exo 2', sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
   margin-bottom: 3rem;
-  font-weight: 300;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
 }
 
 .cta-section {
@@ -370,32 +395,266 @@ body {
   letter-spacing: 1px;
 }
 
-.tech-stack {
+.scroll-indicator {
   position: absolute;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   z-index: 3;
+  animation: scrollBounce 2s ease-in-out infinite;
 }
 
-.tech-item {
-  padding: 0.5rem 1rem;
+.scroll-arrow {
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(180deg, transparent 0%, #ffffff60 50%, transparent 100%);
+  position: relative;
+}
+
+.scroll-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #ffffff60;
+}
+
+.scroll-text {
+  font-size: 0.7rem;
+  color: #ffffff40;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+/* Advantages Section */
+.advantages-section {
+  position: relative;
+  min-height: 100vh;
+  background: #0a0a0a;
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+.geometric-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.floating-element {
+  position: absolute;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.element-1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  border-radius: 20px;
+  animation-delay: 0s;
+}
+
+.element-2 {
+  width: 120px;
+  height: 120px;
+  top: 60%;
+  right: 15%;
+  border-radius: 50%;
+  animation-delay: 2s;
+}
+
+.element-3 {
+  width: 60px;
+  height: 60px;
+  bottom: 20%;
+  left: 20%;
+  transform: rotate(45deg);
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-number {
+  font-family: 'Orbitron', monospace;
+  font-size: 8rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+  line-height: 1;
+}
+
+.section-info {
+  flex: 1;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
+  border-radius: 20px;
+  font-family: 'Exo 2', sans-serif;
   font-size: 0.8rem;
   font-weight: 500;
-  color: #ffffff80;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff70;
+  margin-bottom: 1rem;
 }
 
-.tech-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  transform: translateY(-2px);
+.section-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.advantages-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.advantages-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.big-advantage {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.big-advantage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0.3));
+}
+
+.advantage-number {
+  font-family: 'Orbitron', monospace;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.advantage-text h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.3rem 0;
+}
+
+.advantage-text p {
+  font-family: 'Exo 2', sans-serif;
+  color: #ffffff60;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.advantages-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.advantage-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.advantage-item:last-child {
+  border-bottom: none;
+}
+
+.advantage-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.advantage-dot {
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.advantage-header h4 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.advantage-item p {
+  font-family: 'Exo 2', sans-serif;
+  color: #ffffff70;
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 1.5rem;
 }
 
 /* Responsive Design */
@@ -444,10 +703,24 @@ body {
     gap: 2rem;
   }
 
-  .tech-stack {
-    flex-wrap: wrap;
+  .scroll-indicator {
+    bottom: 1.5rem;
+  }
+
+  .section-header {
+    flex-direction: column;
     gap: 1rem;
-    padding: 0 1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-number {
+    font-size: 4rem;
+  }
+
+  .advantages-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .cta-section {
@@ -491,5 +764,23 @@ body {
   
   .stats {
     gap: 1.5rem;
+  }
+
+  .advantages-left {
+    gap: 2rem;
+  }
+
+  .big-advantage {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .advantage-number {
+    font-size: 2.5rem;
+  }
+
+  .floating-element {
+    display: none;
   }
 }
