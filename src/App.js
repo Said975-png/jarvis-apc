@@ -40,7 +40,7 @@ function AppContent() {
 
   const jarvisResponses = [
     "Отличный вопрос! Наша команда использует самые современные AI те��нологии для создания уникальных решений.",
-    "Я здесь, чтобы помочь ��ам с любыми вопросами о наших услугах и технологиях.",
+    "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
     "Интересно! Расскажите больше о вашем проекте, и я подберу идеальное решение.",
     "Наши разработчики работают 24/7, чтобы обеспечить максимальное качество продукта.",
     "Хотите узнать больше о наших тарифных планах? Я могу помочь выбрать подходящий вариант.",
@@ -106,7 +106,7 @@ function AppContent() {
   };
 
   const handleChatHistory = () => {
-    // Показать историю чатов (��ока простой alert, можно расширить)
+    // Показать историю чатов (пока простой alert, можно расширить)
     if (chatHistory.length === 0) {
       alert('История чатов пуста');
     } else {
@@ -348,7 +348,7 @@ function AppContent() {
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
-                  <span>ИИ помощник для клиентов</span>
+                  <span>ИИ помощник для ��лиентов</span>
                 </div>
                 <div className="feature-item">
                   <div className="feature-dot"></div>
@@ -713,7 +713,9 @@ function AppContent() {
 export default function App() {
   return (
     <AuthProvider>
-      <AppContent />
+      <CartProvider>
+        <AppContent />
+      </CartProvider>
     </AuthProvider>
   );
 }
