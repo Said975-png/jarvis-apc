@@ -1572,16 +1572,17 @@ body {
 
 /* Responsive для AI секции */
 @media (max-width: 1024px) {
-  .ai-slider-container {
-    max-width: 90%;
+  .ai-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
   }
 
-  .slide {
-    padding: 2rem;
+  .ai-card {
+    height: 320px;
   }
 
-  .slide-title {
-    font-size: 2rem;
+  .card-front, .card-back {
+    padding: 1.5rem;
   }
 }
 
@@ -1590,51 +1591,57 @@ body {
     padding: 6rem 0;
   }
 
-  .ai-slider {
-    height: 400px;
+  .ai-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
 
-  .slide {
-    padding: 1.5rem;
+  .ai-card {
+    height: 300px;
   }
 
-  .slide-title {
-    font-size: 1.8rem;
+  .card-title {
+    font-size: 1.3rem;
   }
 
-  .slide-description {
-    font-size: 1rem;
+  .card-title-back {
+    font-size: 1.1rem;
   }
 
-  .slide-features {
-    gap: 0.5rem;
+  .card-description {
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
-  .ai-slider {
-    height: 350px;
+  .ai-cards-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .slide {
+  .ai-card {
+    height: 280px;
+  }
+
+  .card-front, .card-back {
     padding: 1rem;
   }
 
-  .slide-title {
-    font-size: 1.5rem;
-  }
-
-  .slide-description {
-    font-size: 0.9rem;
-  }
-
-  .slide-icon {
+  .card-icon {
     width: 60px;
     height: 60px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .icon-brain::before, .icon-chat::before, .icon-target::before, .icon-shield::before {
     font-size: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-title-back {
+    font-size: 1rem;
   }
 }
