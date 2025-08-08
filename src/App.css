@@ -556,9 +556,7 @@ body {
 
 .main-content {
   text-align: center;
-  padding: 3rem 0;
-  position: relative;
-  z-index: 5;
+  padding: 2rem 0;
 }
 
 .brand-badge {
