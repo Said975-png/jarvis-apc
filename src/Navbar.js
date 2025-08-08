@@ -41,6 +41,16 @@ const Navbar = () => {
           </div>
 
           <div className="navbar-actions">
+            <button
+              className="navbar-icon-button admin-button"
+              title="Админ панель"
+              onClick={() => window.location.href = '/admin'}
+            >
+              <svg viewBox="0 0 24 24" fill="none" className="navbar-icon">
+                <path d="M12 14l9-5-9-5-9 5 9 5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke="currentColor" strokeWidth="2"/>
+              </svg>
+            </button>
             <button className="navbar-icon-button cart-button" title="Корзина" onClick={openCart}>
               <svg viewBox="0 0 24 24" fill="none" className="navbar-icon">
                 <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 002 2h6a2 2 0 002-2v-6m-9 0h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
