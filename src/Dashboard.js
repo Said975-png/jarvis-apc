@@ -70,7 +70,12 @@ const Dashboard = ({ isOpen, onClose }) => {
             <div className="user-details">
               <h3>{user?.name}</h3>
               <p>{user?.email}</p>
-              <span className="user-plan">{user?.plan?.toUpperCase()}</span>
+              <div className="user-badges">
+                <span className="user-plan">{user?.plan?.toUpperCase()}</span>
+                <span className={`database-status ${useSupabase ? 'connected' : 'local'}`}>
+                  {useSupabase ? 'БД подключена' : 'Локально'}
+                </span>
+              </div>
             </div>
           </div>
           <button className="dashboard-close" onClick={onClose}>
@@ -235,7 +240,7 @@ const Dashboard = ({ isOpen, onClose }) => {
           {activeTab === 'plan' && (
             <div className="plan-section">
               <div className="current-plan">
-                <h4>Текущий тарифный план</h4>
+                <h4>Теку��ий тарифный план</h4>
                 <div className="plan-card current">
                   <h5>{user?.plan?.toUpperCase()} план</h5>
                   <div className="plan-features">
