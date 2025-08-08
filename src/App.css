@@ -4614,10 +4614,10 @@ body {
 }
 
 .plan-card h5 {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
-  color: white;
+  color: #2d3748;
   margin: 0 0 20px 0;
 }
 
