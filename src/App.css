@@ -138,11 +138,9 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hero section decorative elements hidden */
+/* Hero section decorative elements hidden - оставляем только дугу видимой */
 .hero-section .background-overlay,
-.hero-section .planet-arc,
 .hero-section .geometric-bg,
-.hero-section .grid-overlay,
 .hero-section .particle-system,
 .hero-section .neural-network {
   display: none;
