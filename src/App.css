@@ -319,29 +319,37 @@ body {
   z-index: 1;
 }
 
-/* Желеобразная плавающая сфера */
+/* Яркая дуга */
 .planet-arc {
   position: absolute;
-  top: 60%;
+  bottom: -50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 400px;
-  height: 400px;
+  transform: translateX(-50%);
+  width: 150vw;
+  height: 150vw;
+  max-width: 1600px;
+  max-height: 1600px;
   border-radius: 50%;
-  background: radial-gradient(
-    ellipse at 25% 25%,
-    rgba(0, 212, 255, 0.8) 0%,
-    rgba(138, 43, 226, 0.7) 30%,
-    rgba(255, 20, 147, 0.6) 60%,
-    rgba(0, 100, 200, 0.5) 100%
+  background: transparent;
+  border: 4px solid transparent;
+  background-image: conic-gradient(
+    from 180deg,
+    rgba(0, 212, 255, 0) 0deg,
+    rgba(0, 212, 255, 0.9) 30deg,
+    rgba(138, 43, 226, 1) 90deg,
+    rgba(255, 20, 147, 0.9) 150deg,
+    rgba(0, 212, 255, 0.9) 180deg,
+    rgba(0, 212, 255, 0) 210deg,
+    rgba(0, 212, 255, 0) 360deg
   );
+  background-clip: padding-box;
   z-index: 1;
-  animation: floatingJelly 6s ease-in-out infinite;
-  filter: blur(1px);
+  animation: arcGlow 4s ease-in-out infinite, arcRotate 15s linear infinite;
+  filter: blur(2px);
   box-shadow:
-    0 0 80px rgba(0, 212, 255, 0.4),
-    0 0 120px rgba(138, 43, 226, 0.3),
-    0 0 160px rgba(255, 20, 147, 0.2);
+    0 0 100px rgba(0, 212, 255, 0.6),
+    0 0 200px rgba(138, 43, 226, 0.5),
+    0 0 300px rgba(255, 20, 147, 0.4);
 }
 
 .planet-arc::before {
