@@ -508,7 +508,7 @@ body {
   filter: blur(8px);
 }
 
-/* Дополнительные желейные волны */
+/* Дополнительные жел��йные волны */
 .planet-arc {
   position: relative;
 }
@@ -3195,7 +3195,7 @@ body {
   border: none;
   border-radius: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   overflow: hidden;
   backdrop-filter: blur(20px);
   z-index: 20000;
