@@ -26,6 +26,10 @@ const Navbar = () => {
     setDashboardOpen(true);
   };
 
+  const openCart = () => {
+    setCartOpen(true);
+  };
+
   return (
     <>
       <nav className="navbar">
