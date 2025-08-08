@@ -2672,7 +2672,7 @@ body {
 }
 
 .chat-header {
-  padding: 30px;
+  padding: 20px 30px;
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
@@ -2681,6 +2681,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  min-height: 80px;
 }
 
 .chat-header-center {
