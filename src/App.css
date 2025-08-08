@@ -2744,11 +2744,14 @@ body {
 
 .chat-messages {
   flex: 1;
-  padding: 20px;
+  padding: 30px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .chat-messages::-webkit-scrollbar {
