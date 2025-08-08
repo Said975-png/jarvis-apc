@@ -1552,13 +1552,17 @@ body {
     padding: 6rem 0;
   }
   
+  .ai-slider-container {
+    max-width: 320px;
+  }
+
+  .ai-card {
+    height: 350px;
+  }
+
   .ai-cards-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-  }
-  
-  .ai-card {
-    height: 350px;
   }
   
   .card-front, .card-back {
