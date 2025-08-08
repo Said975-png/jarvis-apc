@@ -162,11 +162,11 @@ body {
 .side-text {
   position: absolute;
   font-family: 'Exo 2', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.3);
   writing-mode: horizontal-tb;
   transition: all 0.3s ease;
   white-space: nowrap;
@@ -176,7 +176,7 @@ body {
 }
 
 .side-text:hover {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* Side positions - только два текста */
