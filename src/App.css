@@ -249,7 +249,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hero section decorative elements - скрываем все */
+/* Hero section decorative elements - скрываем ��се */
 .hero-section .background-overlay,
 .hero-section .planet-arc,
 .hero-section .geometric-bg,
@@ -2913,6 +2913,20 @@ body {
 }
 
 /* Mobile Responsive */
+@media (max-width: 768px) {
+  .widget-buttons-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+  }
+
+  .action-label,
+  .chat-label {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
 @media (max-width: 480px) {
   .chat-window {
     width: calc(100vw - 40px);
@@ -2920,13 +2934,19 @@ body {
     right: -10px;
   }
 
-  .chat-button {
+  .chat-button,
+  .action-button {
     width: 56px;
     height: 56px;
   }
 
-  .chat-icon {
+  .chat-icon,
+  .action-icon {
     width: 22px;
     height: 22px;
+  }
+
+  .widget-buttons-container {
+    gap: 0.3rem;
   }
 }
