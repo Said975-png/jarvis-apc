@@ -569,6 +569,28 @@ body {
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
 }
 
+/* Hero section specific badge */
+.hero-section .brand-badge {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 3rem;
+  backdrop-filter: none;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.hero-section .brand-badge:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 1);
+}
+
 .brand-title {
   font-family: 'Orbitron', 'Exo 2', monospace;
   font-size: clamp(4rem, 8vw, 8rem);
