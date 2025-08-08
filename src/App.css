@@ -257,7 +257,7 @@ body {
   display: none;
 }
 
-/* Желеоб��азные частицы */
+/* Желеобразные частицы */
 .hero-section .particle-system {
   display: block;
 }
@@ -2554,7 +2554,8 @@ body {
   text-align: center;
 }
 
-.chat-button {
+.chat-button,
+.action-button {
   width: 60px;
   height: 60px;
   border-radius: 50%;
