@@ -4058,11 +4058,13 @@ body {
 
 .form-group label {
   display: block;
-  font-family: 'Exo 2', sans-serif;
-  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: #4a5568;
   margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .form-group input {
