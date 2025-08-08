@@ -10,6 +10,7 @@ const Navbar = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authModalMode, setAuthModalMode] = useState('login');
   const [dashboardOpen, setDashboardOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
 
   const openLoginModal = () => {
     setAuthModalMode('login');
