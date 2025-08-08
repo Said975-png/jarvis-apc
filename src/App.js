@@ -36,10 +36,10 @@ function App() {
               </h1>
               <div className="title-underline"></div>
               <p className="brand-description">
-                Создаем крутые дизайны сайтов с искусственным интелл��ктом
+                Создаем крутые дизайны сайтов с искусственным интеллектом
               </p>
               <p className="brand-subtitle">
-                Современные решения для цифрового мира
+                Современные решения для ц��фрового мира
               </p>
               <div className="cta-section">
                 <button className="primary-button">Начать проект</button>
@@ -58,11 +58,9 @@ function App() {
           </div>
         </div>
         
-        <div className="tech-stack">
-          <div className="tech-item">React</div>
-          <div className="tech-item">Next.js</div>
-          <div className="tech-item">AI Design</div>
-          <div className="tech-item">Modern UI</div>
+        <div className="scroll-indicator">
+          <div className="scroll-arrow"></div>
+          <span className="scroll-text">Прокрутите вниз</span>
         </div>
       </section>
     </div>
