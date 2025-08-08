@@ -3,6 +3,7 @@ import './App.css';
 import { AuthProvider } from './AuthContext';
 import { CartProvider } from './CartContext';
 import Navbar from './Navbar';
+import PricingSection from './PricingSection';
 
 function AppContent() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -250,7 +251,7 @@ function AppContent() {
                   <div className="advantage-dot"></div>
                   <h4>Персональный подход</h4>
                 </div>
-                <p>Каждый проект уникален - создаем индивидуальные решения под ваши задачи</p>
+                <p>Каждый проект уникален - создаем индивидуальные решения под ваши зада��и</p>
               </div>
 
               <div className="advantage-item">
@@ -492,7 +493,7 @@ function AppContent() {
                     </div>
                     <h4>Поддержка 24/7</h4>
                   </div>
-                  <p>Мгновенные ответы на вопросы клиентов в любое время, без выходных и праздников</p>
+                  <p>Мгновенные ответы на вопро��ы клиентов в любое время, без выходных и праздников</p>
                 </div>
 
                 <div className="capability-item">
