@@ -107,6 +107,60 @@ body {
   gap: 1rem;
 }
 
+.navbar-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 400;
+  width: 200px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-input:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.search-button {
+  position: absolute;
+  right: 0.3rem;
+  padding: 0.3rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-icon {
+  width: 16px;
+  height: 16px;
+}
+
 .auth-buttons-wrapper {
   display: flex;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -334,7 +388,7 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Side positions - только два текста */
+/* Side positions - толь��о два текста */
 .left-center {
   top: 50%;
   left: 1rem;
