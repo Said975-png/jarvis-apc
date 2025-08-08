@@ -23,6 +23,17 @@ function App() {
     scrollToBottom();
   }, [messages]);
 
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isChatOpen) {
+        setIsChatOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isChatOpen]);
+
   const jarvisResponses = [
     "Отличный во��рос! Наша команда использует самые современные AI технологии для создания уникальных решений.",
     "Я здесь, чтобы помочь вам с любыми вопросами о наших услугах и технологиях.",
