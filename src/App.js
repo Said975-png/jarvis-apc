@@ -2,6 +2,33 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const slideInterval = 5000; // 5 секунд
+  const totalSlides = 4;
+
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % totalSlides);
+      }, slideInterval);
+
+      return () => clearInterval(interval);
+    }
+  }, [currentSlide, isPaused, totalSlides]);
+
+  const handleIndicatorClick = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const handleMouseEnter = () => {
+    setIsPaused(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+  };
+
   return (
     <div className="jarvis-app">
       <nav className="navbar">
@@ -154,7 +181,7 @@ function App() {
               <div className="advantage-item">
                 <div className="advantage-header">
                   <div className="advantage-dot"></div>
-                  <h4>Гарантия качества</h4>
+                  <h4>Гаранти�� качества</h4>
                 </div>
                 <p>Предоставляем гарантию на все работы и бесплатную техподдержку</p>
               </div>
