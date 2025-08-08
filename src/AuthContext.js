@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
   const [useSupabase, setUseSupabase] = useState(true);
   const fallbackAuth = createFallbackAuth();
 
-  // Проверяем авторизаци�� при загрузке
+  // Проверяем авторизацию при загрузке
   useEffect(() => {
     const initAuth = async () => {
       try {
@@ -315,6 +315,10 @@ export const AuthProvider = ({ children }) => {
   const loadUserChats = async () => {
     if (!user) return { success: false, error: 'Пользователь не авторизован' };
 
+    if (!useSupabase) {
+      return await fallbackAuth.loadUserChats();
+    }
+
     try {
       const { data, error } = await supabase
         .from('chats')
@@ -332,9 +336,13 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Функция создания новог�� чата
+  // Функция создания нового чата
   const createChat = async (title) => {
     if (!user) return { success: false, error: 'Пользователь не авторизован' };
+
+    if (!useSupabase) {
+      return await fallbackAuth.createChat(title);
+    }
 
     try {
       const { data, error } = await supabase
